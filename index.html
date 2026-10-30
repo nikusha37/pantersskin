@@ -1,154 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Knight in the Panther's Skin (ვეფხისტყაოსანი) — Interactive Animated Epic</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ვეფხისტყაოსანი — Scrollytelling Realm Network & Full Bilingual Edition (1–1669)</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-  <!-- Sticky Header -->
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">
-        <div class="brand-emblem" title="The Knight in the Panther's Skin">🐆</div>
-        <div class="brand-titles">
-          <h1>ვეფხისტყაოსანი · The Knight in the Panther's Skin</h1>
-          <p>Interactive 65-Chapter Animated Plot Atlas, Bilingual Critical Text &amp; Official Scholarly Commentary</p>
-        </div>
+
+  <!-- Fixed/Sticky Top Bar -->
+  <header class="top-bar">
+    <div class="brand">
+      <div class="brand-title-row">
+        <h1>ვეფხისტყაოსანი</h1>
+        <span class="brand-pill">1,669 სტროფი • KA / EN</span>
+      </div>
+      <span class="subtitle" id="brandSubtitle">ინტერაქტიული სიუჟეტური ქსელი და ორენოვანი აკადემიური გამოცემა • Scrollytelling Realm Network</span>
+    </div>
+
+    <!-- Search Input (Stanza # / Chapter / Text) -->
+    <div class="search-wrapper">
+      <input
+        type="search"
+        id="globalSearchInput"
+        class="search-input"
+        placeholder="🔍 სტროფი # (1–1669), თავი ან სიტყვა / Stanza # or text..."
+        autocomplete="off"
+      />
+      <div id="searchDropdown" class="search-dropdown hidden"></div>
+    </div>
+
+    <!-- Interaction Type Filter Chips -->
+    <div class="filters" id="typeFilters">
+      <button class="filter-chip active" data-type="all">ყველა / All</button>
+      <button class="filter-chip" data-type="love" title="მიჯნურობა / Courtly Love">💍 მიჯნურობა</button>
+      <button class="filter-chip" data-type="brotherhood" title="დაძმობილება / Sworn Brotherhood">🤝 ძმობა</button>
+      <button class="filter-chip" data-type="feudal" title="მეფობა და ყმობა / Fealty & Kingship">👑 მეფობა</button>
+      <button class="filter-chip" data-type="service" title="თავდადება და მსახურება / Loyal Service">🛡️ მსახურება</button>
+      <button class="filter-chip" data-type="letter" title="ეპისტოლე და წერილი / Epistle & Letter">💌 წერილი</button>
+      <button class="filter-chip" data-type="conflict" title="ბრძოლა და დაპირისპირება / Combat & Conflict">⚔️ ბრძოლა</button>
+      <button class="filter-chip" data-type="rescue" title="გამოხსნა და პატრონობა / Alliance & Rescue">🔓 დახსნა</button>
+      <button class="filter-chip" data-type="grief_support" title="თანაგრძნობა და გლოვა / Shared Mourning">💧 თანაგრძნობა</button>
+    </div>
+
+    <!-- Right Controls: Mode, View Granularity, Language, Scholarly Guide -->
+    <div class="top-controls">
+      <div class="segmented-control" id="granularityToggle" title="აირჩიეთ სიუჟეტური ეპიზოდები ან 65-ვე თავი">
+        <button class="seg-btn active" data-granularity="episodes">26 ეპიზოდი</button>
+        <button class="seg-btn" data-granularity="chapters">65 თავი</button>
       </div>
 
-      <div class="header-controls">
-        <div class="search-box">
-          <input type="search" id="globalSearchInput" placeholder="Search 1,669 stanzas (e.g., 'lion', 'Plato', 'ვეფხი', 'მზე')..." />
-        </div>
-        <button class="btn" id="btnAutoPlay" title="Auto-play animated chapter sequence">▶ Play Story</button>
-        <button class="btn" id="btnScholarlyGuide" title="View synthesized academic commentary &amp; sources">📜 Scholarly Guide</button>
-        <button class="btn" id="btnThemeToggle" title="Switch between Astral Dark &amp; Illuminated Manuscript theme">📜 Manuscript Mode</button>
+      <div class="segmented-control" id="langToggle" title="ენის რეჟიმი / Language Mode">
+        <button class="seg-btn active" data-lang="bi">KA+EN</button>
+        <button class="seg-btn" data-lang="ka">KA</button>
+        <button class="seg-btn" data-lang="en">EN</button>
+      </div>
+
+      <button class="guide-btn" id="openMonographBtn" title="სამეცნიერო მონოგრაფია და წყაროები / Scholarly Monograph & Metadata">
+        📜 კვლევა
+      </button>
+
+      <div class="status-badges">
+        <span id="modeBadge" class="mode-badge">⏱️ აწმყო ხაზი</span>
+        <span id="currentChapter" class="chapter-badge">ეპიზოდი 1 / 26</span>
       </div>
     </div>
   </header>
 
-  <!-- 5-Act Story Navigation Bar -->
-  <nav class="act-bar" aria-label="Story Acts">
-    <div class="act-bar-inner" id="actFilterBar">
-      <button class="act-pill active" data-act="all">All 65 Chapters (1,669 Stanzas)</button>
-      <button class="act-pill" data-act="1">Act I: Arabia &amp; Stranger Knight (Ch 1–9)</button>
-      <button class="act-pill" data-act="2">Act II: Tariel's Chronicle of India (Ch 10–29)</button>
-      <button class="act-pill" data-act="3">Act III: Avtandil's Testament &amp; Duel (Ch 30–41)</button>
-      <button class="act-pill" data-act="4">Act IV: Gulansharo &amp; Kadjeti Tidings (Ch 42–52)</button>
-      <button class="act-pill" data-act="5">Act V: Storming of Kadjeti &amp; Weddings (Ch 53–65)</button>
-    </div>
-  </nav>
+  <!-- Scrubber Timeline Bar -->
+  <div class="timeline-scrubber" id="timelineScrubber"></div>
 
-  <!-- Main Workspace -->
-  <main class="main-layout">
-    <!-- Left Sidebar: 65 Chapters Timeline -->
-    <aside class="chapter-sidebar">
-      <div class="sidebar-header">
-        <h2 id="sidebarCountLabel">Chapters (65)</h2>
-        <span style="font-size: 0.75rem; color: var(--text-muted);">Click to animate</span>
+  <!-- Main Scrollytelling + Sticky Swimlane Realm Stage -->
+  <main class="app-container">
+    <!-- Left Scrollytelling Narrative Column -->
+    <section class="scroller" id="scroller"></section>
+
+    <!-- Right Sticky D3 Realm Swimlane Graph -->
+    <section class="stage" id="stageContainer">
+      <div class="stage-legend-bar" id="stageLegendBar">
+        <span class="stage-hint">💡 დააწკაპუნეთ პერსონაჟის კვანძზე ან კავშირის ემოჯიზე სტროფის, ციტატისა და კომენტარის სანახავად • Click any node or emoji marker</span>
       </div>
-      <div class="chapter-list" id="chapterListContainer"></div>
-    </aside>
-
-    <!-- Right Column: Animated Stage + World Map + Bilingual Stanzas -->
-    <section class="content-column">
-      <div class="visual-grid">
-        <!-- Animated Chapter Stage -->
-        <div class="panel-card">
-          <div class="panel-header">
-            <h3 id="stageSceneTitle">🎭 Animated Chapter Stage</h3>
-            <div style="display:flex; gap:0.4rem;">
-              <button class="btn" id="btnPrevChapter">← Prev</button>
-              <button class="btn btn-primary" id="btnNextChapter">Next Chapter →</button>
-            </div>
-          </div>
-          <div class="stage-canvas-wrap">
-            <svg id="stageSvg" class="stage-svg" viewBox="0 0 640 310" preserveAspectRatio="xMidYMid slice"></svg>
-            <div class="stage-maxim-banner">
-              <div class="maxim-ka" id="stageMaximKa"></div>
-              <div class="maxim-en" id="stageMaximEn"></div>
-            </div>
-          </div>
-          <div class="stage-footer">
-            <div class="char-badges" id="stageCharacters"></div>
-            <div style="font-size:0.78rem; color:var(--text-muted);" id="stageStanzaIndicator"></div>
-          </div>
-        </div>
-
-        <!-- Synchronized Quest Map of the Poem -->
-        <div class="panel-card">
-          <div class="panel-header">
-            <h3>🗺️ Synchronized Quest Map</h3>
-            <span style="font-size:0.76rem; color:var(--text-muted);">Click any realm to filter chapters</span>
-          </div>
-          <div class="map-canvas-wrap">
-            <svg id="mapSvg" class="map-svg" viewBox="0 0 980 460" preserveAspectRatio="xMidYMid meet"></svg>
-          </div>
-          <div class="map-footer">
-            <div id="mapActiveLocationDesc">Select a chapter or map kingdom to trace the knights' journey.</div>
-            <button class="btn" id="btnResetMapFilter" style="display:none; padding:0.25rem 0.65rem; font-size:0.75rem;">Show All Realms</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Chapter Summary & Official Scholarly Commentary -->
-      <article class="chapter-commentary-panel">
-        <div class="chapter-title-row">
-          <div>
-            <span class="chapter-badge-tag" id="chapterActBadge">Act I · Chapter 1</span>
-            <h2 class="chapter-main-title-en" id="chapterMainTitleEn">Loading...</h2>
-            <div class="chapter-main-title-ka" id="chapterMainTitleKa"></div>
-          </div>
-          <a id="chapterSourceLink" href="https://www.georgianencyclopedia.ge/en/form_eng/903" target="_blank" rel="noopener noreferrer" class="btn">
-            🔗 Primary Text &amp; Source
-          </a>
-        </div>
-
-        <div class="expert-box">
-          <div class="expert-box-label">
-            <span>🎓 Official Scholarly Commentary &amp; Plot Synthesis</span>
-            <span id="chapterStanzaSpan">Stanzas 1–31</span>
-          </div>
-          <p id="chapterExpertExplanation"></p>
-        </div>
-      </article>
-
-      <!-- Stanza-by-Stanza Explorer -->
-      <section class="stanzas-panel">
-        <div class="stanzas-header">
-          <div>
-            <h3 style="font-size:1.1rem; color:var(--accent-gold);">📖 Stanza-by-Stanza Text &amp; Expert Annotations</h3>
-            <p style="font-size:0.82rem; color:var(--text-muted);" id="stanzaSectionSubtitle">
-              1966 Shanidze-Baramidze Georgian Critical Edition (1,669 stanzas) paired with Marjory Scott Wardrop's 1912 English Translation (1,576 stanzas)
-            </p>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:0.45rem;" id="viewModeButtons">
-            <button class="btn active" data-view="bilingual">Bilingual + Expert Lens</button>
-            <button class="btn" data-view="ka">ქართული (Georgian Only)</button>
-            <button class="btn" data-view="en">English + Commentary</button>
-          </div>
-        </div>
-
-        <div class="stanza-grid" id="stanzaListContainer"></div>
-      </section>
+      <svg id="stageSvg"></svg>
     </section>
   </main>
 
-  <!-- Scholarly Monograph & Search Modal -->
-  <div class="modal-backdrop" id="infoModal">
-    <div class="modal-content">
+  <!-- Inspector Drawer for Characters & Interactions -->
+  <aside id="inspector" class="inspector">
+    <div class="inspector-header">
+      <h3 id="inspectorTitle" class="inspector-title">ინსპექტორი / Inspector</h3>
+      <button class="close-btn" id="closeInspectorBtn" aria-label="Close">×</button>
+    </div>
+    <div id="inspectorBody" class="inspector-content">
+      დააწკაპუნეთ პერსონაჟის კვანძზე ან კავშირის ემოჯიზე დეტალების სანახავად.
+    </div>
+  </aside>
+
+  <!-- Full Stanza Reader Modal (1,669 Georgian & 1,576 English Stanzas + Scholarly Commentary) -->
+  <div id="stanzaModal" class="modal-overlay hidden">
+    <div class="modal-card">
       <div class="modal-header">
-        <h3 id="modalTitle" style="color:var(--accent-gold); font-size:1.2rem;">Scholarly Guide &amp; Philosophical Synthesis</h3>
-        <button class="btn" id="btnCloseModal">✕ Close</button>
+        <div>
+          <h2 id="modalTitle">თავის სრული ტექსტი</h2>
+          <div id="modalSubtitle" class="modal-subtitle"></div>
+        </div>
+        <div class="modal-header-actions">
+          <div class="segmented-control" id="modalLangToggle">
+            <button class="seg-btn active" data-lang="bi">KA + EN</button>
+            <button class="seg-btn" data-lang="ka">ქართული</button>
+            <button class="seg-btn" data-lang="en">English</button>
+          </div>
+          <button class="close-btn" id="closeModalBtn" aria-label="Close">×</button>
+        </div>
       </div>
-      <div id="modalBody"></div>
+      <div id="modalChapterMeta" class="modal-chapter-meta"></div>
+      <div id="modalStanzasBody" class="modal-body"></div>
     </div>
   </div>
 
-  <!-- Pre-bundled dataset for zero-server file:// usage AND GitHub Pages -->
+  <!-- Scholarly Monograph & Edition Metadata Modal -->
+  <div id="monographModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2 id="monographTitle">📜 სამეცნიერო მონოგრაფია და გამოცემის მეტამონაცემები / Scholarly Monograph & Metadata</h2>
+          <div class="modal-subtitle">1966 აკადემიური გამოცემა (1,669 სტროფი) • მარჯორი უორდროპის თარგმანი (1,576 სტროფი) • რუსთველოლოგიური კომენტარი</div>
+        </div>
+        <button class="close-btn" id="closeMonographBtn" aria-label="Close">×</button>
+      </div>
+      <div id="monographBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Load Existing Full Bilingual Poem Dataset & Story Graph -->
   <script src="data/poem-bundle.js"></script>
-  <script src="js/app.js"></script>
+  <script src="data/story-graph-bundle.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
