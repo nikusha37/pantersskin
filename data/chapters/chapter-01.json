@@ -1,0 +1,373 @@
+{
+  "chapter_number": 1,
+  "chapter_title_ka": "დასაწყისი",
+  "chapter_title_en": "Prologue (Introductory Quatrains)",
+  "stanza_range": "1–31",
+  "stanza_count": 31,
+  "chapter_expert_explanation_en": "The poet's invocation to the Creator God, panegyric dedication to Queen Tamar and David Soslan, self-identification as Rustveli, and two foundational theoretical treatises: the Theory of Poetry ('Shairoba', Stanzas 12–17) and the Theory of Chivalric Love ('Mijnuroba', Stanzas 20–31).",
+  "chapter_source_url": "https://pantherskin.org/chapter/prologue",
+  "stanzas": [
+    {
+      "stanza_number": 1,
+      "wardrop_stanza_number": 1,
+      "georgian_raw_text": "რომელმან შექმნა სამყარო ძალითა მით ძლიერითა,\nზეგარდმო არსნი სულითა ყვნა ზეცით მონაბერითა,\nჩვენ, კაცთა, მოგვცა ქვეყანა, გვაქვს უთვალავი ფერითა,\nდა მისგან არს ყოვლი ხელმწიფე სახითა მის მიერითა.",
+      "english_translation": "HE who created the firmament, by that mighty power made beings inspired from on high with souls celestial; to us men He has given the world, infinite in variety we possess it; from Him is every monarch in His likeness.",
+      "expert_explanation_en": "According to Academician Elguja Khintibidze (Tbilisi State University) and the National Parliamentary Library of Georgia (NPLG) commentary, the opening stanza presents the biblical-Christian cosmology of creation grounded in Genesis 1:1, Psalm 113:23–24, and St. Gregory of Nyssa. Line 1 refers to God creating the celestial firmament ('samyaro') by His omnipotent power; Line 2 refers to the creation of spiritual/angelic beings ('zegardmo arsni') animated by the breath of the Holy Spirit from on high; Line 3 states that God granted the earthly world ('kveqana') in its infinite variety of colors and forms to humanity; and Line 4 formulates the medieval Georgian doctrine of divine kingship (cf. Romans 13:1), stating that every earthly monarch rules by divine appointment and bears God's image/likeness.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=109416",
+        "http://www.nplg.gov.ge/civil/vefkhistkaosani.html"
+      ]
+    },
+    {
+      "stanza_number": 2,
+      "wardrop_stanza_number": 2,
+      "georgian_raw_text": "ჰე, ღმერთო ერთო, შენ შეჰქმენ სახე ყოვლისა ტანისა,\nშენ დამიფარე, ძლევა მეც დათრგუნვად მე სატანისა,\nმომეც მიჯნურთა სურვილი, სიკვდიდმდე გასატანისა,\nდა ცოდვათა შესუბუქება, მუნ თანა წასატანისა.",
+      "english_translation": "O one God! Thou didst create the face of every form! Shield me, give me mastery to trample on Satan, give me the longing of lovers lasting even unto death, lightening (of the burden) of sins I must bear thither with me.",
+      "expert_explanation_en": "After the cosmological invocation of Stanza 1, the poet offers a personal prayer. As documented by Elguja Khintibidze (TSU), the phrase 'saxe qovlisa tanisa' ('the form of every body') has been a major focus of Rustvelological debate: Mose Gogiberidze linked it to Aristotle's Metaphysics and Arabic Aristotelianism (form vs. prime matter); Shalva Nutsubidze linked 'saxe' to Pseudo-Dionysius the Areopagite and Ioane Petritsi; Ivane Lolashvili and Zviad Gamsakhurdia interpreted it as Christian-theological archetypes (or the Celestial Adam); while Elguja Khintibidze demonstrates via Aristotle's De Anima ('Peri Psyches', II, 1) and Old Georgian philosophical terminology ('saxe' = eidos/form, 'tani' = living body/soma) that 'the form of every living body' signifies the soul, which gives life to the body. In Lines 2–4, Rustaveli entrusts his soul to God, asking for protection against Satan, unyielding fidelity in love ('mijnurta survili') until death, and remission of sins in the hereafter.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=109416",
+        "http://www.nplg.gov.ge/civil/vefkhistkaosani.html"
+      ]
+    },
+    {
+      "stanza_number": 3,
+      "wardrop_stanza_number": 3,
+      "georgian_raw_text": "ვის ჰშვენის,-ლომსა,-ხმარება შუბისა, ფარ-შიმშერისა,\nმეფისა მზის თამარისა ღაწვ-ბადახშ-თმა-გიშერისა,\nმას, არა ვიცი, შევჰკადრო შესხმა ხოტბისა შე-რისა,\nდა მისთა მჭვრეტელთა ყანდისა მირთმა ხამს მართ მი-შერისა.",
+      "english_translation": "Of that lion whom the use of lance, shield and sword adorns, of the king, the sun T’hamara, the ruby-cheeked, the jet-haired, of her I know not how I shall dare to sing the manifold praise; they who look upon her must offer her the sweets for which she hungers.",
+      "expert_explanation_en": "As noted by Academician Aleksandre Baramidze (TSU) and the NPLG commentary, Stanza 3 introduces the royal dedicatees of the poem: Queen (King) Tamar ('the Sun Tamar, ruby-cheeked, jet-haired') and her consort David Soslan, metaphorically praised in Line 1 as the 'Lion whom the wielding of lance, shield, and sword ('shimsheri') adorns.' Using classical Georgian courtly panegyric conventions and tmesis (splitting words like 'she-risa' and 'mi-sherisa' for intricate rhyme), Rustaveli expresses rhetorical humility, asking how he can dare offer worthy praise to such perfection.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=98600",
+        "http://www.nplg.gov.ge/civil/vefkhistkaosani.html",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 4,
+      "wardrop_stanza_number": 4,
+      "georgian_raw_text": "თამარს ვაქებდეთ მეფესა, სისხლისა ცრემლ-დათხეული,\nვთქვენი ქებანი ვისნი მე, არ-ავად გამორჩეული.\nმელნად ვიხმარე გიშრის ტბა და კალმად მე ნა რხეული,\nდა ვინცა ისმინოს, დაესვას ლახვარი გულსა ხეული.",
+      "english_translation": "By shedding tears of blood we praise King T’hamara, whose praises I, not ill-chosen, have told forth. For ink I have used a lake of jet, and for pen a pliant crystal. Whoever hears, a jagged spear will pierce his heart!",
+      "expert_explanation_en": "According to Aleksandre Baramidze (TSU), Stanza 4 is a direct continuation of Stanza 3 and expresses the dedication of Vepkhistkaosani to Queen Tamar. While Nikolay Marr and Pavle Ingorokva hypothesized that 'vtqveni kebani' ('I uttered praises') referred to an earlier lost ode collection or romance by Rustaveli, Baramidze explains that Rustaveli is speaking metaphorically of his poetic devotion to Tamar in this work: he used the 'lake of jet' (Tamar's jet-black eyes/lashes) as ink and a 'swaying reed/crystal' ('na rxeuli', metaphorically her slender stature) as his pen, so that whoever hears the poem will have their heart pierced with deep emotion.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=98600",
+        "http://www.nplg.gov.ge/civil/vefkhistkaosani.html"
+      ]
+    },
+    {
+      "stanza_number": 5,
+      "wardrop_stanza_number": 5,
+      "georgian_raw_text": "მიბრძანეს მათად საქებრად თქმა ლექსებისა ტკბილისა,\nქება წარბთა და წამწამთა, თმათა და ბაგე-კბილისა,\nბროლ-ბადახშისა თლილისა, მით მიჯრით მიწყობილისა,\nდა გასტეხს ქვასაცა მაგარსა გრდემლი ტყვიისა ლბილისა.",
+      "english_translation": "She bade me indite sweet verses in her praise, laud her eyebrows and lashes, her hair, her lips and teeth, cut! crystal and ruby arrayed in ranks. An anvil of soft lead breaks even hard stone.",
+      "expert_explanation_en": "As explained in the NPLG commentary, Rustaveli states the royal commission behind the poem: he was commanded ('mibrdzanes') to compose sweet verses praising Queen Tamar's features—her brows, lashes, hair, and lips and teeth compared to rows of cut crystal (teeth) and ruby ('badakhshi', lips). The final line is a famous Rustavelian aphorism ('An anvil of soft lead breaks even hard stone'), signifying that gentle, persistent poetic devotion or a sovereign's command overcomes even the hardest task or heart.",
+      "scholarly_sources": [
+        "http://www.nplg.gov.ge/civil/vefkhistkaosani.html",
+        "https://pantherskin.org/chapter/prologue"
+      ]
+    },
+    {
+      "stanza_number": 6,
+      "wardrop_stanza_number": 6,
+      "georgian_raw_text": "აწ ენა მინდა გამოთქმად, გული და ხელოვანება,\nძალი მომეც და შეწევნა, შენგნით მაქვს, მივსცე გონება,\nმით შევეწივნეთ ტარიელს, ტურფადცა უნდა ხსენება,\nდა მათ სამთა გმირთა მნათობთა სჭირს ერთმანერთის მონება.",
+      "english_translation": "Now want I tongue, heart and skill for utterance! Grant me strength! And if I have aid from thee I shall have understanding, so may we succour Tariel; tenderly indeed should we cherish his memory and that of the three starlike heroes wont to serve one another.",
+      "expert_explanation_en": "Professor Zaza Khintibidze (TSU) notes that in Lines 1–2 Rustaveli distinguishes between the human faculties the poet already possesses ('tongue, heart, and artistic skill/khelovaneba') and the spiritual/physical strength ('dzali') and divine aid ('shetsevna shengnit makvs') granted by God, to which he applies his intellect ('goneba'). Lines 3–4 introduce the central protagonist Tariel and the 'three starlike/radiant heroes' (Tariel, Avtandil, and Pridon), emphasizing their mutual devotion and sworn brotherhood ('ertmanertis moneba') as a foundational axis of the epic alongside love.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=111669",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 7,
+      "wardrop_stanza_number": 7,
+      "georgian_raw_text": "მო, დავსხდეთ, ტარიელისთვის ცრემლი გვდის შეუშრობილი;\nმისებრი მართ დაბადებით ვინმცა ყოფილა შობილი!\nდავჯე, რუსთველმან გავლექსე, მისთვის გულ-ლახვარ-სობილი,\nდა აქამდის ამბად ნათქვამი, აწ მარგალიტი წყობილი.",
+      "english_translation": "Come, sit ye down, ye who have been born under the same fate; let us shed a never-drying tear for Tariel's sake. I sat me down, I, Rust’haveli, indited a poem, my heart I pierced with a lance. Hitherto the tale has been told as a tale; now is it a pearl (of) measured (poesy).",
+      "expert_explanation_en": "Here the author explicitly names himself ('Rustveli') for the first time and invites readers/listeners to empathize with Tariel's suffering. Scholars note the contrast in Line 4 between a prose story or raw plot ('aqamdis ambad natkvami' — hitherto told as a tale/prose narrative) and measured, versified poetry ('ats margaliti tsqobili' — now a strung pearl of verse), introducing the pearl metaphor that recurs in Stanza 9.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=111669",
+        "https://pantherskin.org/chapter/prologue"
+      ]
+    },
+    {
+      "stanza_number": 8,
+      "wardrop_stanza_number": 15,
+      "georgian_raw_text": "მე, რუსთველი, ხელობითა ვიქმ საქმესა ამა დარი:\nვის ჰმორჩილობს ჯარი სპათა, მისთვის ვხელობ, მისთვის მკვდარი;\nდავუძლურდი, მიჯნურთათვის კვლა წამალი არსით არი,\nდა ანუ მომცეს განკურნება, ანუ მიწა მე სამარი.",
+      "english_translation": "I, Rust’haveli, have composed this work by my art. For her whom a multitude of hosts obey, I lose my wits, I die! I am sick of love, and for me there is no cure from anywhere, unless she give me healing or the earth a grave.",
+      "expert_explanation_en": "Rustaveli names himself a second time and plays on the polysemy of the Old Georgian root 'khel-' ('khelobita' = by craft/art vs. 'vkhelob' = I go mad with love). As Georgian literary scholars explain, the poet adopts the persona of a courtly lover devoted to the sovereign 'whom armies obey' (Queen Tamar), declaring his love hopeless and incurable unless she grants him spiritual solace or the earth grants him a grave.",
+      "scholarly_sources": [
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html",
+        "https://pantherskin.org/chapter/prologue"
+      ]
+    },
+    {
+      "stanza_number": 9,
+      "wardrop_stanza_number": 16,
+      "georgian_raw_text": "ესე ამბავი სპარსული, ქართულად ნათარგმანები,\nვით მარგალიტი ობოლი, ხელის-ხელ საგოგმანები,\nვპოვე და ლექსად გარდავთქვი, საქმე ვქმენ საჭოჭმანები,\nდა ჩემმან ხელმქმნელმან დამმართოს ლაღმან და ლამაზმა ნები.",
+      "english_translation": "This Persian tale, now done into Georgian, has hitherto been like a pearl of great price cast in play from hand to hand; now I have found it and mounted it in a setting of verse; I have done a praiseworthy deed. The ravisher of my reason, proud and beautiful, willed me to do it.",
+      "expert_explanation_en": "As analyzed by Professor Zaza Khintibidze in the TSU Commented Vepkhistkaosani, no Persian original of the poem has ever been found, and modern Rustvelology regards the 'Persian tale' reference as a medieval literary device used to frame an allegory touching on Georgian royal court politics (such as female succession and the Demna Batonishvili dynastic crisis) in an Eastern setting. Furthermore, Khintibidze demonstrates from Old Georgian usage that the verb 'vpove' ('I found') also meant 'I invented / conceived / created' (cf. Latin 'inventio'), indicating that Rustaveli himself invented the plot ('ambavi') and versified it like a priceless 'orphan pearl' ('margaliti oboli').",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=111669",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 10,
+      "wardrop_stanza_number": 17,
+      "georgian_raw_text": "თვალთა მისგან უნათლოთა ენატრამცა ახლად ჩენა;\nაჰა, გული გამიჯნურდა, მიჰხდომია ველთა რბენა.\nმიაჯეთ ვინ, ხორცთა დაწვა კმა არს, მისცეს სულთა ლხენა,\nდა სამთა ფერთა საქებელთა ლამის ლექსთა უნდა ვლენა.",
+      "english_translation": "Eyes that have lost their light through her long to look on her anew; lo! my heart is mad with love, and it is my lot to run about the fields. Who will pray for me? The burning of the body sufficeth, let (her) give soul-comfort! In praise of threefold hue, the verse must needs fall short.",
+      "expert_explanation_en": "The poet continues his lyrical-courtly lament: blinded by longing for his beloved sovereign, his love-struck heart is fated to 'roam the wilds' ('velta rbena', a motif of the mad lover or 'mijnuri' later embodied by Tariel). He asks intercessors to plead that the 'burning of the flesh' is enough and that his soul be granted comfort. Line 4 ('samta perta sakebelta' — 'in praise of the three colors/kinds') is interpreted by commentators as referring either to the three radiant heroes of the poem (Tariel, Avtandil, Pridon) or to the three-toned beauty of the royal dedicatee (crystal, ruby, and jet).",
+      "scholarly_sources": [
+        "https://www.nplg.gov.ge/greenstone3/library/collection/lexikonebi/document/HASHb69c2eec8f61f403838486?ed=1",
+        "https://pantherskin.org/chapter/prologue"
+      ]
+    },
+    {
+      "stanza_number": 11,
+      "wardrop_stanza_number": 18,
+      "georgian_raw_text": "რაცა ვის რა ბედმან მისცეს, დასჯერდეს და მას უბნობდეს:\nმუშა მიწყივ მუშაობდეს, მეომარი გულოვნობდეს;\nკვლა მიჯნურსა მიჯნურობა უყვარდეს და გამოსცნობდეს,\nდა არცა ვისგან დაიწუნოს, არცა სხვათა უწუნობდეს.",
+      "english_translation": "With what Fate gives to a man, therewithal should he be content, and so (? contentedly) speak of it. The labourer should ever work, the warrior be brave. So, also, should the lover love Love, and recognize it. Who judges not will not be judged by others.",
+      "expert_explanation_en": "Rustaveli formulates an ethical principle of vocation and destiny: every person should fulfill their allotted calling—the laborer through tireless work, the warrior through valor, and the lover ('mijnuri') through devotion to and comprehension of true love, neither giving cause for reproach nor disdaining others. This stanza serves as a structural bridge to the two major theoretical treatises of the Prologue: the Theory of Poetry ('Shairoba', Stanzas 12–17) and the Theory of Love ('Mijnuroba', Stanzas 20–31).",
+      "scholarly_sources": [
+        "https://www.nplg.gov.ge/greenstone3/library/collection/lexikonebi/document/HASHb69c2eec8f61f403838486?ed=1",
+        "https://pantherskin.org/chapter/prologue"
+      ]
+    },
+    {
+      "stanza_number": 12,
+      "wardrop_stanza_number": 19,
+      "georgian_raw_text": "შაირობა პირველადვე სიბრძნისაა ერთი დარგი,\nსაღმრთო, საღმრთოდ გასაგონი, მსმენელთათვის დიდი მარგი,\nკვლა აქაცა ეამების, ვინცა ისმენს კაცი ვარგი,\nდა გრძელი სიტყვა მოკლედ ითქმის, შაირია ამად კარგი.",
+      "english_translation": "Minstrelsy is, first of all, a branch of wisdom; divinely intelligible to the godlike, very wholesome to them that hearken; it is pleasant, too, if the listener be a worthy man; in few words he utters a long discourse: herein lies the excellence of poetry.",
+      "expert_explanation_en": "This famous stanza opens Rustaveli's Theory of Poetry (Stanzas 12–17). As demonstrated by Mose Gogiberidze and Zaza Khintibidze (TSU), Rustaveli engages directly with Plato's Republic (Book 10, 607d) and Aristotle's Poetics (9, 1451b5–6) and Nicomachean Ethics (10, 6–10). In Old Georgian, 'sibrdzne' means both 'philosophy' and 'intellect/reason', and 'dargi' (per Sulkhan-Saba Orbeliani's dictionary) means 'that which is planted'. Thus, poetry ('shairoba') is an intellectual discipline planted by reason alongside philosophy. Because reason is the divine part of humanity, poetry is 'divine' ('saghmrto') and 'divinely intelligible' ('saghmrtod gasagoni', matching Ioane Petritsi's philosophical term for 'intelligible'). Against Plato's critique that poetry is merely pleasant and not useful, Rustaveli argues that poetry unites both the useful ('didi margi') and the pleasant ('eamebis'). Finally, 'grdzeli sitqva mokled itkmis, shairia amad kargi' defines poetic beauty and goodness ('kargi' = Greek 'to kalon' in Aristotle's Poetics 1450b36–37) as the harmonious, concise ordering ('mokled itkmis') of a vast epic plot/mythos ('grdzeli sitqva').",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=111669",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 13,
+      "wardrop_stanza_number": 20,
+      "georgian_raw_text": "ვითა ცხენსა შარა გრძელი და გამოსცდის დიდი რბევა,\nმობურთალსა მოედანი, მართლად ცემა, მარჯვედ ქნევა,\nმართ აგრევე მელექსესა ლექსთა გრძელთა თქმა და ხევა,\nდა რა მისჭირდეს საუბარი და დაუწყოს ლექსმან ლევა.",
+      "english_translation": "Like a horse running a great race on a long course, like a ball-player in the lists striking the ball fairly and aiming adroitly at the mark, even so it is with the poet who composes and indites long poems, when utterance is hard for him and verse begins to fail.",
+      "expert_explanation_en": "Rustaveli compares the epic poet to a racehorse tested on a long track and a polo/ball player ('moburtali') tested on the playing field. As Zaza Khintibidze (TSU) explains in his textual commentary on Line 3 ('leksta grdzelta tkma da kheva' vs. the manuscript variant 'saubarta tkbilta prkveva'), 'kheva' in Old Georgian means 'cutting off / pruning'. This expresses Rustaveli's Aristotelian principle of Homeric unity: the true epic poet must be able to narrate extensive episodes in rich detail ('leksta grdzelta tkma') while knowing exactly when to cut off tributary episodes ('kheva') so the overarching narrative never drags, especially when expression becomes difficult and rhyme/verse seems about to run dry.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=111669",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 14,
+      "wardrop_stanza_number": 21,
+      "georgian_raw_text": "მაშინღა ნახეთ მელექსე და მისი მოშაირობა,\nრა ვეღარ მიჰხვდეს ქართულსა, დაუწყოს ლექსმან ძვირობა,\nარ შეამოკლოს ქართული, არა ქმნას სიტყვა-მცირობა,\nდა ხელ-მარჯვედ სცემდეს ჩოგანსა, იხმაროს დიდი გმირობა.",
+      "english_translation": "Then, indeed, behold the poet, and his poesy will be manifest. When he is at a loss for Georgian (words), and verse begins to fail, he will not weaken Georgian, nor will he let it grow poor in words. Let him strike the ball cunningly; he will show great virtue.",
+      "expert_explanation_en": "Continuing the polo ('chogani' = polo mallet) metaphor from Stanza 13, Rustaveli states that a true poet's mastery is revealed at the critical moment when rhyme and expression grow scarce ('dzviroba'): rather than impoverishing the Georgian language or resorting to verbal scantiness ('ar sheamoklos kartuli, ara kmnas sitqva-mtsiroba'), the master poet strikes the ball deftly and displays heroic virtuosity ('didi gmiroba') in sustaining the epic narrative.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=111669",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 15,
+      "wardrop_stanza_number": 22,
+      "georgian_raw_text": "მოშაირე არა ჰქვიან, თუ სადმე თქვას ერთი, ორი,\nთავი ყოლა ნუ ჰგონია მელექსეთა კარგთა სწორი;\nგანაღა თქვას ერთი, ორი, უმსგავსო და შორი-შორი,\nდა მაგრა იტყვის: “ჩემი სჯობსო”, უცილობლობს ვითა ჯორი.",
+      "english_translation": "He who utters, somewhere, one or two verses cannot be called a poet; let him not think himself equal to great singers. Even if they compose a few discrepant verses from time to time, yet if they say, \"Mine are of the best!\" they are stiff-necked mules.",
+      "expert_explanation_en": "In Stanzas 15–17, Rustaveli classifies three inferior types of versifiers in contrast to the true epic poet. As explained by Zaza Khintibidze (TSU) and the Aura.ge scholarly summary, the first type (Stanza 15) is the talentless versifier who cobbles together one or two disjointed, incoherent ('umsgavso da shori-shori') verses yet stubbornly insists, like a mule ('jori'), that his work surpasses all others.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=111669",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 16,
+      "wardrop_stanza_number": 23,
+      "georgian_raw_text": "მეორე ლექსი ცოტაი, ნაწილი მოშაირეთა,\nარ ძალ-უც სრულ-ქმნა სიტყვათა გულისა გასაგმირეთა, -\nვამსგავსე მშვილდი ბედითი ყმაწვილთა მონადირეთა:\nდა დიდსა ვერ მოჰკვლენ, ხელად აქვს ხოცა ნადირთა მცირეთა.",
+      "english_translation": "Secondly, lyrics which are but a small part of poetry and cannot command heart-piercing words--I may liken them to the bad bows of young hunters who cannot kill big game; they are able only to slay the small.",
+      "expert_explanation_en": "Stanza 16 describes the second category of minor verse: poets who attempt heart-piercing themes in small forms ('leksi tsotai') but lack the power to bring profound subjects to full completion ('srul-kmna sitqvata'). Rustaveli compares them to fledgling hunters armed with weak bows who cannot bring down big game (monumental epic subjects) and must settle for hunting small game (minor lyrical pieces).",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=111669",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 17,
+      "wardrop_stanza_number": 24,
+      "georgian_raw_text": "მესამე ლექსი კარგია სანადიმოდ, სამღერელად,\nსააშიკოდ, სალაღობოდ, ამხანაგთა სათრეველად;\nჩვენ მათიცა გვეამების, რაცა ოდენ თქვან ნათელად.\nდა მოშაირე არა ჰქვიან, ვერას იტყვის ვინცა გრძელად.",
+      "english_translation": "Thirdly, lyrics are fit for the festive, the joyous, the amorous, the merry, for pleasantries of comrades; they please us when they are rightly sung. Those are not called poets who cannot compose a long work.",
+      "expert_explanation_en": "Stanza 17 addresses the third category: light, convivial, amorous, and festive lyrics ('sanadimod, samgherelad, saashikod, salaghobod'). As Zaza Khintibidze (TSU) notes, Rustaveli acknowledges that such verses are pleasant ('gveamebis') when expressed clearly ('natelad'), and even employs a rare metrical shift mixing high and low shairi in Line 1 (first noted by Nikolay Marr). However, because short lyrical forms can only achieve clarity through brevity and cannot develop major narrative parts at length ('veras itqvis vintsa grdzelad'), their authors provide pleasure without the philosophical utility of epic poetry and thus cannot be called true master poets ('moshaire').",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=111669",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 18,
+      "wardrop_stanza_number": 25,
+      "georgian_raw_text": "ხამს მელექსე ნაჭირვებსა მისსა ცუდად არ აბრკმობდეს,\nერთი უჩნდეს სამიჯნურო, ერთსა ვისმე აშიკობდეს,\nყოვლსა მისთვის ხელოვნობდეს, მას აქებდეს, მას ამკობდეს,\nდა მისგან კიდე ნურა უნდა, მისთვის ენა მუსიკობდეს.",
+      "english_translation": "The poet must not spend his toil in vain. One should seem to him worthy of love; he must be devoted to one, he must employ all his art for her, he must praise her, he must set forth the glory of his beloved; he must wish for nought else, for her alone must his tongue be tuneful.",
+      "expert_explanation_en": "Stanzas 18–19 link the Theory of Poetry to the Theory of Love. Rustaveli states that a true poet must not squander his hard-won poetic labor ('nachirvebsa') in vain; instead, he must dedicate his entire art and musicality of tongue ('ena musikobdes') to a single beloved ideal, praising and adorning her alone.",
+      "scholarly_sources": [
+        "https://www.nplg.gov.ge/greenstone3/library/collection/lexikonebi/document/HASHb69c2eec8f61f403838486?ed=1",
+        "https://pantherskin.org/chapter/prologue"
+      ]
+    },
+    {
+      "stanza_number": 19,
+      "wardrop_stanza_number": 26,
+      "georgian_raw_text": "ჩემი აწ ცანით ყოველმან, მას ვაქებ, ვინცა მიქია;\nესე მიჩნს დიდად სახელად, არ თავი გამიქიქია!\nიგია ჩემი სიცოცხლე, უწყალო ვითა ჯიქია;\nდა მისი სახელი შეფარვით ქვემორე მითქვამს, მიქია.",
+      "english_translation": "Now let all know that I praise her whom I (erstwhile) praised; in this I have great glory, I feel no shame. She is my life; merciless as a leopard is she. Her name I pronounce hereafter with triumph and praise.",
+      "expert_explanation_en": "Applying the rule of Stanza 18 to himself, Rustaveli declares that he praises the same sovereign he has praised before (Queen Tamar), counting this devotion as his highest honor. He compares her pitiless majesty to a leopard/panther ('jiki') and notes that throughout the narrative that follows ('kvemore'), he praises her allegorically/veiled ('sheparvit') through the idealized heroines of the poem (Tinatin and Nestan-Darejan).",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=98600",
+        "https://pantherskin.org/chapter/prologue"
+      ]
+    },
+    {
+      "stanza_number": 20,
+      "wardrop_stanza_number": 27,
+      "georgian_raw_text": "ვთქვა მიჯნურობა პირველი და ტომი გვართა ზენათა,\nძნელად სათქმელი, საჭირო გამოსაგები ენათა,\nიგია საქმე საზეო, მომცემი აღმაფრენათა;\nდა ვინცა ეცდების, თმობამცა ჰქონდა მრავალთა წყენათა.",
+      "english_translation": "I speak of the highest love--divine in its kind. It is difficult to discourse thereon, ill to tell forth with tongues. It is heavenly, upraising the soul on pinions. Whoever strives thereafter must indeed have endurance of many griefs.",
+      "expert_explanation_en": "Stanza 20 inaugurates Rustaveli's philosophical treatise on Love ('Mijnuroba'). As Academician Elguja Khintibidze (TSU) explains, citing Nodar Natadze's analysis of Ioane Petritsi's Neoplatonic terminology ('tomi' = Greek 'genos'/genus; 'gvari' = Greek 'eidos'/species or divine commandment; 'zena' = heavenly/divine), Line 1 means: 'I speak of love, which is the first among divine ideas/commandments and the overarching genus of heavenly ideas.' While Nodar Natadze and Shalva Nutsubidze interpreted this as the Platonic/Neoplatonic metaphysical Idea of Love, Elguja Khintibidze demonstrates from the Gospels (Matthew 22:36–39, where love of God is called 'the first and great commandment') and St. Basil the Great's Asceticon that this first kind of love is mystical, divine love for God ('sakme sazeo, momtsemi aghmaprenata' — a heavenly matter granting spiritual ecstasy/uplift), which requires enduring or renouncing ('tmoba') many worldly afflictions.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=82085",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 21,
+      "wardrop_stanza_number": 28,
+      "georgian_raw_text": "მას ერთსა მიჯნურობასა ჭკვიანნი ვერ მიჰხვდებიან,\nენა დაშვრების, მსმენლისა ყურნიცა დავალდებიან,\nვთქვენ ხელობანი ქვენანი, რომელნი ხორცთა ჰხვდებიან;\nდა მართ მასვე ჰბაძვენ, თუ ოდეს არ სიძვენ, შორით ბნდებიან.",
+      "english_translation": "Sages cannot comprehend that one Love; the tongue will tire, the ears of the listeners will become wearied; I must tell of lower frenzies, which befall human beings; they imitate it when they wanton not, but faint from afar.",
+      "expert_explanation_en": "According to Elguja Khintibidze (TSU), Lines 1–2 express a core tenet of Christian mysticism (such as St. Basil the Great): supreme divine love is ineffable and cannot be grasped by rational intellect alone ('chkianni ver mihkhvdebian'), exhausting both speaker and listener. Therefore, in Lines 3–4, Rustaveli explicitly turns his poetic focus from mystical heavenly love to earthly, human love ('khelobani kvenani, romelni khortsta hkhvdebian'). Crucially, unlike Zviad Gamsakhurdia and King Vakhtang VI (who read the poem as a mystical allegory of divine love disguised as earthly love), Khintibidze shows that Rustaveli applies Aristotle's doctrine of the Golden Mean ('sashuali'): noble earthly love is the ideal middle path between ascetic mysticism and base lust ('sidzva'), imitating and equaling divine love whenever lovers abstain from lust and pine with pure spiritual devotion ('tu odes ar sidzven, shorit bndebian').",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=82085"
+      ]
+    },
+    {
+      "stanza_number": 22,
+      "wardrop_stanza_number": 29,
+      "georgian_raw_text": "მიჯნური შმაგსა გვიქვიან არაბულითა ენითა,\nმით რომე შმაგობს მისისა ვერ მიხვდომისა წყენითა;\nზოგთა აქვს საღმრთო სიახლე, დაშვრების აღმაფრენითა,\nდა კვლა ზოგთა ქვე უც ბუნება კეკლუცთა ზედან ფრფენითა.",
+      "english_translation": "In the Arabic tongue they call the lover \"madman,\" because by non-fruition he loses his wits. Some have nearness to God, but they weary in the flight; then again, to others it is natural to pursue beauty.",
+      "expert_explanation_en": "Rustaveli notes the Arabic etymology of 'mijnuri' (from Arabic 'majnun', meaning 'madman'), explaining that the lover loses his wits from the sorrow of unattained union. As analyzed by King Vakhtang VI, Teimuraz Bagrationi, and Elguja Khintibidze (TSU), Lines 3–4 contrast the two extremes of love: on one hand, mystics/ascetics who possess 'nearness to God' ('saghmrto siakhle') but grow exhausted ('dashvrebis') in otherworldly ecstasy; on the other hand, those whose nature is drawn downward ('kve uts buneba') to flutter after physical beauties ('keklutsta zedan prpenita').",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=82085"
+      ]
+    },
+    {
+      "stanza_number": 23,
+      "wardrop_stanza_number": 8,
+      "georgian_raw_text": "მიჯნურსა თვალად სიტურფე ჰმართებს, მართ ვითა მზეობა.\nსიბრძნე, სიმდიდრე, სიუხვე, სიყმე და მოცალეობა,\nენა, გონება, დათმობა, მძლეთა მებრძოლთა მძლეობა;\nდა ვისცა ეს სრულად არა სჭირს, აკლია მიჯნურთ ზნეობა.",
+      "english_translation": "To a lover, beauty, glorious beauty, wisdom, wealth, generosity, youth and leisure are fitting; he must be eloquent, intelligent, patient, an overcomer of mighty adversaries; who has not all these qualities lacks the character of a lover.",
+      "expert_explanation_en": "In Stanza 23, Rustaveli enumerates the 11 chivalric, intellectual, and moral virtues required of the ideal earthly lover ('mijnuri'): sun-like physical beauty ('tvalad siturpe'), wisdom ('sibrdzne'), wealth ('simdidre'), generosity ('siukhve'), youth/chivalric vigor ('siqme'), leisure/freedom from base toil ('motsaleoba'), eloquence ('ena'), intellect ('goneba'), patience/endurance ('datmoba'), and victory over mighty adversaries ('mdzleta mebrdzolta mdzleoba'). Whoever lacks the fullness of these virtues falls short of the moral code of true lovers ('mijnurt zneoba').",
+      "scholarly_sources": [
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html",
+        "https://www.nplg.gov.ge/greenstone3/library/collection/lexikonebi/document/HASHb69c2eec8f61f403838486?ed=1"
+      ]
+    },
+    {
+      "stanza_number": 24,
+      "wardrop_stanza_number": 9,
+      "georgian_raw_text": "მიჯნურობა არის ტურფა, საცოდნელად ძნელი გვარი;\nმიჯნურობა სხვა რამეა, არ სიძვისა დასადარი:\nიგი სხვაა, სიძვა სხვაა, შუა უზის დიდი მზღვარი,\nდა ნურვინ გარევთ ერთმანერთსა, გესმას ჩემი ნაუბარი!",
+      "english_translation": "Love is tender, a thing hard to be known. True love is something apart from lust, and cannot be likened thereto it is one thing; lust is quite another thing, and between. them lies a broad boundary; in no way do they mingle hear my saying!",
+      "expert_explanation_en": "As Elguja Khintibidze (TSU) and the NPLG commentary highlight, Rustaveli draws an emphatic moral boundary ('didi mzghvari') between noble earthly love ('mijnuroba') and carnal lust/fornication ('sidzva'). Following Aristotle's ethical method in the Nicomachean Ethics—where the virtuous mean must first be sharply separated from the vice most opposed to its nature—Rustaveli warns his audience never to conflate chivalric love with base physical passion.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=82085",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 25,
+      "wardrop_stanza_number": 10,
+      "georgian_raw_text": "ხამს მიჯნური ხანიერი, არ მეძავი, ბილწი, მრუში,\nრა მოშორდეს მოყვარესა, გაამრავლოს სულთქმა, უში,\nგული ერთსა დააჯეროს, კუშტი მიჰხვდეს, თუნდა ქუში;\nდა მძულს უგულოდ სიყვარული, ხვევნა, კოცნა, მტლაშა-მტლუში.",
+      "english_translation": "The lover must be constant, not lewd, impure an faithless; when he is far from his beloved he must heave sigh upon sigh; his heart must be fixed on one from whom he endures wrath or sorrow if need be. I hate heartless love--embracing, kissing, noisy bussing.",
+      "expert_explanation_en": "Rustaveli defines constancy ('khanieri') as the hallmark of a true lover: he must not be promiscuous or adulterous ('medzavi, biltsi, mrushi'), must sigh with longing when parted from his beloved, and must remain devoted to a single beloved even if met with frowns or severity ('kushti mihkhvdes, tunda kushi'). In Line 4, Rustaveli famously condemns 'heartless love' ('ugulo siqvaruli') characterized by superficial physical loud kissing and embracing ('khvevna, kotsna, mtlasha-mtlushi').",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=82085",
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html"
+      ]
+    },
+    {
+      "stanza_number": 26,
+      "wardrop_stanza_number": 11,
+      "georgian_raw_text": "ამა საქმესა მიჯნური ნუ უხმობს მიჯნურობასა:\nდღეს ერთი უნდეს, ხვალე სხვა, სთმობდეს გაყრისა თმობასა.\nესე მღერასა ბედითსა ჰგავს ვაჟთა, ყმაწვილობასა,\nდა კარგი მიჯნური იგია, ვინ იქმს სოფლისა თმობასა.",
+      "english_translation": "Lovers, call not this thing love: when any long for one to-day and another to-morrow, (lightly) bearing parting's pain. Such base sport is like mere boyish trifling; the good lover is he who suffers a world's woe.",
+      "expert_explanation_en": "Continuing the critique of fickleness, Rustaveli states that desiring one person today and another tomorrow, while easily enduring separation, is mere juvenile play ('mgherasa beditsa hgavs vajta, qmatsvilobasa') rather than love. The true lover ('kargi mijnuri') is one capable of renouncing the world or enduring the world's suffering ('soplisa tmobasa') for the sake of his beloved.",
+      "scholarly_sources": [
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html",
+        "https://www.nplg.gov.ge/greenstone3/library/collection/lexikonebi/document/HASHb69c2eec8f61f403838486?ed=1"
+      ]
+    },
+    {
+      "stanza_number": 27,
+      "wardrop_stanza_number": 12,
+      "georgian_raw_text": "არს პირველი მიჯნურობა არ დაჩენა, ჭირთა მალვა,\nთავის-წინა იგონებდეს, ნიადაგმცა ჰქონდა ხალვა,\nშორით ბნედა, შორით კდომა, შორით დაგვა, შორით ალვა,\nდა დათმოს წყრომა მოყვრისაგან, მისი ჰქონდეს შიში, კრძალვა.",
+      "english_translation": "There is a first (? noblest) love; it does not show, but hides its woes; (the lover) thinks of it when lied is alone, and always seeks solitude; his fainting, dying, burning, flaming, all are from afar; he may face the wrath of kings, yet will he be fearful of her.",
+      "expert_explanation_en": "Here 'pirveli mijnuroba' means the foremost/primary duty of noble earthly love: concealing one's suffering ('ar-dachena chirta, malva'), contemplating the beloved in solitude ('khalva'), longing and burning from afar ('shorit bneda, shorit kvdoma, shorit dagva, shorit alva'), and bearing the beloved's displeasure with reverent awe and respect ('shishi, krdzalva').",
+      "scholarly_sources": [
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html",
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=82085"
+      ]
+    },
+    {
+      "stanza_number": 28,
+      "wardrop_stanza_number": 13,
+      "georgian_raw_text": "ხამს თავისსა ხვაშიადსა არვისთანა ამჟღავნებდეს;\nარ ბედითად ჰაი ზმიდეს, მოყვარესა აყივნებდეს;\nარსით უჩნდეს მიჯნურობა, არა სადა იფერებდეს,\nდა მისთვის ჭირი ლხინად უჩნდეს, მისთვის ცეცხლსა მოიდებდეს.",
+      "english_translation": "He must betray his secret to none, he must not basely groan and put his beloved to shame; in nought should he manifest his love, nowhere must he reveal it; for her sake he looks upon sorrow as joy, for her sake he would willingly be burned (or? willingly burns [with love]).",
+      "expert_explanation_en": "In accordance with medieval chivalric secrecy, the lover must guard his innermost secret ('khvashiadi') from everyone, never uttering foolish public sighs ('hai') that would dishonor or compromise his beloved ('moqvaresa aqivnebdes'). Instead, he must hide his love in public while counting every hardship endured for her sake as joy.",
+      "scholarly_sources": [
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html",
+        "https://www.nplg.gov.ge/greenstone3/library/collection/lexikonebi/document/HASHb69c2eec8f61f403838486?ed=1"
+      ]
+    },
+    {
+      "stanza_number": 29,
+      "wardrop_stanza_number": 14,
+      "georgian_raw_text": "მას უშმაგო ვით მიენდოს, ვინ მოყვარე გაამჟღავნოს,\nამის მეტი რამცა ირგო, მას ავნოს და თვითცა ივნოს,\nრათამცაღა ასახელა, რა სიტყვითა მოაყივნოს,\nდა რა ჰგავა თუ მოყვარესა კაცმან გული არ ატკივნოს!",
+      "english_translation": "How can the sane trust him who noises his love abroad, and what shall it profit to do this? He makes her suffer, and he himself suffers. How should he glorify her if he shame her with words? What a chance if one hurt not his beloved's heart!",
+      "expert_explanation_en": "Rustaveli elaborates on why betraying the secret of love is reprehensible: no sensible person ('ushmago') can trust a man who exposes his beloved to public gossip, as doing so harms both her and himself, disgracing the very person he claims to glorify instead of sparing her heart from pain.",
+      "scholarly_sources": [
+        "https://www.nplg.gov.ge/greenstone3/library/collection/lexikonebi/document/HASHb69c2eec8f61f403838486?ed=1",
+        "https://pantherskin.org/chapter/prologue"
+      ]
+    },
+    {
+      "stanza_number": 30,
+      "wardrop_stanza_number": 30,
+      "georgian_raw_text": "მიკვირს, კაცი რად იფერებს საყვარლისა სიყვარულსა!\nვინცა უყვარს, რად აყივნებს მისთვის მკვდარსა, მისთვის წყლულსა!\nთუ არ უყვარს, რად არა სძულს, რად აყივნებს, რაცა სძულსა?!\nდა ავსა კაცსა ავი სიტყვა ურჩევნია სულსა, გულსა.",
+      "english_translation": "I wonder why men show that they love the beloved. Why shame they her whom they love, her who slays herself for them, who is covered with wounds? If they love her not, why do they not manifest to her feelings of hatred? Why do they disgrace what they hate? But an evil man loves an evil word more than his soul or heart.",
+      "expert_explanation_en": "Rustaveli marvels at hypocrites who parade their love or slander their beloved: why would someone publicly disgrace the one who is wounded and dying with love for him, or feign love if he does not truly love her? The stanza concludes with one of the poem's most famous proverbs: 'An evil man prefers an evil word to his own soul and heart' ('avsa katssa avi sitqva urchevnia sulsa, gulsa').",
+      "scholarly_sources": [
+        "https://www.aura.ge/103-saskolo/4978-vefxistkaosanis-shinaarsi--prologi.html",
+        "https://www.nplg.gov.ge/greenstone3/library/collection/lexikonebi/document/HASHb69c2eec8f61f403838486?ed=1"
+      ]
+    },
+    {
+      "stanza_number": 31,
+      "wardrop_stanza_number": 31,
+      "georgian_raw_text": "თუ მოყვარე მოყვრისათვის ტირს, ტირილსა ემართლების;\nსიარული, მარტოობა ჰშვენის, გაჭრად დაეთვლების;\nიგონებდეს, მისგან კიდე ნურაოდეს მოეცლების,\nდა არ დააჩნდეს მიჯნურობა, სჯობს, თუ კაცსა იახლების.",
+      "english_translation": "If the lover weep for his beloved, tears are her (? his) due. Wandering and solitude befit him, and must be esteemed as roaming. He will have time for nothing but to think of her. If he be among men, it is better that he manifest not his love.",
+      "expert_explanation_en": "Concluding the Prologue, Rustaveli synthesizes the behavioral code of the chivalric lover that will govern Tariel and Avtandil throughout the epic: weeping for one's beloved is justified, wandering in solitude ('gachra' — abandoning society to roam the wilds) befits the lover, his mind should be constantly occupied with her alone, and whenever he is in the company of others ('tu katssa eakhlebis'), he must conceal all outward signs of his love.",
+      "scholarly_sources": [
+        "https://www.nplg.gov.ge/greenstone3/library/collection/lexikonebi/document/HASHb69c2eec8f61f403838486?ed=1",
+        "https://pantherskin.org/chapter/prologue"
+      ]
+    }
+  ],
+  "act_id": 1,
+  "act_title": "Act I: Arabia, The Royal Hunt & Quest for the Stranger Knight",
+  "location_id": "arabia",
+  "location": {
+    "id": "arabia",
+    "name_en": "Kingdom of Arabia",
+    "name_ka": "არაბეთი",
+    "x": 165,
+    "y": 295,
+    "color": "#f59e0b",
+    "desc": "Realm of King Rostevan, Queen Tinatin, and Commander-in-Chief Avtandil."
+  },
+  "route_from": null,
+  "route_to": null,
+  "scene_type": "prologue_cosmos",
+  "active_characters": [
+    "Shota Rustaveli",
+    "Queen Tamar",
+    "David Soslan"
+  ],
+  "key_maxim_ka": "გრძელი სიტყვა მოკლედ ითქმის, შაირია ამად კარგი",
+  "key_maxim_en": "A long word is said briefly; therefore is poetry good. (Stanza 12)"
+}

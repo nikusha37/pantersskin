@@ -1,0 +1,618 @@
+{
+  "chapter_number": 5,
+  "chapter_title_ka": "თინათინისაგან ავთანდილის გაგზავნა მის ყმის საძებრად",
+  "chapter_title_en": "Tinatin Sends Avtandil in Quest of the Knight",
+  "stanza_range": "120–164",
+  "stanza_count": 45,
+  "chapter_expert_explanation_en": "Queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+  "chapter_source_url": "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+  "stanzas": [
+    {
+      "stanza_number": 120,
+      "wardrop_stanza_number": 119,
+      "georgian_raw_text": "ავთანდილ ჯდა მარტო საწოლს, ეცვა ოდენ მართ პერანგი,\nიმღერდა და იხარებდა, წინა ედგა ერთი ჩანგი.\nშემოვიდა მას წინაშე თინათინის მონა ზანგი;\nდა მოახსენა: “გიბრძანებსო ტანი ალვა, პირი მანგი”.",
+      "english_translation": "Thus he spoke, and sporting was increased with, rejoicing; they called the minstrel and the acrobat! wherever they were found, many gifts were distributed, he summoned all to the throne-room. What other did God create with generosity like unto his!",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 120; Wardrop Stanza 119): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 121,
+      "wardrop_stanza_number": 120,
+      "georgian_raw_text": "ავთანდილს მიჰხვდა მოსმენა საქმისა სანატრელისა,\nადგა და კაბა ჩაიცვა, მჯობი ყოვლისა ჭრელისა;\nუხარის შეყრა ვარდისა, არ ერთგან შეუყრელისა.\nდა ამაოა ჭვრეტა ტურფისა, სიახლე საყვარელისა!",
+      "english_translation": "Avt’handil sat alone in his chamber, clad only in an under-garment; he was singing and making merry, before him stood a harp. To him came T’hinat’hin's black slave, and said: \"She of the aloe form, the moonfaced one, sends for thee.\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 121; Wardrop Stanza 120): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 122,
+      "wardrop_stanza_number": 121,
+      "georgian_raw_text": "ავთანდილ ლაღი, უკადრი, მივა, არვისგან ჰრცხვენოდა,\nმას ნახავს, ვისთა ვამთაგან ცრემლი მრავალ-ჯერ სდენოდა.\nიგი უებრო ქუშად ჯდა, ელვისა მსგავსად ჰშვენოდა,\nდა მთვარესა მისთა შუქთაგან უკუნი გარდაჰფენოდა.",
+      "english_translation": "Avt’handil was glad to hear this joyful news. He rose and donned his best and brightest coat. He rejoiced to meet the rose; they had never yet met alone. Pleasant is it to gaze on beauty, and be near one beloved.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 122; Wardrop Stanza 121): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 123,
+      "wardrop_stanza_number": 122,
+      "georgian_raw_text": "გაძრცვლისა ტანსა ემოსნეს ყარყუმნი უსაპირონი,\nებურნეს მოშლით რიდენი, ფასისა თქმად საჭირონი;\nჰშვენოდეს შავნი წამწამნი, გულისა გასაგმირონი,\nდა მას თეთრსა ყელსა ეხვივნეს გრძლად თმანი არ უხშირონი.",
+      "english_translation": "Proudly and boldly Avt’handil came to her; he was ashamed of none. He will see her for whom the tear of woe full oft had flowed. The peerless one sat mournful, she shone like lightning, her rays eclipsed the moon.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 123; Wardrop Stanza 122): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 124,
+      "wardrop_stanza_number": 123,
+      "georgian_raw_text": "დაღრეჯით იყო მჯდომარე ძოწეულითა რიდითა;\nავთანდილს უთხრა დაჯდომა წყნარად, ცნობითა მშვიდითა.\nმონამან სელნი დაუდგნა, დაჯდა კრძალვით და რიდითა;\nდა პირის-პირ პირსა უჭვრეტდა, სავსე ლხინითა დიდითა.",
+      "english_translation": "Her fair form was clad in unlined ermine, she wore negligently veils whose price it were hard to tell; but her black, heart-piercing eyelashes and the thick, long tresses which embraced her white throat were her real adornments.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 124; Wardrop Stanza 123): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 125,
+      "wardrop_stanza_number": null,
+      "georgian_raw_text": "ქალმა უბრძანა: “ზარი მლევს მე ამისისა თხრობისა;\nმწადდა არა თქმა, რომლისა ღონე არა მაქვს თმობისა;\nმაგრა იცია მიზეზი შენისა აქა ხმობისა,\nდა რად ვზი ქუშად და დაღრეჯით ასრე მიხდილი ცნობისა?”",
+      "english_translation": null,
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 125): Included in the 1966 Shanidze–Baramidze Georgian critical edition (omitted from the 1888 Kartvelishvili edition used by Marjory Wardrop's 1912 English translation, as part of the manuscript expansions examined by Rustvelologists). Context: Queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 126,
+      "wardrop_stanza_number": 125,
+      "georgian_raw_text": "ყმამან ჰკადრა: “საზაროსა ჩემგან თქმაღა ვით იქმნების?\nმზესა მთვარე შეეყაროს, დაილევის, დაცაჭნების;\nაზრად არად აღარა მცალს, თავი ჩემი მეგონების,\nდა თქვენვე ბრძანეთ, რაცა გიმძიმს, ანუ რაცა გეკურნების”.",
+      "english_translation": "The knight said: \"How indeed can I speak to one so dread! If the moon meet the sun it is consumed, it fades away. I am no longer at leisure to think; I fear for myself. Tell me, then, why you are sad and what will relieve you.\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 126; Wardrop Stanza 125): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 127,
+      "wardrop_stanza_number": 126,
+      "georgian_raw_text": "ქალმან უთხრა საუბარი კეკლუც-სიტყვად, არ დუხჭირად;\nიტყვის: “თუცა აქანამდის ჩემგან შორს ხარ დანამჭირად,\nგიკვირს, მოგხვდა წამის ყოფით საქმე შენგან საეჭვი რად,\nდა მაგრა გითხრა პირველ ხვალმე სენი მე მჭირს რაცა ჭირად.",
+      "english_translation": "The maiden replied with elegant words, not ill-chosen, saying: \"Although thou hast hitherto remained far from me, yet I wonder thou shouldst be timid even for a moment. But first I must tell thee of the malady which afflicts me, as a plague.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 127; Wardrop Stanza 126): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 128,
+      "wardrop_stanza_number": 127,
+      "georgian_raw_text": "“გახსოვს, ოდეს შენ და როსტანს მინდორს მხეცი დაგეხოცა,\nყმა გენახა უცხო ვინმე, რომე ცრემლი მოეხოცა,\nმას უკანით გონებამან მისმან ასრე დამამხოცა,\nდა შენ გენუკვი მონახვასა, კიდით კიდე მოლახო ცა.",
+      "english_translation": "\"Dost thou remember, when thou and Rostan killed game in the plain, how ye saw a certain stranger youth who wiped his tears away? Since then I have been a prey to thoughts of him. I beg thee to search for him, to seek him even to the bounds of the earth (within the bounds of the sky).",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 128; Wardrop Stanza 127): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 129,
+      "wardrop_stanza_number": 128,
+      "georgian_raw_text": "“აქანამდის ნაუბარსა თუცა ვერას ვერ გეტყვია,\nმაგრა შორით სიყვარული შენგან ჩემი შემიტყვია,\nვიცი, რომე გაუწყვედლად თვალთათ ცრემლი გისეტყვია,\nდა შეუპყრიხარ სიყვარულსა, გული შენი დაუტყვია.",
+      "english_translation": "\"Although I have been unable to hold converse with thee hitherto, yet from afar have I perceived thy love for me; I know that without pause the hail has fallen from thine eyes upon thy cheek. Thou art made prisoner by love; thy heart is taken captive.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 129; Wardrop Stanza 128): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 130,
+      "wardrop_stanza_number": 129,
+      "georgian_raw_text": "“ასრე გითხრა, სამსახური ჩემი გმართებს ამად ორად:\nპირველ ყმა ხარ, ხორციელი არვინა გვყავს შენად სწორად,\nმერმე ჩემი მიჯნური ხარ, დასტურია, არ ნაჭორად;\nდა წადი, იგი მოყმე ძებნე, ახლოს იყოს თუნდა შორად.",
+      "english_translation": "\"This service of mine which I bid thee do befits thee for these two reasons: First, thou art a knight, among all flesh there is none like unto thee; secondly, thou art in love with me, this is true and no slander. Go, seek that brother-in-arms, be he near or far.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 130; Wardrop Stanza 129): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 131,
+      "wardrop_stanza_number": 130,
+      "georgian_raw_text": "“შენგან ჩემი სიყვარული ამით უფრო გაამყარე,\nრომე დამხსნა შეჭირვება, ეშმა ბილწი ასაპყარე.\nგულსა გარე საიმედო ია მორგე, ვარდი ყარე,\nდა მერმე მოდი, ლომო, მზესა შეგეყრები, შემეყარე.",
+      "english_translation": "\"Thereby shalt thou strengthen my love for thee; by delivering me from my sadness, thou shalt cripple the foul demon; plant the violet of hope in my heart, strew roses; then come, O lion, I shall meet thee like a sun; meet thou me.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 131; Wardrop Stanza 130): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 132,
+      "wardrop_stanza_number": 131,
+      "georgian_raw_text": "“სამსა ძებნე წელიწადსა იგი შენი საძებარი;\nჰპოო, მოდი გამარჯვებით, მხიარულად მოუბარი;\nვერა ჰპოებ, დავიჯერებ, იყო თურე უჩინარი,\nდა კოკობი და დაუფრჭვნელი ვარდი დაგხვდე დაუმჭნარი.",
+      "english_translation": "\"Seek three years him whom thou hast to seek; if thou find him, come gaily telling thy victory. If thou find him not, I shall believe he was a vision. Thou shalt meet the rosebud unwithered, unfaded.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 132; Wardrop Stanza 131): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 133,
+      "wardrop_stanza_number": 132,
+      "georgian_raw_text": "“ფიცით გითხრობ: შენგან კიდე თუ შევირთო რაცა ქმარი,\nმზეცა მომხვდეს ხორციელი, ჩემთვის კაცად შენაქმარი,\nსრულად მოვსწყდე სამოთხესა, ქვესკნელს ვიყო დასანთქმარი,\nდა შენი მკლვიდეს სიყვარული, გულსა დანა ასაქმარი”.",
+      "english_translation": "\"I swear if I wed any husband but thee, even should the sun become man, incarnate for my sake, may I be cut off for ever from Paradise, may I be swallowed up in Hell; love for thee would slay me, piercing my heart with a knife!\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 133; Wardrop Stanza 132): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 134,
+      "wardrop_stanza_number": 133,
+      "georgian_raw_text": "მოახსენა ყმამან: “მზეო, ვინ გიშერი აწამწამე,\nსხვა პასუხი რამცა გკადრე, ანუ რამცა შევიწამე,\nმე სიკვდილსა მოველოდი, შენ სიცოცხლე გამიწამე,\nდა ვითა მონა, სამსახურად გაღანამცა წავე, წა, მე!”",
+      "english_translation": "The knight replied: \"O sun, who causest the jet 1 to blink, what have I said to thee, and what have I done to make thee suspect me? I awaited death; thou hast renewed my will to live. I shall certainly obey thee like a slave in service.\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 134; Wardrop Stanza 133): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 135,
+      "wardrop_stanza_number": 134,
+      "georgian_raw_text": "კვლაცა ჰკადრა: “აჰა, მზეო, რათგან ღმერთმან მზედ დაგბადა,\nმით გმორჩილობს ზეციერი მნათობია რაცა სადა;\nმე რომ თქვენგან მოვისმინე წყალობანი, მედიადა,\nდა ვარდი ჩემი არ დაჭნების, შუქი შენი იეფად-ა”.",
+      "english_translation": "Again he spoke: \"O sun, since God has created thee a sun, so that the heavenly planets obey thee wherever they may be, I have heard from you than which has overwhelmed me with grace; my rose shall not wither, thy ray shines generously upon it.\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 135; Wardrop Stanza 134): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 136,
+      "wardrop_stanza_number": 135,
+      "georgian_raw_text": "კვლა შეჰფიცეს ერთმანერთსა, დააპირეს ესე პირი;\nგასალდეს და გაამრავლეს საუბარი სიტყვა-ხშირი,\nგაადვილდა, აქანამდის გარდეხადა რაცა ჭირი,\nდა თეთრთა კბილთათ გამოჰკრთების თეთრი ელვა ვითა ჭვირი.",
+      "english_translation": "Once more they made an oath together, they promised each other, they confirmed it and discoursed much, with many a word; what grief they had borne until now became easy. Their white teeth flashed white lightning as if transparent.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 136; Wardrop Stanza 135): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 137,
+      "wardrop_stanza_number": 136,
+      "georgian_raw_text": "ერთგან დასხდეს, ილაღობეს, საუბარი ასად აგეს;\nბროლ-ბადახში შეხვეული და გიშერი ასადაგეს;\nყმა ეტყვის თუ: “შენთა მჭვრეტთა თავი ხელი ა სად აგეს!\nდა ცეცხლთა, მანდით მოდებულთა, გული ჩემი ასადაგეს”.",
+      "english_translation": "They sat together, they made merry, they talked simply of a hundred things, they spoke with their crystal and ruby (faces) and jet (eyes). The knight said: \"Those who gaze upon thee become mad; my heart is burned to ashes by the fire that comes from thee.\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 137; Wardrop Stanza 136): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 138,
+      "wardrop_stanza_number": 137,
+      "georgian_raw_text": "ყმა წავიდა, სიშორესა თუცა მისსა ვერ გასძლებდა;\nუკუღმავე იხედვიდა, თვალთა რეტად აყოლებდა.\nბროლსა სეტყვს და ვარდსა აზრობს, ტანსა მჭევრსაათრთოლებდა,\nდა გული ჰქონდა გულისათვის, სიყვარულსა ავალებდა.",
+      "english_translation": "The youth went away, but he could not bear parting from her; he looked back, his eyes were dazed, crystal hails down and freezes the rose, his graceful form was trembling; he had heart for heart, he had lent (his) to love.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 138; Wardrop Stanza 137): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 139,
+      "wardrop_stanza_number": 138,
+      "georgian_raw_text": "თქვა: “მზეო, ვარდსა სიშორე შენი დამაჩნდეს ეს ადრე,\nბროლი და ლალი გასრულვარ ქარვისა უყვითლესადრე;\nმაშინ რაღა ვქმნა, ვერ ჭვრეტა რა მომხვდეს კვლა უგრძესადრე!\nდა ხამს მოყვრისათვის სიკვდილი, ესე მე დამიც წესადრე”.",
+      "english_translation": "He said to himself: \"O sun, separation from thee is thus early manifested on the rose; my crystal and ruby have faded, I am become yellower than amber. What shall I do, then, when I cannot see thee for a long time? This shall be my law: death for the beloved is fitting.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 139; Wardrop Stanza 138): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 140,
+      "wardrop_stanza_number": 139,
+      "georgian_raw_text": "საწოლს დაწვა, ტირს, მტირალსა ცრემლი ძნელად ეხოცების,\nვითა ვერხვი ქარისაგან ირხევის და იკეცების;\nრა მიჰლულნის, სიახლევე საყვარლისა ეოცების,\nდა შეკრთის, დიდი დაიზახის, მით პატიჟი ეოცების.",
+      "english_translation": "He lay down on his bed, he weeps, it is difficult for him to wipe away the tears, he shivered and swayed, like an aspen in the wind; when he fell into a slumber he dreamed his beloved was near, he starts, he cries out loud, his suffering increases twentyfold.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 140; Wardrop Stanza 139): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 141,
+      "wardrop_stanza_number": 140,
+      "georgian_raw_text": "მოშორვება საყვარლისა მას შეჰქმნოდა მისად ღაზოდ,\nცრემლსა, ვითა მარგალიტსა ჰყრის ვარდისა დასანაზოდ;\nრა გათენდა, შეეკაზმა მისთა მჭვრეტთა სალამაზოდ,\nდა ცხენსა შეჯდა, გაემართა, დარბაზს მივა სადარბაზოდ.",
+      "english_translation": "Separation from his beloved made him jealous. Tears like pearls were shed upon the rose, making it tender. When day dawned he apparelled himself, fair to look upon; he mounted his horse, set out, and came to court for an audience.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 141; Wardrop Stanza 140): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 142,
+      "wardrop_stanza_number": 141,
+      "georgian_raw_text": "დარბაზს ეჯიბი შეგზავნა, მართ მისგან შენარონია,\nშესთვალა: “გკადრებ, მეფეო, მე ესე გამიგონია:\nყოველი პირი მიწისა თქვენ ხრმლითა დაგიმონია,\nდა აწ თუ სჯობს, ესე ამბავი ცნან რაცა გარემონია”.",
+      "english_translation": "He sent a chamberlain into the hall of audience with a message from him to the king, saying: \"O king, I venture to tell you what I have thought: all the face of the earth is subjected to you by your sword; now, if it be better, I shall make known these tidings to all the vicinage.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 142; Wardrop Stanza 141): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 143,
+      "wardrop_stanza_number": 142,
+      "georgian_raw_text": "“მე წავიდე, მოვიარო, ვილაშქრო და ვინაპირო,\nთინათინის ხელმწიფობა მტერთა თქვენთა გულსა ვჰგმირო,\nმორჩილ-ქმნილი გავახარო, ურჩი ყოვლი ავატირო,\nდა ძღვენნი გკადრნე ზედაზედა, არ სალამი დავაძვირო”.",
+      "english_translation": "\"I will go, I shall travel, I shall wage war, I shall go the rounds of the marches, I shall, by piercing the heart of your enemies, announce T’hinat’hin's accession; I shall cause the obedient to rejoice, the disobedient will I make to weep, I shall send you gifts incessantly, I shall not be sparing of greeting.\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 143; Wardrop Stanza 142): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 144,
+      "wardrop_stanza_number": 143,
+      "georgian_raw_text": "მეფესა ეთქვა ამისი დიადი მადრიელობა,\nებრძანა: “ლომო, არა გჭირს შენ ომთა გარდუხდელობა,\nაწ მაგა შენსა თათბირსა ჰგავსო შენივე ქველობა,\nდა წა, მაგრა მომხვდეს, რაღა ვქმნა, თუ სიშორისა გრძელობა!”",
+      "english_translation": "The king expressed his great gratitude; he said: \"O lion, stretching thine arm in battle irks thee not. Behold, this thy counsel is matched by thy valour. Thou mayst go, but what shall I do if it happen that thou tarry long?\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 144; Wardrop Stanza 143): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 145,
+      "wardrop_stanza_number": 144,
+      "georgian_raw_text": "ყმა შევიდა, თაყვანი სცა, მადლი რამე მოახსენა:\n“ხელმწიფეო, მიკვირს, ქება რად იკადრეთ ჩემი თქვენა,\nაწ ნუთუმცა კვლა ნახვითა ღმერთმან ბნელი გამითენა,\nდა პირი თქვენი მხიარული მხიარულსა კვლა მიჩვენა”.",
+      "english_translation": "The knight came in; he did homage, and spoke some words of thanks: \"O monarch, I wonder that you should deign to praise me. Now God will perchance lighten for me the darkness of separation, and let me see again in joy your joyful face.\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 145; Wardrop Stanza 144): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 146,
+      "wardrop_stanza_number": 145,
+      "georgian_raw_text": "მეფე ყელსა მოეკიდა, გარდაკოცნა ვითა შვილი,\nსხვა მათებრი არ ყოფილა არ გამზრდელი, არ გაზრდილი;\nყმა ადგა და წამოვიდა, მას დღე მათი ჩანს გაყრილი;\nდა როსტან მისთვის აატირა გონიერი გული, ლბილი.",
+      "english_translation": "The king hung upon his neck and kissed him like a son; like unto them have none been, neither upbringer nor upbrought. The knight rose and went away, to him their day seemed separated; Rostan, wise and soft-hearted, wept for him.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 146; Wardrop Stanza 145): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 147,
+      "wardrop_stanza_number": 146,
+      "georgian_raw_text": "გამოემართა ავთანდილ, მოყმე მხნე, ლაღად მავალი,\nოც დღე იარა, ღამეცა დღეზედა წართო მრავალი.\nიგია ლხინი სოფლისა, იგია ნივთი და ვალი,\nდა არ მისცილდება თინათინ მისი მას, ვისგან სწვავ ალი.",
+      "english_translation": "Avt’handil set out, a brave knight marching boldly; twenty days he journeyed, many a day he made one with the night. She is the joy of the world, she is treasure and due; he puts not away the thought of T’hinat’hin, of her for whom the flame burns.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 147; Wardrop Stanza 146): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 148,
+      "wardrop_stanza_number": 147,
+      "georgian_raw_text": "რა მოვიდა, სიხარული შიგან გახდა სამეფოსა;\nმოეგებნეს დიდებულნი, ძღვენსა სძღვნიდეს იეფოსა;\nიგი პირ-მზე არ მოსცთების სიარულსა სასწრაფოსა,\nდა მიჰხვდეს მყოფნი მას წინაშე სიხარულსა სადაფოსა.",
+      "english_translation": "Whenever he came there was rejoicing in the kingdom, nobles met him, they gave generous gifts; the sun-faced had not wasted time in his rapid journey. A dawning joy met them that came into his presence.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 148; Wardrop Stanza 147): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 149,
+      "wardrop_stanza_number": 148,
+      "georgian_raw_text": "ქალაქი ჰქონდა მაგარი საზაროდ სანაპიროსა,\nგარე კლდე იყო, გიამბობ, ზღუდესა უქვიტკიროსა,\nყმამან მუნ დაყო სამი დღე ამოსა სანადიროსა,\nდა გაზრდილი მისი შერმადინ დაისვა სავაზიროსა.",
+      "english_translation": "He had a strong city to strike terror in the marches; outside was a rock, I tell thee, with an unmortared wall. The knight spent there three days in the pleasant chase; he appointed his pupil, Shermadin, as vizier.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 149; Wardrop Stanza 148): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 150,
+      "wardrop_stanza_number": 149,
+      "georgian_raw_text": "ესეა მონა შერმადინ, ზემოთცა სახელდებული;\nთანა შეზრდილი, ერთგული და მისთვის თავდადებული;\nმან არ იცოდა აქამდის მის ყმისა ცეცხლი დებული,\nდა აწ გაუცხადა სიტყვები მის მზისა იმედებული.",
+      "english_translation": "This is the slave Shermadin mentioned above, brought up with (Avt’handil), faithful and self-sacrificing to him. He knew not hitherto of the fire which burned the knight; now he (Avt’handil) revealed the hopeful words of the sun (T’hinat’hin).",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 150; Wardrop Stanza 149): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 151,
+      "wardrop_stanza_number": null,
+      "georgian_raw_text": "უბრძანა: “აჰა, შერმადინ, ამად მე შენგან მრცხვენიან,\nჩემნი საქმენი ყოველნი გცოდნიან გაგივლენიან,\nმაგრა არ იცი, აქამდის რანიცა ცრემლნი მდენიან!\nდა მე ვისგან მქონდეს პატიჟნი, აწ მასვე მოულხენიან.",
+      "english_translation": null,
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 151): Included in the 1966 Shanidze–Baramidze Georgian critical edition (omitted from the 1888 Kartvelishvili edition used by Marjory Wardrop's 1912 English translation, as part of the manuscript expansions examined by Rustvelologists). Context: Queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 152,
+      "wardrop_stanza_number": 150,
+      "georgian_raw_text": "“მოუკლავარ თინათინის სურვილსა და სიყვარულსა;\nცრემლი ცხელი ასოვლებდის ნარგისთაგან ვარდსა ზრულსა;\nვერ ვაჩენდი აქანამდის ჭირსა ჩემგან დაფარულსა,\nდა აწ მიბრძანა საიმედო, ამად მხედავ მხიარულსა”.",
+      "english_translation": "He said: \"Lo, Shermadin, for this I am ashamed before thee; thou knowest all my affairs and hast given heed to them; but hitherto thou hast not known what tears I have shed; in her from whom I had suffering I now find joy.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 152; Wardrop Stanza 150): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 153,
+      "wardrop_stanza_number": 151,
+      "georgian_raw_text": "“მიბრძანა: \"მიცან ამბავი მის ყმისა დაკარგულისა,\nმოხვიდე, სრულ-ვქმნა მაშინღა შენი წადილი გულისა,\nქმარი არ მინდა უშენოდ, მომხვდეს ხისაცა რგულისა»,\nდა მომცა წამალი გულისა, აქამდის დადაგულისა.",
+      "english_translation": "\"I am slain by love and longing for T’hinat’hin; from the narcissus (eyes) hot tears moistened the frosted rose; I could not till now show my hidden woe, now has she bidden me hope, therefore thou seest me joyful.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 153; Wardrop Stanza 151): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 154,
+      "wardrop_stanza_number": 152,
+      "georgian_raw_text": "“პირველ ყმა ვარ, წასვლა მინდა პატრონისა სამსახურად;\nხამს მეფეთა ერთგულობა, ყოფა გვმართებს ყმასა ყმურად;\nმერმე ცეცხლი დაუვსია, აღარა მწვავს გულსა მურად,\nდა ხამს, თუ კაცი არ შეუდრკეს ჭირს, მიუხდეს მამაცურად.",
+      "english_translation": "\"She said to me: 'Learn news of that lost knight, then come, I shall fulfil thy heart's desire; I want no husband save thee, a planted tree falls to my lot.' She gave me the balm of my heart, until that moment bound captive.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 154; Wardrop Stanza 152): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 155,
+      "wardrop_stanza_number": 153,
+      "georgian_raw_text": "“ვართ უმოყვრესნი მე და შენ ყოველთა პატრონ-ყმათასა,\nამისთვის გნუკევ სმენასა შენ ამა ჩემთა ხმათასა;\nჩემ წილ დაგაგდებ პატრონად, თავადად ჩემთა სპათასა,\nდა ამა საქმესა ვერა ვიქმ მე განდობასა სხვათასა.",
+      "english_translation": "\"First, I am a knight; I wish to go forth to serve my lady. Faithfulness to kings is fitting, vassal must act as vassal; then, she has extinguished the fire, my heart is no longer consumed to soot; a man must not bend before misfortune, but meet it like a man.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 155; Wardrop Stanza 153): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 156,
+      "wardrop_stanza_number": 154,
+      "georgian_raw_text": "“ლაშქართა და დიდებულთა ალაშქრებდი, ჰპატრონობდი;\nდარბაზს კაცსა გაგზავნიდი და ამბავსა მათსა სცნობდი;\nწიგნსა სწერდი ჩემ მაგიერ, უფასოსა ძღვენსა სძღვნობდი,\nდა აქა სადმე არ-ყოფასა ჩემსა მათმცა რად აგრძნობდი!",
+      "english_translation": "\"Of all lords and vassals thou and I are most friendly; therefore I entreat thee to hear this from mine own mouth; in my stead I appoint thee lord and chief over mine armies, I could not entrust this matter to others.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 156; Wardrop Stanza 154): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 157,
+      "wardrop_stanza_number": 155,
+      "georgian_raw_text": "“ლაშქრობა და ნადირობა შენი ჩემსა დაასახე,\nაქათ სამ წელ მომიცადე, ხვაშიადი შემინახე,\nმე ნუთუმცა შემოვბრუნდი, ალვა ჩემი არ დაჭნა ხე,\nდა არ მოვბრუნდე, მომიგლოვე, მიტირე და მივაგლახე.",
+      "english_translation": "\"Lead forth the soldiers to battle, rule the nobles, send messengers to court telling the state of affairs, write letters in my stead, present priceless gifts; why should it be known that I am not here? (thou must not let my absence be perceived).",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 157; Wardrop Stanza 155): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 158,
+      "wardrop_stanza_number": 156,
+      "georgian_raw_text": "“მაშინღა ჰკადრე მეფესა არ საქმე სასურვალია,\nაცნობე ჩემი სიკვდილი, იყავ მართ ვითა მთრვალია;\nმიჰხვდა-თქო საქმე, რომელი ყოველთათვის გარდუვალია,\nდა გლახაკთა მიეც საჭურჭლე, ოქრო, ვერცხლი და რვალია.",
+      "english_translation": "\"Represent me in military duties and in the hunting-field, wait here for me three years, keep my secret; perchance indeed I shall return, my aloe-tree shall not fade; but if I come not back, mourn me, weep for me, utter sighs.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 158; Wardrop Stanza 156): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 159,
+      "wardrop_stanza_number": 157,
+      "georgian_raw_text": "“მაშინ უფრო მომეხმარე ამისგანცა უფრო მხნედრე,\nნუთუ ადრე დამივიწყო, მახსენებდე ზედა-ზედრე!\nმეტად კარგად დამიურვე, სული ჩემი შეივედრე,\nდა ზრდანი ჩემნი მოიგონენ, გული შენი მოიმდედრე”.",
+      "english_translation": "\"Tell the king forthwith--it is not a desirable deed--announce my death to him, be as if thou art drunk; say to him: 'For him is come to pass the thing which none escape.' Give to the poor my treasure--gold, silver and copper.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 159; Wardrop Stanza 157): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 160,
+      "wardrop_stanza_number": 158,
+      "georgian_raw_text": "რა მონამან მოისმინა, გაუკვირდა, შეეზარა,\nთვალთათ, ვითა მარგალიტი, ცრემლი ცხელი გარდმოყარა;\nმოახსენა: “უშენომან გულმან რამცა გაიხარა!\nდა ვიცი, რომე არ დასდგები, მაგას გიშლი ამად არა.",
+      "english_translation": "\"Thus shalt thou help me after the best fashion, by this thou shalt aid me most; do not forget me soon, think of me often, take good thought of provision for me, pray for my soul. Remember my childhood; let thy heart be motherly towards me.\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 160; Wardrop Stanza 158): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 161,
+      "wardrop_stanza_number": 159,
+      "georgian_raw_text": "“ჩემად ნაცვლად დაგაგდებო, - ესე სიტყვა ვით მიბრძანე?\nრა გვარა ვქმნა პატრონობა? რამც გიფერე, რამც გიგვანე?\nშენ მარტოსა გიგონებდე, მემცა მიწა ვიაკვანე!\nდა სჯობს ორნივე გავიპარნეთ, წამოგყვები, წამიტანე”.",
+      "english_translation": "When the slave heard this he wondered, he was alarmed, from his eyes the hot tears poured like pearls. He said: \"How can the heart deprived of thee rejoice? I know thou wilt not stay; so I cannot hinder thee in this matter.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 161; Wardrop Stanza 159): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 162,
+      "wardrop_stanza_number": 160,
+      "georgian_raw_text": "ყმამან უთხრა: “მომისმინე, მართლად გითხრობ, არა ჭრელად:\nრა მიჯნური ველთა რბოდეს, მარტო უნდა გასაჭრელად;\nმარგალიტი არვის მიჰხვდეს უსასყიდლოდ, უვაჭრელად,\nდა კაცი ცრუ და მოღალატე ხამს ლახვრითა დასაჭრელად.",
+      "english_translation": "\"Why didst thou say thou wouldst appoint me in thy stead? How can I undertake the lordship, how can I imitate thee or resemble thee? It were better that the earth cradled me too than that I should have to think that thou art alone; rather let us both steal forth, I will accompany thee, take me with thee.\"",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 162; Wardrop Stanza 160): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 163,
+      "wardrop_stanza_number": 161,
+      "georgian_raw_text": "“ვისმცა ვუთხარ ხვაშიადი, შენგან კიდე არვინ ვარგა,\nუშენოსა პატრონობა ვის მივანდო, ვინ იქმს კარგა?\nსანაპირო გაამაგრე, მტერმან ახლოს ვერ იბარგა,\nდა კვლა ნუთუმცა შემოვიქეც, ღმერთმან სრულად არ დამკარგა.",
+      "english_translation": "The knight replied: \"Hearken unto me, I tell thee truth without beating about the bush: when a lover would roam the fields, alone he must wander; a pearl falls to the lot of none without buying and bargaining. An evil and treacherous man should be pierced with a lance.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 163; Wardrop Stanza 161): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 164,
+      "wardrop_stanza_number": 162,
+      "georgian_raw_text": "“ფათერაკი სწორად მოჰკლავს, ერთი იყოს, თუნდა ასი;\nმარტოობა ვერას მიზამს, მცავს თუ ცისა ძალთა დასი;\nაქათ სამ წელ არ მოვიდე, მაშინ გმართებს გლოვა, ფლასი,\nდა წიგნსა მოგცემ, გმორჩილობდენ, ვინცა იყოს ჩემი ხასი”.",
+      "english_translation": "\"To whom could I tell my secret? save thee, none is worthy. To whom can I entrust the lordship save thee, who else can do it well? Fortify the marches that the enemy may not encamp near! Perchance I shall return, if God make me not to be wholly lost.",
+      "expert_explanation_en": "Chapter 5 ('Tinatin Sends Avtandil in Quest of the Knight', Stanza 164; Wardrop Stanza 162): Part of the narrative sequence in which queen Tinatin summons Avtandil to their first private meeting, acknowledges his hidden courtly love for her, and commands him as her vassal and lover ('First thou art a knight... second, thou art my lover', Stanza 130) to search for the Knight in the Panther's Skin for three years, swearing an oath to wed none but Avtandil. Avtandil confides in his loyal retainer Shermadin and appoints him regent of his domain.",
+      "scholarly_sources": [
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98/%E1%83%97%E1%83%98%E1%83%9C%E1%83%90%E1%83%97%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%9C_%E1%83%90%E1%83%95%E1%83%97%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%92%E1%83%90%E1%83%92%E1%83%96%E1%83%90%E1%83%95%E1%83%9C%E1%83%90_%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A7%E1%83%9B%E1%83%98%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AB%E1%83%94%E1%83%91%E1%83%A0%E1%83%90%E1%83%93",
+        "https://ka.wikisource.org/wiki/%E1%83%95%E1%83%94%E1%83%A4%E1%83%AE%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A7%E1%83%90%E1%83%9D%E1%83%A1%E1%83%90%E1%83%9C%E1%83%98",
+        "https://www.allgeo.org/index.php/en/266-shota-rustaveli-the-knight-in-the-panther-s-skin",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    }
+  ],
+  "act_id": 1,
+  "act_title": "Act I: Arabia, The Royal Hunt & Quest for the Stranger Knight",
+  "location_id": "arabia",
+  "location": {
+    "id": "arabia",
+    "name_en": "Kingdom of Arabia",
+    "name_ka": "არაბეთი",
+    "x": 165,
+    "y": 295,
+    "color": "#f59e0b",
+    "desc": "Realm of King Rostevan, Queen Tinatin, and Commander-in-Chief Avtandil."
+  },
+  "route_from": "arabia",
+  "route_to": "cave",
+  "scene_type": "pavilion_oath",
+  "active_characters": [
+    "Queen Tinatin",
+    "Avtandil",
+    "Shermadin"
+  ],
+  "key_maxim_ka": "ხამს მოყვარე მოყვრისათვის თავი ჭირსა არ დამრიდად",
+  "key_maxim_en": "A friend should not spare himself trouble for a friend's sake. (Stanza 162)"
+}

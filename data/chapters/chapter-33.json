@@ -1,0 +1,255 @@
+{
+  "chapter_number": 33,
+  "chapter_title_ka": "ანდერძი ავთანდილისა როსტევან მეფის წინაშე",
+  "chapter_title_en": "Testament of Avtandil to King Rostevan",
+  "stanza_range": "788–808",
+  "stanza_count": 21,
+  "chapter_expert_explanation_en": "The ethical and philosophical pinnacle of the epic (Stanzas 788–808): Avtandil writes his testament to King Rostevan, justifying his departure through Plato ('Falsehood and two-facedness injure the body, then the soul', Stanza 789), Christian Neoplatonism ('union with the choir of heavenly choirs', Stanza 790), the Apostles ('Love exalts us', Stanza 791), chivalric honor ('Better a glorious death than a shameful life', Stanza 800), and charitable emancipation of his slaves and distribution of his wealth to the poor, orphans, hospices, and bridge-building.",
+  "chapter_source_url": "https://e-learning.tsu.ge/mod/resource/view.php?id=79298",
+  "stanzas": [
+    {
+      "stanza_number": 788,
+      "wardrop_stanza_number": 769,
+      "georgian_raw_text": "დაჯდა წერად ანდერძისად, საბრალოსა საუბრისად:\n“ჰე, მეფეო, გავიპარე ძებნად ჩემგან საძებრისად!\nვერ დავდგები შეუყრელად ჩემთა ცეცეხლთა მომდებრისად;\nდა შემინდევ და წამატანე მოწყალება ღმრთეებრისად.",
+      "english_translation": "He sat down to write the will, thus piteously inditing: \"O king! I have stolen away in quest of him I must seek. I cannot remain sundered from him, the kindler of my fires. Forgive me and be merciful to me like as God.",
+      "expert_explanation_en": "As Academician Elguja Khintibidze (TSU) explains, Avtandil's Testament (Stanzas 788–808) is the ethical and philosophical manifesto of the poem. Torn between feudal obedience to his foster-father King Rostevan and his sworn oath of brotherhood to the suffering Tariel ('he who kindled my fires'), Avtandil explains why moral duty compels him to depart secretly and asks for the king's godlike forgiveness.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=79298",
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 789,
+      "wardrop_stanza_number": 770,
+      "georgian_raw_text": "“ვიცი, ბოლოდ არ დამიგმობ ამა ჩემსა განზრახულსა.\nკაცი ბრძენი ვერ გასწირავს მოყვარესა მოყვარულსა;\nმე სიტყვასა ერთსა გკადრებ, პლატონისგან სწავლა-თქმულსა:\nდა “სიცრუე და ორპირობა ავნებს ხორცსა, მერმე სულსა».",
+      "english_translation": "\"I know that in the end thou wilt not blame this my resolve. A wise man cannot abandon his beloved friend. I venture to remind thee of the teaching of a certain discourse made by Plato: 'Falsehood, and two-facedness injure the body and then the soul.'",
+      "expert_explanation_en": "In one of the most intensively studied stanzas of Rustvelology, Avtandil invokes Plato ('platonisgan stsavla-tkmulsa'): 'Falsehood and two-facedness injure the body, and then the soul.' As Elguja Khintibidze (TSU) documents, while earlier scholars (Viktor Nozadze, Bachana Bregvadze) linked this to Platonic/Plotinian soul-body anthropology and Pavle Ingorokva and Ivane Lolashvili pointed to Georgian apophthegm collections, Khintibidze proves that Rustaveli synthesizes Plato's Republic ('Politeia' II, 382a–d; VII, 535e), Gorgias (524e–525a), Laws (V, 730c), and Epistle VII (335a) with biblical usage of 'flesh' ('khortsi' = earthly life in this world) and 'soul' ('suli' = immortal soul in the hereafter): moral falsehood/injustice first ruins a person's earthly life ('khortsi') and subsequently condemns their immortal soul ('suli').",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=79298",
+        "https://www.atiner.gr/papers/LIT2014-1016.pdf"
+      ]
+    },
+    {
+      "stanza_number": 790,
+      "wardrop_stanza_number": 771,
+      "georgian_raw_text": "“რათგან თავია სიცრუე ყოვლისა უბადობისა,\nმე რად გავწირო მოყვარე, ძმა უმტკიცესი ძმობისა?\nარა ვიქმ, ცოდნა რას მარგებს ფილოსოფოსთა ბრძნობისა,\nდა მით ვისწავლებით, მოგვეცეს შერთვა ზესთ მწყობრთა წყობისა.",
+      "english_translation": "\"Since lying is the source of all misfortunes, why should I abandon my friend, a -brother by a stronger tie than born brotherhood? I will not do it! What avails me the knowledge of the philosophizing of the philosophers! Therefore are we taught that we may be united with the choir of the heavenly hosts.",
+      "expert_explanation_en": "As Elguja Khintibidze (TSU) notes, Avtandil declares that philosophical knowledge ('tsodna pilosoposta brdznobisa') is worthless unless practiced in moral action—specifically, keeping faith with a sworn brother. Line 4 ('shertva zest mtsqobrta tsqobisa' — 'union with the supreme order of heavenly choirs/ranks') employs the exact Christian-Neoplatonic terminology of Pseudo-Dionysius the Areopagite ('On the Celestial Hierarchy', translated into Georgian by Ephrem Mtsire) and Ioane Petritsi, expressing the deification/ascent of the virtuous human soul to the angelic choirs.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=79298",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 791,
+      "wardrop_stanza_number": 772,
+      "georgian_raw_text": "“წაგიკითხავს, სიყვარულსა მოციქულნი რაგვარ სწერენ?\nვით იტყვიან, ვით აქებენ? ცან, ცნობანი მიაფერენ.\n“სიყვარული აღგვამაღლებს», ვით ეჟვანნი, ამას ჟღერენ,\nდა შენ არ სჯერხარ, უსწავლელნი კაცნი ვითმცა შევაჯერენ!",
+      "english_translation": "\"Thou hast read how the apostles write of love, how they speak of it, how they praise it; know thou it and harmonize thy knowledge: 'love exalteth us,' this is as it were the tinkling burden of their song: if thou conceive not this how can I convince ignorant men?",
+      "expert_explanation_en": "Pairing Classical philosophy (Plato in Stanzas 789–790) with Christian Scripture, Avtandil cites the Apostles—specifically St. Paul's Hymn to Love in 1 Corinthians 13:1–13 (where lack of love is compared to 'sounding brass or a tinkling cymbal/bell', 'ezhvanni') and St. John the Apostle in 1 John 4:7–20—summarizing the Apostolic teaching in the famous aphorism 'Love exalts us' ('siqvaruli aghgvamaghlebs').",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=79298",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 792,
+      "wardrop_stanza_number": 773,
+      "georgian_raw_text": "“ვინ დამბადა, შეძლებაცა მანვე მომცა ძლევად მტერთად,\nვინ არს ძალი უხილავი შემწედ ყოვლთა მიწიერთად,\nვინ საზღვარსა დაუსაზღვრებს, ზის უკვდავი ღმერთი ღმერთად,\nდა იგი გაჰხდის წამის–ყოფით ერთსა ასად, ასსა ერთად.",
+      "english_translation": "\"He who created me, even He gave me power to overcome foes; He who is the invisible Might, the Aid of every earthly being, who fixes the bounds of the finite, sits immortal God as God, He can in one moment change a hundred into one and one into a hundred.",
+      "expert_explanation_en": "Avtandil affirms Christian providence and human agency: the Creator who endowed him with martial strength is the 'invisible Power helping all earthly beings' who sets cosmic boundaries and can turn one into a hundred or a hundred into one in an instant ('tsamis-qopit').",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 793,
+      "wardrop_stanza_number": 774,
+      "georgian_raw_text": "“რაცა ღმერთსა არა სწადდეს, არა საქმე არ იქმნების.\nმზისა შუქთა ვერ მჭვრეტელი ია ხმების, ვარდი ჭნების,\nთვალთა ტურფა საჭვრეტელი უცხო რადმე ეშვენების;\nდა მე ვით გავძლო უმისობა, ან სიცოცხლე ვით მეთნების!",
+      "english_translation": "\"What God wills not will not become fact. The violet fades, the rose withers, if they cannot gaze on the sunbeams; every lovely thing is desirable for the eye to gaze on. How can I endure the lack of him, or how can life please me!",
+      "expert_explanation_en": "Just as the violet and rose wither when deprived of sunlight, Avtandil cannot endure life separated from his radiant friend Tariel.",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 794,
+      "wardrop_stanza_number": 775,
+      "georgian_raw_text": "“რაზომცა სწყრები, შემინდევ შეცვლა თქვენისა მცნებისა.\nძალი არ მქონდა ტყვე-ქმნილსა მე მაგისისა თნებისა;\nაწ წასლვა იყო წამალი ჩემთა სახმილთა გზნებისა,\nდა სადა გინდ ვიყო, რა მგამა, ყოფამცა მქონდა ნებისა!",
+      "english_translation": "\"However angry thou art, forgive me that I have not kept your command; enthralled, I had no power to fulfil it. No! to go was the remedy for the flaming of my furnaces. Wherever I may be, what matters it to me if I have but my freewill?",
+      "expert_explanation_en": "Avtandil apologizes for disobeying the king's prohibition, explaining that as a moral captive to his sworn promise, departing to aid Tariel was the only remedy for the burning furnace in his heart.",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 795,
+      "wardrop_stanza_number": 776,
+      "georgian_raw_text": "“არას გარგებს სიმძიმილი, უსარგებლო ცრემლთა დენა;\nარ გარდავა გარდუვალად მომავალი საქმე ზენა;\nწესი არის მამაცისა მოჭირვება, ჭირთა თმენა,\nდა არვის ძალუც ხორციელსა განგებისა გარდავლენა.",
+      "english_translation": "\"Sadness avails thee not, nor useless flow of tears. The deed which is inevitably decreed above cannot be avoided. It is a law with men that they should struggle and suffer woes, and no creature of flesh hath power to thwart Providence.",
+      "expert_explanation_en": "Avtandil counsels King Rostevan with a classic Rustavelian maxim unifying faith in Providence ('gangeba') with active human fortitude: 'It is the duty of a brave man to strive and endure afflictions' ('tsesi aris mamatsisa mochirveba, chirta tmena').",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 796,
+      "wardrop_stanza_number": 777,
+      "georgian_raw_text": "“რაცა ღმერთსა გაუგია თავსა ჩემსა გარდასავლად,\nგარდამხდეს და შემოვიქცე, აღარ დამრჩეს გული ავლად;\nთქვენვე გნახე მხიარულნი დიდებით და დავლა-მრავლად;\nდა მას რა ვარგო, ესე ჩემთვის დიდებად და კმარის დავლად.",
+      "english_translation": "Whatever God has predestined to come to pass upon me let it be fulfilled, and when I return my heart will no longer remain ashes. May I see you also joyful in majesty and manifold wealth. What I can do for him is my glory, and this is sufficient booty for me.",
+      "expert_explanation_en": "Avtandil expresses his hope to return safely after fulfilling his mission, counting service to his friend ('mas ra vargo') as his highest glory and treasure.",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 797,
+      "wardrop_stanza_number": 778,
+      "georgian_raw_text": "“მეფეო, ესე თათბირი, მომკალ, ვინ დამიწუნოსა!\nმეფეო, ნუთუ წასვლამან თქვენ ჩემმან დაგაჭმუნოსა?!\nვერ ვეცრუები, ვერ ვუზამ საქმესა საძაბუნოსა,\nდა პირის-პირ მარცხვენს, ორნივე მივალთ მას საუკუნოსა.",
+      "english_translation": "\"O king, this is my decision. Slay me! if anyone can disapprove! O king, can it be that my going grieves thee! I cannot be false, I cannot do a cowardly deed; he would shame me when we meet face to face in that eternity whereto we both shall come.",
+      "expert_explanation_en": "As Elguja Khintibidze (TSU) notes, Line 4 ('piris-pir martskhvens, ornive mivalt mas saukunosa') demonstrates Rustaveli's Christian belief in the personal immortality of the soul: if Avtandil betrayed Tariel on earth, he would be disgraced face-to-face before him in eternity ('saukuno').",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=79298",
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 798,
+      "wardrop_stanza_number": 779,
+      "georgian_raw_text": "“არ დავიწყება მოყვრისა აროდეს გვიზამს ზიანსა;\nვჰგმობ კაცსა აუგიანსა, ცრუსა და ღალატიანსა!\nვერ ვეცრუები, ვერ ვუზამ მას ხელმწიფესა მზიანსა,\nდა რა უარეა მამაცსა სულ-დიდსა, წასლვა-გვიანსა?!",
+      "english_translation": "\"Mindfulness of a friend ne’er doeth us harm. I despise the man who is shameless, false and treacherous. I cannot be false; I cannot do it for a mighty king. What is worse than a hesitant, tardy-going man!",
+      "expert_explanation_en": "Avtandil utters the proverb 'Remembering a friend will never do us harm' ('ar-davitsqeba moqvrisa arodes gvizams ziansa') and condemns hesitation when a friend's life is at stake.",
+      "scholarly_sources": [
+        "https://e-learning.tsu.ge/mod/resource/view.php?id=79298",
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 799,
+      "wardrop_stanza_number": 780,
+      "georgian_raw_text": "“რა უარეა მამაცსა, ომშიგან პირის-მხმეჭელსა,\nშედრეკილ-შეშინებულსა და სიკვდილისა მეჭველსა!\nკაცი, ჯაბანი რითა სჯობს დიაცსა, ქსლისა მბეჭველსა?\nდა სჯობს სახელისა მოხვეჭა ყოველსა მოსახვეჭელსა!",
+      "english_translation": "\"What is worse than a man in the fight with a frowning face, shirking, affrighted and thinking of death! In what is a cowardly man better than a woman weaving a web! It is better to get glory than all goods!",
+      "expert_explanation_en": "Denouncing cowardice in battle, Avtandil formulates the chivalric proverb: 'Winning an honorable name surpasses every worldly acquisition' ('sjobs sakhelisa mokhvecha qovelsa mosakhvechelsa').",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 800,
+      "wardrop_stanza_number": 781,
+      "georgian_raw_text": "“ვერ დაიჭირავს სიკვდილსა გზა ვიწრო, ვერცა კლდოვანი;\nმისგან ყოველი გასწორდეს, სუსტი და ძალ-გულოვანი;\nბოლოდ შეყარნეს მიწამან ერთგან მოყმე და მხცოვანი.\nდა სჯობს სიცოცხლესა ნაზრახსა სიკვდილი სახელოვანი!",
+      "english_translation": "\"A narrow road cannot keep back Death, nor a rocky one; by him all are levelled, weak and strong-hearted; in the end the earth unites in one place youth and greybeard. Better a glorious death than shameful life!",
+      "expert_explanation_en": "One of the most famous stanzas in Georgian history: because Death cannot be barred by narrow defiles or rocky fortresses and ultimately levels both weak and strong, young and old, human dignity lies in how one lives and dies—culminating in Georgia's national maxim: 'Better a glorious death than a shameful life!' ('sjobs sitsotskhlesa nazrakhsa sikvdili sakhelovani!').",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away",
+        "https://www.georgianencyclopedia.ge/en/form_eng/903"
+      ]
+    },
+    {
+      "stanza_number": 801,
+      "wardrop_stanza_number": 782,
+      "georgian_raw_text": "“მერმე ვიშიშვი, მეფეო, თქვენად კადრებად ამისად:\nცთების და ცთების, სიკვდილსა ვინ არ მოელის წამისად;\nმოვა შემყრელი ყოველთა ერთგან დღისა და ღამისად,\nდა თუ ვერა გნახე ცოცხალმან, ყოფამცა მქონდა ჟამისად.",
+      "english_translation": "\"And now I fear, O king, to make this request to you: mistaken, mistaken is he who expects not death momentarily; it which unites us all comes alike by day and by night. If I see thee not living, life will be fleeting for me.",
+      "expert_explanation_en": "Transitioning to the testamentary disposal of his estate in case he perishes on his quest, Avtandil reminds the king that anyone who does not expect death at every moment is gravely mistaken.",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 802,
+      "wardrop_stanza_number": 783,
+      "georgian_raw_text": "“თუ საწუთრომან დამამხოს, ყოველთა დამამხობელმან,\nღარიბი მოვკვდე ღარიბად, ვერ დამიტიროს მშობელმან,\nვეღარ შემსუდრონ დაზრდილთა და ვერცა მისანდობელმან,\nდა მუნ შემიწყალოს თქვენმავე გულმან მოწყალე, მლმობელმან.",
+      "english_translation": "\"If Fate, the destroyer of all, destroy me, an orphan I shall die travelling, unmourned by parent, nor will those who brought me up, nor the friend whom I trust, enshroud me; then indeed will your merciful, tender heart have pity on me.",
+      "expert_explanation_en": "Avtandil contemplates dying as a stranger in a foreign land ('gharibi movkvde gharibad', where 'gharibi' in Old Georgian means 'foreigner/exile far from home') without burial rites from his kin, asking for Rostevan's paternal compassion.",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 803,
+      "wardrop_stanza_number": 784,
+      "georgian_raw_text": "“მაქვს საქონელი ურიცხვი, ვერვისგან ანაწონები,\nმიეც გლახაკთა საჭურჭლე, ათავისუფლე მონები,\nშენ დაამდიდრე ყოველი, ობოლი, არასმქონები:\nდა მიღვწიან, მომიგონებენ, დამლოცვენ, მოვეგონები.",
+      "english_translation": "\"I have countless possessions weighed by none: Give the treasure to the poor, free the slaves; enrich every orphan without means; they will be grateful to me, remember me, bless me; I shall be thought of.",
+      "expert_explanation_en": "As Academician Elguja Khintibidze notes in the Georgian Encyclopedia, Stanzas 803–804 exemplify both Rustaveli's humanistic social ethic and his expressive verb-rich syntax ('mighvtsian, momigoneben, damlotsven, movegonebi' — 'they will care for my soul, remember me, bless me, I shall be remembered'): Avtandil bequeaths his vast wealth to the poor, emancipates his slaves/serfs ('atavisuple monebi'), and provides for orphans and the destitute.",
+      "scholarly_sources": [
+        "https://www.georgianencyclopedia.ge/en/form_eng/903",
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 804,
+      "wardrop_stanza_number": 785,
+      "georgian_raw_text": "“რაცა თქვენთვის არ ვარგიყოს საჭურჭლესა დასადებლად,\nმიეც ზოგი ხანაგათა, ზოგი ხიდთა ასაგებლად;\nნურა ნუ გშურს საქონელი ჩემი ჩემთვის წარსაგებლად,\nდა შენგან კიდევ არვინ მივის ცეცხლთა ჩემთა დამავსებლად.",
+      "english_translation": "\"Whatever is not worthy of being kept in your treasury, give part to build orphan homes, part to build bridges; be not sparing in the spending of mine estate for me; I have none save thee to quench the hot fires. 1",
+      "expert_explanation_en": "Reflecting 12th-century Georgian royal and civic philanthropy, Avtandil directs that whatever does not enter the royal treasury be spent on 'khanaga' (hospices/almshouses for travelers and the poor) and public infrastructure ('khidta asageblad' — building bridges).",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 805,
+      "wardrop_stanza_number": 786,
+      "georgian_raw_text": "“ამას იქით ჩემგან ჩემი ამბავიცა არ გეცნევის,\nამად გვედრებ სულსა ჩემსა, წიგნი გკადრებს,არ გეთნევის,\nარას მარგებს, ეშმაკისა საქმეთაგან დაეძლევის,\nდა შემინდევ და შემივედრე, მკვდარსა რაღა გარდმეხდევის!",
+      "english_translation": "\"Henceforth thou shalt learn no more news from me, herewith I commit my soul to thee; this letter tells thee so, without flattering thee; the devil's deeds shall not seduce (my soul), it will prevail; forgive me and pray for me; what can be exacted from me dead?",
+      "expert_explanation_en": "Echoing the Prologue's prayer (Stanza 2), Avtandil commends his soul to Rostevan's prayers and forgiveness lest it be overcome by the works of the devil.",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 806,
+      "wardrop_stanza_number": 787,
+      "georgian_raw_text": "“გვედრებ, მეფეო, შერმადინს, მონასა ჩემსა რჩეულსა,-\nნაკად აქვს ჭირი სამისოდ ამ წელიწადსა წლეულსა,-\nნუგეშინის-ეც წყალობით ჩემგან წყალობა-ჩვეულსა,\nდა ნუ დაადინებ თვალთაგან ცრემლსა, სისხლითა ფრქვეულსა.",
+      "english_translation": "\"I entreat thee, O king, for Shermadin my chosen servant. This year he hath an added day of grief. Comfort him with the favour I was wont to favour him withal; make not the tears to flow from his eyes welling with blood.",
+      "expert_explanation_en": "Demonstrating the ideal reciprocity of Georgian 'patronqmoba' (lord-retainer fidelity), Avtandil tenderly commends his loyal servant Shermadin to the king's protection.",
+      "scholarly_sources": [
+        "https://www.georgianencyclopedia.ge/en/form_eng/903",
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 807,
+      "wardrop_stanza_number": 788,
+      "georgian_raw_text": "“გასრულდა ჩემი ანდერძი, ჩემგან ნაწერი ხელითა;\nაჰა, გამზრდელო, მოგშორდი, წავე გულითა ხელითა!\nნუ სჭმუნავთ ჩემთვის მეფენი, ნუ ხართ მოსილნი ბნელითა.\nდა სუფევითმცა ხართ თავითა, მტერთაგან საკრძალველითა!”",
+      "english_translation": "\"My testament is ended, written by mine own hand. Behold, mine upbringer, I have parted from thee; I am gone away with maddened heart. Let not the sovereigns be grieved for my sake, be ye not clad in gloom, but be ye in your sovereignty feared by foes.\"",
+      "expert_explanation_en": "Avtandil concludes his testament, bidding farewell to his foster-father ('gamzrdelo') and wishing both sovereigns (Rostevan and Tinatin) a glorious reign.",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    },
+    {
+      "stanza_number": 808,
+      "wardrop_stanza_number": 789,
+      "georgian_raw_text": "მისცა ანდერძი შერმადინს, რა გაათავა წერითა;\nუთხრა: “ჰკადრეო მეფესა საქმითა მეცნიერითა,\nშენ დაგამეტებს ვერავინ მსახურებითა ვერითა”.\nდა მოეხვია და ატირდა ცრემლითა სისხლთა ფერითა.",
+      "english_translation": "When he had made an end of writing he gave the will to Shermadin. He said: \"Convey this to the king discreetly; none can excel thee in any service.\" He embraced him and wept over him bloody-hued tears.",
+      "expert_explanation_en": "Handing the completed testament to Shermadin, Avtandil embraces his faithful retainer and weeps blood-colored tears as they part.",
+      "scholarly_sources": [
+        "https://pantherskin.org/chapter/testament-of-avthandil-to-king-rostevan-when-he-stole-away"
+      ]
+    }
+  ],
+  "act_id": 3,
+  "act_title": "Act III: Avtandil's Testament, The Lion-Panther Duel & Astral Hymn",
+  "location_id": "arabia",
+  "location": {
+    "id": "arabia",
+    "name_en": "Kingdom of Arabia",
+    "name_ka": "არაბეთი",
+    "x": 165,
+    "y": 295,
+    "color": "#f59e0b",
+    "desc": "Realm of King Rostevan, Queen Tinatin, and Commander-in-Chief Avtandil."
+  },
+  "route_from": "cave",
+  "route_to": "arabia",
+  "scene_type": "prologue_cosmos",
+  "active_characters": [
+    "Avtandil",
+    "Queen Tinatin",
+    "King Rostevan",
+    "Shermadin",
+    "Vizier Sograt"
+  ],
+  "key_maxim_ka": "სიცრუე და ორპირობა ავნებს ხორცსა, მერმე სულსა",
+  "key_maxim_en": "Falsehood and two-facedness injure the body, then the soul. (Stanza 789)"
+}
