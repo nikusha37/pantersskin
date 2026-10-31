@@ -3,128 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ვეფხისტყაოსანი — Scrollytelling Realm Network & Full Bilingual Edition (1–1669)</title>
+  <title>ვეფხისტყაოსანი — სიუჟეტური ქსელი (1–1669)</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
 
-  <!-- Fixed/Sticky Top Bar -->
+  <!-- Clean, Single-Row Minimal Top Bar -->
   <header class="top-bar">
     <div class="brand">
-      <div class="brand-title-row">
-        <h1>ვეფხისტყაოსანი</h1>
-        <span class="brand-pill">1,669 სტროფი • KA / EN</span>
-      </div>
-      <span class="subtitle" id="brandSubtitle">ინტერაქტიული სიუჟეტური ქსელი და ორენოვანი აკადემიური გამოცემა • Scrollytelling Realm Network</span>
+      <h1>ვეფხისტყაოსანი</h1>
+      <span id="currentChapter" class="chapter-badge">1 / 26</span>
+      <span id="modeBadge" class="mode-badge hidden">📜 მოგონება</span>
     </div>
 
-    <!-- Search Input (Stanza # / Chapter / Text) -->
-    <div class="search-wrapper">
-      <input
-        type="search"
-        id="globalSearchInput"
-        class="search-input"
-        placeholder="🔍 სტროფი # (1–1669), თავი ან სიტყვა / Stanza # or text..."
-        autocomplete="off"
-      />
-      <div id="searchDropdown" class="search-dropdown hidden"></div>
-    </div>
-
-    <!-- Interaction Type Filter Chips -->
-    <div class="filters" id="typeFilters">
-      <button class="filter-chip active" data-type="all">ყველა / All</button>
+    <!-- Compact Relationship Filters -->
+    <nav class="filters" id="typeFilters" aria-label="კავშირის ფილტრი">
+      <button class="filter-chip active" data-type="all">ყველა</button>
       <button class="filter-chip" data-type="love" title="მიჯნურობა / Courtly Love">💍 მიჯნურობა</button>
       <button class="filter-chip" data-type="brotherhood" title="დაძმობილება / Sworn Brotherhood">🤝 ძმობა</button>
-      <button class="filter-chip" data-type="feudal" title="მეფობა და ყმობა / Fealty & Kingship">👑 მეფობა</button>
-      <button class="filter-chip" data-type="service" title="თავდადება და მსახურება / Loyal Service">🛡️ მსახურება</button>
-      <button class="filter-chip" data-type="letter" title="ეპისტოლე და წერილი / Epistle & Letter">💌 წერილი</button>
-      <button class="filter-chip" data-type="conflict" title="ბრძოლა და დაპირისპირება / Combat & Conflict">⚔️ ბრძოლა</button>
-      <button class="filter-chip" data-type="rescue" title="გამოხსნა და პატრონობა / Alliance & Rescue">🔓 დახსნა</button>
-      <button class="filter-chip" data-type="grief_support" title="თანაგრძნობა და გლოვა / Shared Mourning">💧 თანაგრძნობა</button>
-    </div>
+      <button class="filter-chip" data-type="feudal" title="მეფობა და ყმობა / Fealty">👑 მეფობა</button>
+      <button class="filter-chip" data-type="service" title="ერთგულება და მსახურება / Loyal Service">🛡️ მსახურება</button>
+      <button class="filter-chip" data-type="letter" title="წერილი / Epistle">💌 წერილი</button>
+      <button class="filter-chip" data-type="conflict" title="ბრძოლა / Conflict">⚔️ ბრძოლა</button>
+      <button class="filter-chip" data-type="rescue" title="დახსნა / Rescue">🔓 დახსნა</button>
+      <button class="filter-chip" data-type="grief_support" title="თანაგრძნობა / Shared Mourning">💧 თანაგრძნობა</button>
+    </nav>
 
-    <!-- Right Controls: Mode, View Granularity, Language, Scholarly Guide -->
+    <!-- Compact Tools: Search, 26/65 Toggle, KA/EN Toggle, Monograph -->
     <div class="top-controls">
-      <div class="segmented-control" id="granularityToggle" title="აირჩიეთ სიუჟეტური ეპიზოდები ან 65-ვე თავი">
+      <div class="search-wrapper">
+        <input
+          type="search"
+          id="globalSearchInput"
+          class="search-input"
+          placeholder="🔍 სტროფი # ან ძებნა..."
+          autocomplete="off"
+        />
+        <div id="searchDropdown" class="search-dropdown hidden"></div>
+      </div>
+
+      <div class="segmented-control" id="granularityToggle" title="26 ეპიზოდი ან 65 თავი">
         <button class="seg-btn active" data-granularity="episodes">26 ეპიზოდი</button>
         <button class="seg-btn" data-granularity="chapters">65 თავი</button>
       </div>
 
-      <div class="segmented-control" id="langToggle" title="ენის რეჟიმი / Language Mode">
-        <button class="seg-btn active" data-lang="bi">KA+EN</button>
-        <button class="seg-btn" data-lang="ka">KA</button>
+      <div class="segmented-control" id="langToggle" title="ენა / Language">
+        <button class="seg-btn active" data-lang="ka">KA</button>
         <button class="seg-btn" data-lang="en">EN</button>
       </div>
 
-      <button class="guide-btn" id="openMonographBtn" title="სამეცნიერო მონოგრაფია და წყაროები / Scholarly Monograph & Metadata">
-        📜 კვლევა
+      <button class="icon-btn" id="openMonographBtn" title="სამეცნიერო კვლევა და წყაროები / Scholarly Monograph">
+        📜
       </button>
-
-      <div class="status-badges">
-        <span id="modeBadge" class="mode-badge">⏱️ აწმყო ხაზი</span>
-        <span id="currentChapter" class="chapter-badge">ეპიზოდი 1 / 26</span>
-      </div>
     </div>
   </header>
 
-  <!-- Scrubber Timeline Bar -->
+  <!-- Minimal Timeline Scrubber -->
   <div class="timeline-scrubber" id="timelineScrubber"></div>
 
-  <!-- Main Scrollytelling + Sticky Swimlane Realm Stage -->
+  <!-- Main Split Layout: Clean Narrative Cards + Uncluttered Swimlane Graph -->
   <main class="app-container">
-    <!-- Left Scrollytelling Narrative Column -->
     <section class="scroller" id="scroller"></section>
-
-    <!-- Right Sticky D3 Realm Swimlane Graph -->
     <section class="stage" id="stageContainer">
-      <div class="stage-legend-bar" id="stageLegendBar">
-        <span class="stage-hint">💡 დააწკაპუნეთ პერსონაჟის კვანძზე ან კავშირის ემოჯიზე სტროფის, ციტატისა და კომენტარის სანახავად • Click any node or emoji marker</span>
-      </div>
       <svg id="stageSvg"></svg>
     </section>
   </main>
 
-  <!-- Inspector Drawer for Characters & Interactions -->
+  <!-- Focused Inspector Drawer -->
   <aside id="inspector" class="inspector">
     <div class="inspector-header">
-      <h3 id="inspectorTitle" class="inspector-title">ინსპექტორი / Inspector</h3>
+      <h3 id="inspectorTitle" class="inspector-title">ინსპექტორი</h3>
       <button class="close-btn" id="closeInspectorBtn" aria-label="Close">×</button>
     </div>
-    <div id="inspectorBody" class="inspector-content">
-      დააწკაპუნეთ პერსონაჟის კვანძზე ან კავშირის ემოჯიზე დეტალების სანახავად.
-    </div>
+    <div id="inspectorBody" class="inspector-content"></div>
   </aside>
 
-  <!-- Full Stanza Reader Modal (1,669 Georgian & 1,576 English Stanzas + Scholarly Commentary) -->
+  <!-- Clean Full Stanza Reader Modal (with Collapsible Commentary & Bilingual Switch) -->
   <div id="stanzaModal" class="modal-overlay hidden">
     <div class="modal-card">
       <div class="modal-header">
         <div>
-          <h2 id="modalTitle">თავის სრული ტექსტი</h2>
+          <h2 id="modalTitle">თავის ტექსტი</h2>
           <div id="modalSubtitle" class="modal-subtitle"></div>
         </div>
         <div class="modal-header-actions">
+          <button class="toggle-chip" id="toggleCommentaryBtn" title="კომენტარების ჩვენება/დამალვა">
+            🎓 კომენტარები
+          </button>
           <div class="segmented-control" id="modalLangToggle">
-            <button class="seg-btn active" data-lang="bi">KA + EN</button>
-            <button class="seg-btn" data-lang="ka">ქართული</button>
-            <button class="seg-btn" data-lang="en">English</button>
+            <button class="seg-btn active" data-lang="ka">KA</button>
+            <button class="seg-btn" data-lang="en">EN</button>
+            <button class="seg-btn" data-lang="bi">KA+EN</button>
           </div>
           <button class="close-btn" id="closeModalBtn" aria-label="Close">×</button>
         </div>
       </div>
-      <div id="modalChapterMeta" class="modal-chapter-meta"></div>
+      <div id="modalChapterMeta" class="modal-chapter-meta hidden"></div>
       <div id="modalStanzasBody" class="modal-body"></div>
     </div>
   </div>
 
-  <!-- Scholarly Monograph & Edition Metadata Modal -->
+  <!-- Scholarly Monograph Modal -->
   <div id="monographModal" class="modal-overlay hidden">
     <div class="modal-card">
       <div class="modal-header">
         <div>
-          <h2 id="monographTitle">📜 სამეცნიერო მონოგრაფია და გამოცემის მეტამონაცემები / Scholarly Monograph & Metadata</h2>
-          <div class="modal-subtitle">1966 აკადემიური გამოცემა (1,669 სტროფი) • მარჯორი უორდროპის თარგმანი (1,576 სტროფი) • რუსთველოლოგიური კომენტარი</div>
+          <h2 id="monographTitle">📜 სამეცნიერო მონოგრაფია და წყაროები</h2>
+          <div class="modal-subtitle">1966 აკადემიური გამოცემა (1,669 სტროფი) • მ. უორდროპის თარგმანი (1,576 სტროფი)</div>
         </div>
         <button class="close-btn" id="closeMonographBtn" aria-label="Close">×</button>
       </div>
@@ -132,7 +118,6 @@
     </div>
   </div>
 
-  <!-- Load Existing Full Bilingual Poem Dataset & Story Graph -->
   <script src="data/poem-bundle.js"></script>
   <script src="data/story-graph-bundle.js"></script>
   <script src="app.js"></script>

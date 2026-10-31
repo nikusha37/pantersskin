@@ -8,7 +8,9 @@ let chapterSteps = [];
 let currentStepIndex = 0;
 let activeFilterType = "all";
 let currentGranularity = "episodes"; // "episodes" (26) | "chapters" (65)
-let currentLang = "bi"; // "bi" | "ka" | "en"
+let currentLang = "ka"; // "ka" | "en" on main view; "ka" | "en" | "bi" in modal
+let modalLang = "ka";
+let showAllCommentary = false;
 let scrollObserver = null;
 let currentModalStep = null;
 let currentModalHighlightStanza = null;
@@ -21,6 +23,18 @@ const gNodes = svg.append("g").attr("class", "nodes-layer");
 
 let width = 860;
 let height = 620;
+
+const FILTER_LABELS = {
+  all: { ka: "ყველა", en: "All" },
+  love: { ka: "💍 მიჯნურობა", en: "💍 Love" },
+  brotherhood: { ka: "🤝 ძმობა", en: "🤝 Brotherhood" },
+  feudal: { ka: "👑 მეფობა", en: "👑 Fealty" },
+  service: { ka: "🛡️ მსახურება", en: "🛡️ Service" },
+  letter: { ka: "💌 წერილი", en: "💌 Letter" },
+  conflict: { ka: "⚔️ ბრძოლა", en: "⚔️ Conflict" },
+  rescue: { ka: "🔓 დახსნა", en: "🔓 Rescue" },
+  grief_support: { ka: "💧 თანაგრძნობა", en: "💧 Empathy" }
+};
 
 function escapeHtml(str) {
   return String(str || "")
@@ -63,7 +77,6 @@ function build65ChapterSteps() {
 
   return bundleData.chapters.map((ch) => {
     const [stStart, stEnd] = parseStanzaRange(ch.stanza_range);
-    // Find matching episode in story_graph.json by poemChapters or stanza overlap
     let parentEp = graphData.steps.find(
       (ep) => Array.isArray(ep.poemChapters) && ep.poemChapters.includes(ch.chapter_number)
     );
@@ -89,9 +102,9 @@ function build65ChapterSteps() {
       stanzaEnd: stEnd,
       mode: parentEp.mode || "present",
       title: ch.chapter_title_ka,
-      title_ka: `თავი ${ch.chapter_number}: ${ch.chapter_title_ka}`,
-      title_en: `Chapter ${ch.chapter_number}: ${ch.chapter_title_en}`,
-      narrative: ch.chapter_expert_explanation_en || parentEp.narrative_ka,
+      title_ka: ch.chapter_title_ka,
+      title_en: ch.chapter_title_en,
+      narrative: parentEp.narrative_ka,
       narrative_ka: parentEp.narrative_ka,
       narrative_en: ch.chapter_expert_explanation_en || parentEp.narrative_en,
       verse: verseKa,
@@ -143,10 +156,10 @@ function setupArrowMarkers() {
       .append("marker")
       .attr("id", `arrow-${typeKey}`)
       .attr("viewBox", "0 -5 10 10")
-      .attr("refX", 24)
+      .attr("refX", 23)
       .attr("refY", 0)
-      .attr("markerWidth", 5.5)
-      .attr("markerHeight", 5.5)
+      .attr("markerWidth", 5)
+      .attr("markerHeight", 5)
       .attr("orient", "auto")
       .append("path")
       .attr("d", "M0,-4L10,0L0,4")
@@ -157,7 +170,7 @@ function setupArrowMarkers() {
 function updateDimensions() {
   const bounds = document.getElementById("stageContainer").getBoundingClientRect();
   width = Math.max(bounds.width || 800, 360);
-  height = Math.max((bounds.height || 600) - 32, 360);
+  height = Math.max(bounds.height || 600, 360);
   svg.attr("viewBox", `0 0 ${width} ${height}`);
 }
 
@@ -169,13 +182,11 @@ function getRealmX(realmId) {
 
 function renderRealms() {
   const laneWidth = width / graphData.realms.length;
-
   const lanes = gRealms.selectAll(".realm-group").data(graphData.realms, (d) => d.id);
 
   const enter = lanes.enter().append("g").attr("class", "realm-group");
   enter.append("rect").attr("class", "realm-lane").attr("y", 0);
-  enter.append("text").attr("class", "realm-label-ka").attr("y", 24).attr("text-anchor", "middle");
-  enter.append("text").attr("class", "realm-label-en").attr("y", 40).attr("text-anchor", "middle");
+  enter.append("text").attr("class", "realm-label").attr("y", 26).attr("text-anchor", "middle");
 
   const merged = enter.merge(lanes);
   merged
@@ -186,14 +197,9 @@ function renderRealms() {
     .attr("fill", (d) => d.color);
 
   merged
-    .select(".realm-label-ka")
+    .select(".realm-label")
     .attr("x", (d, i) => i * laneWidth + laneWidth / 2)
     .text((d) => (currentLang === "en" ? d.name_en : d.name_ka));
-
-  merged
-    .select(".realm-label-en")
-    .attr("x", (d, i) => i * laneWidth + laneWidth / 2)
-    .text((d) => (currentLang === "bi" ? d.name_en : ""));
 
   lanes.exit().remove();
 }
@@ -207,7 +213,7 @@ function buildScrubber() {
     const dot = document.createElement("div");
     dot.className = `scrubber-dot ${step.mode === "flashback" ? "flashback" : ""} ${idx === currentStepIndex ? "active" : ""}`;
     const titleText = currentLang === "en" ? step.title_en || step.title : step.title_ka || step.title;
-    dot.title = `${step.chapterNumber}. ${titleText} (სტრ. / St. ${step.stanzaStart}–${step.stanzaEnd})`;
+    dot.title = `${step.chapterNumber}. ${titleText} (${step.stanzaStart}–${step.stanzaEnd})`;
     dot.addEventListener("click", () => {
       const targetCard = document.getElementById(`card-${idx}`);
       if (targetCard) {
@@ -216,12 +222,6 @@ function buildScrubber() {
     });
     scrubber.appendChild(dot);
   });
-}
-
-function formatTextByLang(kaText, enText) {
-  if (currentLang === "ka") return { primary: kaText || enText, secondary: "" };
-  if (currentLang === "en") return { primary: enText || kaText, secondary: "" };
-  return { primary: kaText || "", secondary: enText || "" };
 }
 
 function buildScrollCards() {
@@ -234,71 +234,43 @@ function buildScrollCards() {
     card.className = `step-card ${step.mode === "flashback" ? "flashback-card" : ""} ${idx === currentStepIndex ? "active" : ""}`;
     card.id = `card-${idx}`;
 
-    const labelPrefix =
+    const isEn = currentLang === "en";
+    const stepLabel =
       currentGranularity === "chapters"
-        ? currentLang === "en"
-          ? `Chapter ${step.chapterNumber} / 65`
-          : `თავი ${step.chapterNumber} / 65`
-        : currentLang === "en"
-          ? `Episode ${step.chapterNumber} / ${steps.length}`
-          : `ეპიზოდი ${step.chapterNumber} / ${steps.length}`;
+        ? isEn
+          ? `Chapter ${step.chapterNumber}`
+          : `თავი ${step.chapterNumber}`
+        : isEn
+          ? `Episode ${step.chapterNumber}`
+          : `ეპიზოდი ${step.chapterNumber}`;
 
-    const stanzaLabel =
-      currentLang === "en"
-        ? `Stanzas ${step.stanzaStart}–${step.stanzaEnd}`
-        : `სტროფები ${step.stanzaStart}–${step.stanzaEnd}`;
+    const stanzaLabel = isEn
+      ? `St. ${step.stanzaStart}–${step.stanzaEnd}`
+      : `სტრ. ${step.stanzaStart}–${step.stanzaEnd}`;
 
-    const modeLabel =
+    const flashbackTag =
       step.mode === "flashback"
-        ? currentLang === "en"
-          ? "📜 Flashback"
-          : "📜 რეტროსპექტივა"
-        : currentLang === "en"
-          ? "⏱️ Present Timeline"
-          : "⏱️ აწმყო";
+        ? `<span>${isEn ? "📜 Flashback" : "📜 მოგონება"}</span>`
+        : "";
 
-    const titles = formatTextByLang(step.title_ka || step.title, step.title_en || step.title);
-    const bodies = formatTextByLang(step.narrative_ka || step.narrative, step.narrative_en || step.narrative);
-    const verses = formatTextByLang(step.verse_ka || step.verse, step.verse_en || "");
-
-    const edgePillsHtml = (step.interactions || [])
-      .map((edge, eIdx) => {
-        const meta = graphData.interaction_types[edge.type] || { emoji: "🔗" };
-        const src = graphData.characters[edge.source];
-        const tgt = graphData.characters[edge.target];
-        const srcName = currentLang === "en" ? src?.name_en || src?.name : src?.name_ka || src?.name;
-        const tgtName = currentLang === "en" ? tgt?.name_en || tgt?.name : tgt?.name_ka || tgt?.name;
-        const refBadge = edge.stanza_ref ? ` (#${edge.stanza_ref})` : "";
-        return `<button class="mini-edge-pill" data-step="${idx}" data-edge="${eIdx}">
-          ${meta.emoji} ${escapeHtml(srcName)} ➔ ${escapeHtml(tgtName)}${refBadge}
-        </button>`;
-      })
-      .join("");
-
-    const readBtnLabel =
-      currentLang === "en"
-        ? `📖 Read Stanzas (${step.stanzaStart}–${step.stanzaEnd})`
-        : `📖 წაიკითხე სტროფები (${step.stanzaStart}–${step.stanzaEnd})`;
+    const titleText = isEn ? step.title_en || step.title : step.title_ka || step.title;
+    const bodyText = isEn ? step.narrative_en || step.narrative : step.narrative_ka || step.narrative;
+    const verseText = isEn ? step.verse_en || step.verse : step.verse_ka || step.verse;
+    const btnText = isEn
+      ? `📖 Read Stanzas (${step.stanzaStart}–${step.stanzaEnd})`
+      : `📖 სტროფები (${step.stanzaStart}–${step.stanzaEnd})`;
 
     card.innerHTML = `
       <div class="step-meta">
-        <span>${escapeHtml(labelPrefix)} • ${escapeHtml(stanzaLabel)}</span>
-        <span>${escapeHtml(modeLabel)}</span>
+        <span>${escapeHtml(stepLabel)} • ${escapeHtml(stanzaLabel)}</span>
+        ${flashbackTag}
       </div>
-      <h2 class="step-title">${escapeHtml(titles.primary)}</h2>
-      ${titles.secondary ? `<div class="step-title-en">${escapeHtml(titles.secondary)}</div>` : ""}
-      <p class="step-body">${escapeHtml(bodies.primary)}</p>
-      ${bodies.secondary ? `<p class="step-body-en">${escapeHtml(bodies.secondary)}</p>` : ""}
-      <blockquote class="step-verse">
-        ${escapeHtml(verses.primary)}
-        ${verses.secondary ? `<span class="step-verse-en">${escapeHtml(verses.secondary)}</span>` : ""}
-      </blockquote>
-      <div class="step-interactions-mini">${edgePillsHtml}</div>
-      <div class="step-actions">
-        <button class="read-stanzas-btn" data-step="${idx}">
-          ${escapeHtml(readBtnLabel)}
-        </button>
-      </div>
+      <h2 class="step-title">${escapeHtml(titleText)}</h2>
+      <p class="step-body">${escapeHtml(bodyText)}</p>
+      <blockquote class="step-verse">${escapeHtml(verseText)}</blockquote>
+      <button class="read-stanzas-btn" data-step="${idx}">
+        ${escapeHtml(btnText)}
+      </button>
     `;
     scroller.appendChild(card);
   });
@@ -308,25 +280,6 @@ function buildScrollCards() {
       const idx = parseInt(e.currentTarget.dataset.step, 10);
       const step = getActiveSteps()[idx];
       openStanzaModal(step, null);
-    });
-  });
-
-  document.querySelectorAll(".mini-edge-pill").forEach((pill) => {
-    pill.addEventListener("click", (e) => {
-      const sIdx = parseInt(e.currentTarget.dataset.step, 10);
-      const eIdx = parseInt(e.currentTarget.dataset.edge, 10);
-      const step = getActiveSteps()[sIdx];
-      const edge = step.interactions[eIdx];
-      if (edge) {
-        openInspector(
-          "interaction",
-          {
-            ...edge,
-            typeMeta: graphData.interaction_types[edge.type]
-          },
-          step
-        );
-      }
     });
   });
 }
@@ -343,17 +296,16 @@ function computePositions(nodeRealms) {
 
   Object.entries(groups).forEach(([realmId, charIds]) => {
     const cx = getRealmX(realmId);
-    const usableHeight = height - 115;
+    const usableHeight = height - 105;
     const stepY = usableHeight / (charIds.length + 1);
     charIds.forEach((charId, i) => {
-      // Stagger x slightly when multiple nodes share a column so vertical edges remain clear
       let xOffset = 0;
       if (charIds.length >= 3) {
-        xOffset = (i % 2 === 0 ? -1 : 1) * Math.min(laneWidth * 0.16, 18);
+        xOffset = (i % 2 === 0 ? -1 : 1) * Math.min(laneWidth * 0.15, 16);
       }
       coords[charId] = {
         x: cx + xOffset,
-        y: 65 + stepY * (i + 1)
+        y: 55 + stepY * (i + 1)
       };
     });
   });
@@ -367,18 +319,15 @@ function updateGraph(stepIndex) {
   currentStepIndex = safeIndex;
   const step = steps[safeIndex];
 
-  // Update Header & Scrubber
-  const prefix = currentGranularity === "chapters" ? (currentLang === "en" ? "Ch." : "თავი") : (currentLang === "en" ? "Ep." : "ეპიზოდი");
-  document.getElementById("currentChapter").textContent =
-    `${prefix} ${step.chapterNumber} / ${steps.length} • ${step.stanzaStart}–${step.stanzaEnd}`;
+  document.getElementById("currentChapter").textContent = `${step.chapterNumber} / ${steps.length}`;
 
   const modeBadge = document.getElementById("modeBadge");
   if (step.mode === "flashback") {
-    modeBadge.textContent = currentLang === "en" ? "📜 Flashback" : "📜 მოგონება (Flashback)";
+    modeBadge.textContent = currentLang === "en" ? "📜 Flashback" : "📜 მოგონება";
+    modeBadge.classList.remove("hidden");
   } else {
-    modeBadge.textContent = currentLang === "en" ? "⏱️ Present Timeline" : "⏱️ აწმყო ხაზი";
+    modeBadge.classList.add("hidden");
   }
-  modeBadge.classList.toggle("flashback", step.mode === "flashback");
 
   document.getElementById("stageContainer").classList.toggle("flashback-stage", step.mode === "flashback");
 
@@ -395,8 +344,7 @@ function updateGraph(stepIndex) {
         ...chObj,
         x: positions[charId].x,
         y: positions[charId].y,
-        currentRealm: step.nodeRealms[charId],
-        statusObj: step.nodeStatus ? step.nodeStatus[charId] : null
+        currentRealm: step.nodeRealms[charId]
       };
     })
     .filter(Boolean);
@@ -405,7 +353,6 @@ function updateGraph(stepIndex) {
     (edge) => activeFilterType === "all" || edge.type === activeFilterType
   );
 
-  // Track pair counts to curve parallel edges cleanly
   const pairCounter = {};
   const edgesArray = filteredInteractions
     .map((edge, idx) => {
@@ -420,15 +367,13 @@ function updateGraph(stepIndex) {
       const dx = tPos.x - sPos.x;
       const dy = tPos.y - sPos.y;
       const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-      // Normal vector for Bezier control point
       const nx = -dy / dist;
       const ny = dx / dist;
       const bendSign = pairIndex % 2 === 1 ? 1 : -1;
-      const bendMag = Math.min(52, dist * 0.24) * bendSign * Math.ceil(pairIndex / 2);
+      const bendMag = Math.min(48, dist * 0.22) * bendSign * Math.ceil(pairIndex / 2);
 
       const cx = (sPos.x + tPos.x) / 2 + nx * bendMag;
       const cy = (sPos.y + tPos.y) / 2 + ny * bendMag;
-      // Midpoint on quadratic Bezier at t = 0.5
       const midX = 0.25 * sPos.x + 0.5 * cx + 0.25 * tPos.x;
       const midY = 0.25 * sPos.y + 0.5 * cy + 0.25 * tPos.y;
 
@@ -446,9 +391,9 @@ function updateGraph(stepIndex) {
     })
     .filter(Boolean);
 
-  const t = d3.transition().duration(600).ease(d3.easeCubicOut);
+  const t = d3.transition().duration(550).ease(d3.easeCubicOut);
 
-  // Render Edges
+  // Edges
   const edges = gEdges.selectAll(".edge-group").data(edgesArray, (d) => d.id);
   const edgesEnter = edges
     .enter()
@@ -456,26 +401,13 @@ function updateGraph(stepIndex) {
     .attr("class", "edge-group")
     .on("click", (event, d) => openInspector("interaction", d, step));
 
-  edgesEnter
-    .append("path")
-    .attr("class", "edge-line")
-    .attr("stroke-width", 2.4);
-
-  edgesEnter
-    .append("circle")
-    .attr("class", "emoji-badge-bg")
-    .attr("r", 14);
-
+  edgesEnter.append("path").attr("class", "edge-line").attr("stroke-width", 2.2);
+  edgesEnter.append("circle").attr("class", "emoji-badge-bg").attr("r", 13);
   edgesEnter
     .append("text")
     .attr("class", "emoji-marker")
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "central");
-
-  edgesEnter
-    .append("text")
-    .attr("class", "edge-ref-label")
-    .attr("text-anchor", "middle");
 
   const edgesMerged = edgesEnter.merge(edges);
 
@@ -500,16 +432,9 @@ function updateGraph(stepIndex) {
     .attr("x", (d) => d.midX)
     .attr("y", (d) => d.midY);
 
-  edgesMerged
-    .select(".edge-ref-label")
-    .text((d) => (d.stanza_ref ? `#${d.stanza_ref}` : ""))
-    .transition(t)
-    .attr("x", (d) => d.midX)
-    .attr("y", (d) => d.midY + 23);
-
   edges.exit().remove();
 
-  // Render Character Nodes
+  // Character Nodes
   const nodes = gNodes.selectAll(".character-group").data(nodesArray, (d) => d.id);
   const nodesEnter = nodes
     .enter()
@@ -520,38 +445,19 @@ function updateGraph(stepIndex) {
 
   nodesEnter
     .append("circle")
-    .attr("class", "character-glow")
-    .attr("r", 24)
-    .attr("fill", (d) => d.color)
-    .attr("opacity", 0.18);
-
-  nodesEnter
-    .append("circle")
     .attr("class", "character-node")
-    .attr("r", 18)
+    .attr("r", 17)
     .attr("stroke", "#fff")
     .attr("stroke-width", 2);
 
-  nodesEnter
-    .append("text")
-    .attr("class", "node-label")
-    .attr("dy", 32);
-
-  nodesEnter
-    .append("text")
-    .attr("class", "node-sublabel")
-    .attr("dy", 44);
+  nodesEnter.append("text").attr("class", "node-label").attr("dy", 31);
 
   const nodesMerged = nodesEnter.merge(nodes);
   nodesMerged.transition(t).attr("transform", (d) => `translate(${d.x},${d.y})`);
-  nodesMerged.select(".character-glow").attr("fill", (d) => d.color);
   nodesMerged.select(".character-node").attr("fill", (d) => d.color);
   nodesMerged
     .select(".node-label")
     .text((d) => (currentLang === "en" ? d.name_en || d.name : d.name_ka || d.name));
-  nodesMerged
-    .select(".node-sublabel")
-    .text((d) => (currentLang === "bi" ? d.name_en || "" : ""));
 
   nodes.exit().transition(t).style("opacity", 0).remove();
 }
@@ -561,6 +467,7 @@ function openInspector(kind, data, step) {
   const titleEl = document.getElementById("inspectorTitle");
   const bodyEl = document.getElementById("inspectorBody");
   inspector.classList.add("open");
+  const isEn = currentLang === "en";
 
   if (kind === "character") {
     const realm = graphData.realms.find((r) => r.id === data.currentRealm);
@@ -568,58 +475,32 @@ function openInspector(kind, data, step) {
       (e) => e.source === data.id || e.target === data.id
     );
 
-    const charName =
-      currentLang === "en"
-        ? data.name_en || data.name
-        : currentLang === "ka"
-          ? data.name_ka || data.name
-          : `${data.name_ka || data.name} • ${data.name_en || ""}`;
-
-    const charTitle =
-      currentLang === "en"
-        ? data.title_en || data.title
-        : currentLang === "ka"
-          ? data.title_ka || data.title
-          : `${data.title_ka || data.title} / ${data.title_en || ""}`;
-
-    const realmName = realm
-      ? currentLang === "en"
-        ? realm.name_en
-        : currentLang === "ka"
-          ? realm.name_ka
-          : `${realm.name_ka} (${realm.name_en})`
-      : data.currentRealm;
-
+    const charName = isEn ? data.name_en || data.name : data.name_ka || data.name;
+    const charTitle = isEn ? data.title_en || data.title : data.title_ka || data.title;
+    const realmName = realm ? (isEn ? realm.name_en : realm.name_ka) : data.currentRealm;
     const statusObj = step.nodeStatus && step.nodeStatus[data.id];
-    const statusHtml = statusObj
-      ? `<div class="inspector-status-box">
-           <strong>📍 სტატუსი ამ ეპიზოდში / Current Status:</strong><br/>
-           ${escapeHtml(currentLang === "en" ? statusObj.en : statusObj.ka)}
-           ${currentLang === "bi" && statusObj.en ? `<div style="color:#9aa1b8; font-size:0.76rem; margin-top:3px;">${escapeHtml(statusObj.en)}</div>` : ""}
-         </div>`
-      : "";
 
     titleEl.textContent = charName;
     bodyEl.innerHTML = `
-      <div class="inspector-badge-row">
-        <span class="inspector-pill">👑 ${escapeHtml(charTitle)}</span>
-        <span class="inspector-pill">🗺️ ${escapeHtml(realmName)}</span>
+      <div class="inspector-sub">${escapeHtml(charTitle)} • 📍 ${escapeHtml(realmName)}</div>
+      ${
+        statusObj
+          ? `<div class="inspector-status-box">${escapeHtml(isEn ? statusObj.en : statusObj.ka)}</div>`
+          : ""
+      }
+      <div style="font-size:0.76rem; color:var(--text-muted); margin-bottom:4px;">
+        ${isEn ? `Active Bonds (${activeLinks.length})` : `მიმდინარე კავშირები (${activeLinks.length})`}
       </div>
-      ${statusHtml}
-      <p style="font-size:0.82rem; font-weight:600; color:var(--accent-gold);">
-        🔗 აქტიური კავშირები ამ სცენაში / Active Bonds (${activeLinks.length}):
-      </p>
       <ul class="inspector-conn-list">
         ${activeLinks
           .map((l, idx) => {
             const otherId = l.source === data.id ? l.target : l.source;
             const other = graphData.characters[otherId];
-            const otherName = currentLang === "en" ? other?.name_en || other?.name : other?.name_ka || other?.name;
+            const otherName = isEn ? other?.name_en || other?.name : other?.name_ka || other?.name;
             const emoji = graphData.interaction_types[l.type]?.emoji || "🔗";
-            const lbl = currentLang === "en" ? l.label_en || l.label : l.label_ka || l.label;
-            const stRef = l.stanza_ref ? ` • სტრ. #${l.stanza_ref}` : "";
+            const lbl = isEn ? l.label_en || l.label : l.label_ka || l.label;
             return `<li class="inspector-conn-item" data-conn-idx="${idx}">
-              <strong>${emoji} ${escapeHtml(otherName)}</strong>: ${escapeHtml(lbl)}${escapeHtml(stRef)}
+              <strong>${emoji} ${escapeHtml(otherName)}</strong> — ${escapeHtml(lbl)}
             </li>`;
           })
           .join("")}
@@ -643,70 +524,34 @@ function openInspector(kind, data, step) {
     const src = graphData.characters[data.source];
     const tgt = graphData.characters[data.target];
     const emoji = data.typeMeta ? data.typeMeta.emoji : "🔗";
-    const typeName = data.typeMeta
-      ? currentLang === "en"
-        ? data.typeMeta.label_en
-        : currentLang === "ka"
-          ? data.typeMeta.label_ka
-          : `${data.typeMeta.label_ka} / ${data.typeMeta.label_en}`
-      : data.type;
+    const bondTitle = isEn ? data.label_en || data.label : data.label_ka || data.label;
+    const srcName = isEn ? src?.name_en || src?.name : src?.name_ka || src?.name;
+    const tgtName = isEn ? tgt?.name_en || tgt?.name : tgt?.name_ka || tgt?.name;
+    const detailText = isEn ? data.detail_en || data.detail : data.detail_ka || data.detail;
 
-    const bondTitle =
-      currentLang === "en"
-        ? data.label_en || data.label
-        : currentLang === "ka"
-          ? data.label_ka || data.label
-          : `${data.label_ka || data.label} • ${data.label_en || ""}`;
-
-    const srcName = currentLang === "en" ? src?.name_en || src?.name : src?.name_ka || src?.name;
-    const tgtName = currentLang === "en" ? tgt?.name_en || tgt?.name : tgt?.name_ka || tgt?.name;
-
-    const detailKa = data.detail_ka || data.detail || "";
-    const detailEn = data.detail_en || "";
-
-    // Look up full stanza in bundle if stanza_ref exists
     const fullStanza = data.stanza_ref ? stanzasByNumber[String(data.stanza_ref)] : null;
-    const quoteKa = fullStanza ? fullStanza.georgian_raw_text : data.quote_ka || data.quote || "";
-    const quoteEn = fullStanza ? fullStanza.english_translation : data.quote_en || "";
-    const commentaryEn = fullStanza ? fullStanza.expert_explanation_en : "";
+    const quoteText = isEn
+      ? fullStanza?.english_translation || data.quote_en || data.quote
+      : fullStanza?.georgian_raw_text || data.quote_ka || data.quote;
 
     titleEl.textContent = `${emoji} ${bondTitle}`;
     bodyEl.innerHTML = `
-      <div class="inspector-badge-row">
-        <span class="inspector-pill">${emoji} ${escapeHtml(typeName)}</span>
-        <span class="inspector-pill">👤 ${escapeHtml(srcName)} ➔ ${escapeHtml(tgtName)}</span>
-        ${data.stanza_ref ? `<span class="inspector-pill">📖 სტროფი / Stanza #${data.stanza_ref}</span>` : ""}
+      <div class="inspector-sub">
+        ${escapeHtml(srcName)} ➔ ${escapeHtml(tgtName)}
+        ${data.stanza_ref ? ` • ${isEn ? "Stanza" : "სტროფი"} #${data.stanza_ref}` : ""}
       </div>
-      <p style="font-size:0.84rem; line-height:1.55;">
-        ${escapeHtml(currentLang === "en" ? detailEn || detailKa : detailKa)}
-      </p>
-      ${
-        currentLang === "bi" && detailEn
-          ? `<p style="font-size:0.79rem; color:#9aa1b8; margin-top:4px; line-height:1.5;">${escapeHtml(detailEn)}</p>`
-          : ""
-      }
-      <div class="inspector-verse-box">
-        ${currentLang !== "en" ? `<div>${escapeHtml(quoteKa)}</div>` : ""}
-        ${
-          currentLang !== "ka" && quoteEn
-            ? `<div style="margin-top:${currentLang === "bi" ? "8px" : "0"}; color:#c5cde0; font-size:0.8rem;">${escapeHtml(quoteEn)}</div>`
-            : ""
-        }
-      </div>
-      ${
-        commentaryEn && currentLang !== "ka"
-          ? `<div class="inspector-commentary-box">
-               <strong>🎓 Scholarly Commentary (Stanza #${data.stanza_ref}):</strong><br/>
-               ${escapeHtml(commentaryEn)}
-             </div>`
-          : ""
-      }
+      <p style="font-size:0.83rem; line-height:1.55; color:#dce1f0;">${escapeHtml(detailText)}</p>
+      <div class="inspector-verse-box">${escapeHtml(quoteText)}</div>
       <div style="margin-top:12px;">
         <button class="read-stanzas-btn" id="inspectorOpenStanzaBtn" style="width:100%;">
           📖 ${
             data.stanza_ref
-              ? `გახსენი სტროფი #${data.stanza_ref} სრულ ტექსტში / Read Stanza #${data.stanza_ref} in Context`
-              : `წაიკითხე ეპიზოდის სტროფები (${step.stanzaStart}–${step.stanzaEnd})`
+              ? isEn
+                ? `Open Stanza #${data.stanza_ref} in Reader`
+                : `სტროფი #${data.stanza_ref} სრულ ტექსტში`
+              : isEn
+                ? `Read Stanzas (${step.stanzaStart}–${step.stanzaEnd})`
+                : `სტროფები (${step.stanzaStart}–${step.stanzaEnd})`
           }
         </button>
       </div>
@@ -731,37 +576,32 @@ function openStanzaModal(step, highlightStanzaNum) {
   const metaBox = document.getElementById("modalChapterMeta");
   const body = document.getElementById("modalStanzasBody");
 
-  const stepTitleKa = step.title_ka || step.title;
-  const stepTitleEn = step.title_en || "";
-  title.textContent = `${stepTitleKa} (სტროფები / Stanzas ${step.stanzaStart}–${step.stanzaEnd})`;
-  subtitle.textContent = stepTitleEn;
+  const isEn = currentLang === "en";
+  title.textContent = isEn ? step.title_en || step.title : step.title_ka || step.title;
+  subtitle.textContent = isEn
+    ? `Stanzas ${step.stanzaStart}–${step.stanzaEnd}`
+    : `სტროფები ${step.stanzaStart}–${step.stanzaEnd}`;
 
-  // Gather chapters covered by this step
   const coveredChapters = [];
-  if (Array.isArray(step.poemChapters) && step.poemChapters.length) {
+  if (Array.isArray(step.poemChapters)) {
     step.poemChapters.forEach((chNum) => {
       if (chaptersByNumber[chNum]) coveredChapters.push(chaptersByNumber[chNum]);
     });
   }
 
-  if (coveredChapters.length > 0) {
-    metaBox.style.display = "block";
+  if (showAllCommentary && coveredChapters.length > 0) {
+    metaBox.classList.remove("hidden");
     metaBox.innerHTML = coveredChapters
       .map(
         (ch) => `
-        <div style="margin-bottom:6px;">
-          <strong style="color:var(--accent-gold);">თავი ${ch.chapter_number}: ${escapeHtml(ch.chapter_title_ka)} / ${escapeHtml(ch.chapter_title_en)} (St. ${ch.stanza_range})</strong>
-          ${
-            ch.chapter_source_url
-              ? ` — <a class="source-chip" href="${escapeHtml(ch.chapter_source_url)}" target="_blank" rel="noopener noreferrer">წყარო / Source ↗</a>`
-              : ""
-          }
-          <div style="font-size:0.78rem; color:#b8c0d4; margin-top:3px;">${escapeHtml(ch.chapter_expert_explanation_en || "")}</div>
+        <div style="margin-bottom:4px;">
+          <strong style="color:var(--accent-gold);">${escapeHtml(ch.chapter_title_ka)} / ${escapeHtml(ch.chapter_title_en)}</strong>:
+          ${escapeHtml(ch.chapter_expert_explanation_en || "")}
         </div>`
       )
       .join("");
   } else {
-    metaBox.style.display = "none";
+    metaBox.classList.add("hidden");
   }
 
   body.innerHTML = "";
@@ -772,8 +612,6 @@ function openStanzaModal(step, highlightStanzaNum) {
     }
   }
 
-  const isSingleCol = currentLang !== "bi";
-
   if (foundStanzas.length > 0) {
     foundStanzas.forEach((st) => {
       const div = document.createElement("div");
@@ -781,19 +619,15 @@ function openStanzaModal(step, highlightStanzaNum) {
       div.className = `stanza-item ${isHighlighted ? "highlighted-stanza" : ""}`;
       div.id = `modal-stanza-${st.stanza_number}`;
 
-      const wardropBadge = st.wardrop_stanza_number
-        ? `Wardrop EN #${st.wardrop_stanza_number}`
-        : `1966 Critical Edition`;
-
       let linesHtml = "";
-      if (currentLang === "bi") {
+      if (modalLang === "bi") {
         linesHtml = `
           <div class="stanza-grid">
             <div class="stanza-lines-ka">${escapeHtml(st.georgian_raw_text)}</div>
             <div class="stanza-lines-en">${escapeHtml(st.english_translation || "")}</div>
           </div>
         `;
-      } else if (currentLang === "ka") {
+      } else if (modalLang === "ka") {
         linesHtml = `
           <div class="stanza-grid single-col">
             <div class="stanza-lines-ka">${escapeHtml(st.georgian_raw_text)}</div>
@@ -810,7 +644,7 @@ function openStanzaModal(step, highlightStanzaNum) {
       const sourcesHtml = (st.scholarly_sources || [])
         .map((s) => {
           const url = typeof s === "string" ? s : s.url;
-          let host = "Scholarly Source";
+          let host = "Source";
           try {
             host = new URL(url).hostname.replace("www.", "");
           } catch (e) {}
@@ -818,28 +652,31 @@ function openStanzaModal(step, highlightStanzaNum) {
         })
         .join("");
 
+      const commentaryHtml = st.expert_explanation_en
+        ? `<details class="stanza-commentary-details" ${showAllCommentary ? "open" : ""}>
+             <summary>🎓 ${isEn ? "Scholarly Commentary" : "სამეცნიერო კომენტარი"}</summary>
+             <div class="commentary-text">
+               ${escapeHtml(st.expert_explanation_en)}
+               ${sourcesHtml ? `<div class="source-links-row">${sourcesHtml}</div>` : ""}
+             </div>
+           </details>`
+        : "";
+
       div.innerHTML = `
         <div class="stanza-top-row">
-          <span>სტროფი / Stanza #${st.stanza_number} ${st.chapter_number ? `• თავი / Ch. ${st.chapter_number}` : ""}</span>
-          <span>${escapeHtml(wardropBadge)}</span>
+          <span>#${st.stanza_number}</span>
+          <span>${st.wardrop_stanza_number ? `Wardrop #${st.wardrop_stanza_number}` : ""}</span>
         </div>
         ${linesHtml}
-        ${
-          st.expert_explanation_en && currentLang !== "ka"
-            ? `<div class="stanza-commentary">
-                 <strong>🎓 Expert Commentary:</strong> ${escapeHtml(st.expert_explanation_en)}
-                 ${sourcesHtml ? `<div class="source-links-row">${sourcesHtml}</div>` : ""}
-               </div>`
-            : ""
-        }
+        ${commentaryHtml}
       `;
       body.appendChild(div);
     });
   } else {
     body.innerHTML = `
       <div class="stanza-item">
-        <div class="stanza-top-row"><span>საკვანძო სტროფი (${step.stanzaStart}–${step.stanzaEnd})</span></div>
-        <div class="stanza-lines-ka">${escapeHtml(step.verse_ka || step.verse)}</div>
+        <div class="stanza-top-row"><span>#${step.stanzaStart}–${step.stanzaEnd}</span></div>
+        <div class="stanza-lines-ka">${escapeHtml(isEn ? step.verse_en || step.verse : step.verse_ka || step.verse)}</div>
       </div>
     `;
   }
@@ -852,7 +689,7 @@ function openStanzaModal(step, highlightStanzaNum) {
       if (targetEl) {
         targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
       }
-    }, 60);
+    }, 50);
   } else {
     body.scrollTop = 0;
   }
@@ -868,16 +705,12 @@ function openMonographModal() {
   const sourcesHtml = (meta.verified_sources || [])
     .map(
       (s) => `
-      <li style="margin-bottom:8px;">
+      <li style="margin-bottom:6px;">
         <a class="source-chip" href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">
           🔗 ${escapeHtml(s.title)} ↗
         </a>
       </li>`
     )
-    .join("");
-
-  const authoritiesHtml = (meta.scholarly_authorities_cited || [])
-    .map((a) => `<li style="margin-bottom:5px; color:#d5d9e6;">${escapeHtml(a)}</li>`)
     .join("");
 
   const monoSectionsHtml = Object.entries(mono)
@@ -887,7 +720,7 @@ function openMonographModal() {
         <div class="stanza-top-row">
           <span>${escapeHtml(key.replace(/_/g, " ").toUpperCase())}</span>
         </div>
-        <p style="font-size:0.86rem; line-height:1.62; color:#dce1f0;">${escapeHtml(val)}</p>
+        <p style="font-size:0.84rem; line-height:1.6; color:#dce1f0;">${escapeHtml(val)}</p>
       </div>`
     )
     .join("");
@@ -895,26 +728,17 @@ function openMonographModal() {
   body.innerHTML = `
     <div class="stanza-item">
       <div class="stanza-top-row">
-        <span>${escapeHtml(meta.title_ka || "ვეფხისტყაოსანი")} — ${escapeHtml(meta.title_en || "")}</span>
-        <span>${escapeHtml(meta.composition_period || "")}</span>
+        <span>${escapeHtml(meta.title_ka || "ვეფხისტყაოსანი")} — ${escapeHtml(meta.title_en || "The Knight in the Panther's Skin")}</span>
+        <span>${escapeHtml(meta.composition_period || "c. 1189–1207")}</span>
       </div>
-      <p style="font-size:0.85rem; line-height:1.6; color:#d5d9e6; margin-bottom:10px;">
-        ${escapeHtml(meta.dataset_description || "")}
+      <p style="font-size:0.84rem; line-height:1.58; color:#cfd5e6;">
+        ${escapeHtml(meta.dataset_description || "Complete 65-chapter, 1,669-stanza critical edition paired with Marjory Scott Wardrop's English translation and academic commentary.")}
       </p>
-      <div class="inspector-badge-row">
-        <span class="inspector-pill">📚 65 თავი / Chapters</span>
-        <span class="inspector-pill">🇬🇪 1,669 ქართული სტროფი (6,676 ტაეპი)</span>
-        <span class="inspector-pill">🇬🇧 1,576 ინგლისური სტროფი (Wardrop 1912)</span>
-      </div>
     </div>
     ${monoSectionsHtml}
     <div class="stanza-item">
-      <div class="stanza-top-row"><span>სამეცნიერო ავტორიტეტები / Scholarly Authorities Cited</span></div>
-      <ul style="padding-left:18px; font-size:0.83rem; line-height:1.55;">${authoritiesHtml}</ul>
-    </div>
-    <div class="stanza-item">
-      <div class="stanza-top-row"><span>დადასტურებული აკადემიური წყაროები / Verified Academic Sources</span></div>
-      <ul style="list-style:none;">${sourcesHtml}</ul>
+      <div class="stanza-top-row"><span>აკადემიური წყაროები / Verified Academic Sources</span></div>
+      <ul style="list-style:none; margin-top:6px;">${sourcesHtml}</ul>
     </div>
   `;
 
@@ -932,41 +756,46 @@ function handleSearchInput(query) {
 
   const results = [];
   const steps = getActiveSteps();
+  const isEn = currentLang === "en";
 
-  // Check if user typed a stanza number (e.g. "302" or "#302")
   const numMatch = q.match(/^#?(\d+)$/);
   if (numMatch) {
     const stNum = parseInt(numMatch[1], 10);
+    const matchingStepIdx = steps.findIndex((s) => stNum >= s.stanzaStart && stNum <= s.stanzaEnd);
     if (stanzasByNumber[String(stNum)]) {
       const st = stanzasByNumber[String(stNum)];
-      const matchingStepIdx = steps.findIndex(
-        (s) => stNum >= s.stanzaStart && stNum <= s.stanzaEnd
-      );
       results.push({
         type: "stanza",
         stanzaNum: stNum,
         stepIndex: matchingStepIdx >= 0 ? matchingStepIdx : 0,
-        title: `სტროფი / Stanza #${stNum} (თავი ${st.chapter_number})`,
-        sub: st.georgian_raw_text.replace(/\n/g, " / ")
+        title: `${isEn ? "Stanza" : "სტროფი"} #${stNum}`,
+        sub: isEn ? st.english_translation : st.georgian_raw_text.replace(/\n/g, " / ")
+      });
+    } else if (matchingStepIdx >= 0) {
+      const s = steps[matchingStepIdx];
+      results.push({
+        type: "step",
+        stepIndex: matchingStepIdx,
+        title: `${s.chapterNumber}. ${isEn ? s.title_en : s.title_ka} (#${stNum})`,
+        sub: isEn ? s.narrative_en : s.narrative_ka
       });
     }
   }
 
-  // Search steps & stanzas by text
   const qLower = q.toLowerCase();
   steps.forEach((step, idx) => {
     const hay = `${step.title_ka || ""} ${step.title_en || ""} ${step.narrative_ka || ""} ${step.narrative_en || ""}`.toLowerCase();
-    if (hay.includes(qLower) && results.length < 8) {
+    if (hay.includes(qLower) && results.length < 7) {
       results.push({
         type: "step",
         stepIndex: idx,
-        title: `${step.chapterNumber}. ${step.title_ka || step.title} (St. ${step.stanzaStart}–${step.stanzaEnd})`,
-        sub: step.title_en || step.narrative_ka
+        title: `${step.chapterNumber}. ${isEn ? step.title_en || step.title : step.title_ka || step.title}`,
+        sub: `${step.stanzaStart}–${step.stanzaEnd}`
       });
     }
   });
 
-  if (q.length >= 2 && results.length < 12) {
+  if (q.length >= 2 && results.length < 10) {
     for (let s = 1; s <= 1669; s++) {
       const st = stanzasByNumber[String(s)];
       if (!st) continue;
@@ -981,16 +810,16 @@ function handleSearchInput(query) {
           type: "stanza",
           stanzaNum: s,
           stepIndex: matchingStepIdx >= 0 ? matchingStepIdx : 0,
-          title: `სტროფი / Stanza #${s} • თავი ${st.chapter_number}`,
-          sub: `${st.georgian_raw_text.split("\n")[0]} — ${st.english_translation || ""}`
+          title: `${isEn ? "Stanza" : "სტროფი"} #${s}`,
+          sub: isEn ? st.english_translation : st.georgian_raw_text.split("\n")[0]
         });
-        if (results.length >= 12) break;
+        if (results.length >= 10) break;
       }
     }
   }
 
   if (results.length === 0) {
-    dropdown.innerHTML = `<div class="search-item"><div class="search-item-sub">არაფერი მოიძებნა / No matching stanza or chapter found</div></div>`;
+    dropdown.innerHTML = `<div class="search-item"><div class="search-item-sub">${isEn ? "No matches found" : "არაფერი მოიძებნა"}</div></div>`;
     dropdown.classList.remove("hidden");
     return;
   }
@@ -1023,14 +852,27 @@ function handleSearchInput(query) {
   });
 }
 
-function syncLangButtons() {
-  document.querySelectorAll("#langToggle .seg-btn, #modalLangToggle .seg-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.getAttribute("data-lang") === currentLang);
+function updateUITextByLang() {
+  const isEn = currentLang === "en";
+  document.querySelectorAll("#typeFilters .filter-chip").forEach((btn) => {
+    const t = btn.getAttribute("data-type");
+    if (FILTER_LABELS[t]) {
+      btn.textContent = isEn ? FILTER_LABELS[t].en : FILTER_LABELS[t].ka;
+    }
   });
+
+  const epBtn = document.querySelector("#granularityToggle [data-granularity='episodes']");
+  const chBtn = document.querySelector("#granularityToggle [data-granularity='chapters']");
+  if (epBtn) epBtn.textContent = isEn ? "26 Episodes" : "26 ეპიზოდი";
+  if (chBtn) chBtn.textContent = isEn ? "65 Chapters" : "65 თავი";
+
+  const searchInput = document.getElementById("globalSearchInput");
+  if (searchInput) {
+    searchInput.placeholder = isEn ? "🔍 Stanza # or search..." : "🔍 სტროფი # ან ძებნა...";
+  }
 }
 
 function setupControls() {
-  // Interaction Type Filter Chips
   document.querySelectorAll(".filter-chip").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       document.querySelectorAll(".filter-chip").forEach((b) => b.classList.remove("active"));
@@ -1040,7 +882,6 @@ function setupControls() {
     });
   });
 
-  // Granularity Toggle (26 Episodes vs 65 Chapters)
   document.querySelectorAll("#granularityToggle .seg-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       document.querySelectorAll("#granularityToggle .seg-btn").forEach((b) => b.classList.remove("active"));
@@ -1055,23 +896,47 @@ function setupControls() {
     });
   });
 
-  // Language Toggle (KA+EN / KA / EN)
-  document.querySelectorAll("#langToggle .seg-btn, #modalLangToggle .seg-btn").forEach((btn) => {
+  document.querySelectorAll("#langToggle .seg-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
+      document.querySelectorAll("#langToggle .seg-btn").forEach((b) => b.classList.remove("active"));
+      e.currentTarget.classList.add("active");
       currentLang = e.currentTarget.getAttribute("data-lang");
-      syncLangButtons();
+      modalLang = currentLang;
+      document.querySelectorAll("#modalLangToggle .seg-btn").forEach((b) => {
+        b.classList.toggle("active", b.getAttribute("data-lang") === modalLang);
+      });
+      updateUITextByLang();
       renderRealms();
       buildScrubber();
       buildScrollCards();
       updateGraph(currentStepIndex);
       setupScrollObserver();
-      if (currentModalStep && !document.getElementById("stanzaModal").classList.contains("hidden")) {
+      document.getElementById("inspector").classList.remove("open");
+    });
+  });
+
+  document.querySelectorAll("#modalLangToggle .seg-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      document.querySelectorAll("#modalLangToggle .seg-btn").forEach((b) => b.classList.remove("active"));
+      e.currentTarget.classList.add("active");
+      modalLang = e.currentTarget.getAttribute("data-lang");
+      if (currentModalStep) {
         openStanzaModal(currentModalStep, currentModalHighlightStanza);
       }
     });
   });
 
-  // Search Input
+  const commBtn = document.getElementById("toggleCommentaryBtn");
+  if (commBtn) {
+    commBtn.addEventListener("click", () => {
+      showAllCommentary = !showAllCommentary;
+      commBtn.classList.toggle("active", showAllCommentary);
+      if (currentModalStep) {
+        openStanzaModal(currentModalStep, currentModalHighlightStanza);
+      }
+    });
+  }
+
   const searchInput = document.getElementById("globalSearchInput");
   searchInput.addEventListener("input", (e) => handleSearchInput(e.target.value));
   searchInput.addEventListener("keydown", (e) => {
@@ -1086,7 +951,6 @@ function setupControls() {
     }
   });
 
-  // Close & Modal Buttons
   document.getElementById("closeInspectorBtn").addEventListener("click", () => {
     document.getElementById("inspector").classList.remove("open");
   });
@@ -1123,7 +987,7 @@ function setupScrollObserver() {
         }
       });
     },
-    { threshold: 0.52 }
+    { threshold: 0.55 }
   );
 
   document.querySelectorAll(".step-card").forEach((card) => scrollObserver.observe(card));
