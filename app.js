@@ -1,19 +1,13 @@
 let graphData = null;
 let bundleData = window.VEPKHISTKAOSANI_BUNDLE || null;
-let stanzasByNumber = {};
-let chaptersByNumber = {};
-let episodeSteps = [];
+let stanzaSteps = [];
 let chapterSteps = [];
 
 let currentStepIndex = 0;
 let activeFilterType = "all";
-let currentGranularity = "episodes"; // "episodes" (26) | "chapters" (65)
-let currentLang = "ka"; // "ka" | "en" on main view; "ka" | "en" | "bi" in modal
-let modalLang = "ka";
-let showAllCommentary = false;
+let currentGranularity = "stanzas"; // "stanzas" (1669) | "chapters" (65)
+let currentLang = "ka"; // "ka" | "en" | "bi"
 let scrollObserver = null;
-let currentModalStep = null;
-let currentModalHighlightStanza = null;
 
 const svg = d3.select("#stageSvg");
 const defs = svg.append("defs");
@@ -44,88 +38,14 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;");
 }
 
-function indexPoemBundle() {
-  if (!bundleData && window.VEPKHISTKAOSANI_BUNDLE) {
-    bundleData = window.VEPKHISTKAOSANI_BUNDLE;
-  }
-  if (!bundleData || !Array.isArray(bundleData.chapters)) return;
-
-  bundleData.chapters.forEach((ch) => {
-    chaptersByNumber[ch.chapter_number] = ch;
-    (ch.stanzas || []).forEach((st) => {
-      stanzasByNumber[String(st.stanza_number)] = {
-        ...st,
-        chapter_number: ch.chapter_number,
-        chapter_title_ka: ch.chapter_title_ka,
-        chapter_title_en: ch.chapter_title_en
-      };
-    });
-  });
-}
-
-function parseStanzaRange(rangeStr) {
-  if (!rangeStr) return [1, 1];
-  const parts = String(rangeStr).split(/[–-]/).map((s) => parseInt(s.trim(), 10));
-  if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
-    return [parts[0], parts[1]];
-  }
-  return [parts[0] || 1, parts[0] || 1];
-}
-
-function build65ChapterSteps() {
-  if (!bundleData || !Array.isArray(bundleData.chapters) || !graphData) return [];
-
-  return bundleData.chapters.map((ch) => {
-    const [stStart, stEnd] = parseStanzaRange(ch.stanza_range);
-    let parentEp = graphData.steps.find(
-      (ep) => Array.isArray(ep.poemChapters) && ep.poemChapters.includes(ch.chapter_number)
-    );
-    if (!parentEp) {
-      parentEp =
-        graphData.steps.find((ep) => stStart >= ep.stanzaStart && stStart <= ep.stanzaEnd) ||
-        graphData.steps[0];
-    }
-
-    const firstStanza = (ch.stanzas && ch.stanzas[0]) || null;
-    const verseKa = firstStanza
-      ? firstStanza.georgian_raw_text.split("\n").slice(0, 2).join(" / ")
-      : parentEp.verse_ka;
-    const verseEn = firstStanza
-      ? firstStanza.english_translation
-      : parentEp.verse_en;
-
-    return {
-      id: `ch_${ch.chapter_number}`,
-      chapterNumber: ch.chapter_number,
-      poemChapters: [ch.chapter_number],
-      stanzaStart: stStart,
-      stanzaEnd: stEnd,
-      mode: parentEp.mode || "present",
-      title: ch.chapter_title_ka,
-      title_ka: ch.chapter_title_ka,
-      title_en: ch.chapter_title_en,
-      narrative: parentEp.narrative_ka,
-      narrative_ka: parentEp.narrative_ka,
-      narrative_en: ch.chapter_expert_explanation_en || parentEp.narrative_en,
-      verse: verseKa,
-      verse_ka: verseKa,
-      verse_en: verseEn,
-      verse_stanza: stStart,
-      nodeRealms: { ...parentEp.nodeRealms },
-      nodeStatus: parentEp.nodeStatus ? { ...parentEp.nodeStatus } : {},
-      interactions: (parentEp.interactions || []).map((inter) => ({ ...inter }))
-    };
-  });
-}
-
 function getActiveSteps() {
-  return currentGranularity === "chapters" && chapterSteps.length > 0
-    ? chapterSteps
-    : episodeSteps;
+  return currentGranularity === "chapters" ? chapterSteps : stanzaSteps;
 }
 
 async function initApp() {
-  indexPoemBundle();
+  if (!bundleData && window.VEPKHISTKAOSANI_BUNDLE) {
+    bundleData = window.VEPKHISTKAOSANI_BUNDLE;
+  }
 
   if (window.STORY_GRAPH_BUNDLE) {
     graphData = window.STORY_GRAPH_BUNDLE;
@@ -134,11 +54,11 @@ async function initApp() {
     graphData = await response.json();
   }
 
-  episodeSteps = graphData.steps || [];
-  chapterSteps = build65ChapterSteps();
+  stanzaSteps = graphData.stanza_steps || graphData.steps || [];
+  chapterSteps = graphData.chapter_steps || graphData.steps || [];
 
   setupArrowMarkers();
-  buildScrubber();
+  populateChapterDropdown();
   buildScrollCards();
   setupControls();
   updateDimensions();
@@ -165,6 +85,21 @@ function setupArrowMarkers() {
       .attr("d", "M0,-4L10,0L0,4")
       .attr("fill", meta.color || "#d4af37");
   });
+}
+
+function populateChapterDropdown() {
+  const select = document.getElementById("chapterSelect");
+  if (!select) return;
+  const isEn = currentLang === "en";
+
+  select.innerHTML = chapterSteps
+    .map((ch) => {
+      const lbl = isEn
+        ? `Ch. ${ch.chapterNumber}: ${ch.title_en.replace(/^Chapter \d+:\s*/, "")} (${ch.stanzaStart}–${ch.stanzaEnd})`
+        : `თავი ${ch.chapterNumber}: ${ch.title} (${ch.stanzaStart}–${ch.stanzaEnd})`;
+      return `<option value="${ch.chapterNumber}">${escapeHtml(lbl)}</option>`;
+    })
+    .join("");
 }
 
 function updateDimensions() {
@@ -204,82 +139,121 @@ function renderRealms() {
   lanes.exit().remove();
 }
 
-function buildScrubber() {
-  const scrubber = document.getElementById("timelineScrubber");
-  scrubber.innerHTML = "";
-  const steps = getActiveSteps();
-
-  steps.forEach((step, idx) => {
-    const dot = document.createElement("div");
-    dot.className = `scrubber-dot ${step.mode === "flashback" ? "flashback" : ""} ${idx === currentStepIndex ? "active" : ""}`;
-    const titleText = currentLang === "en" ? step.title_en || step.title : step.title_ka || step.title;
-    dot.title = `${step.chapterNumber}. ${titleText} (${step.stanzaStart}–${step.stanzaEnd})`;
-    dot.addEventListener("click", () => {
-      const targetCard = document.getElementById(`card-${idx}`);
-      if (targetCard) {
-        targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    });
-    scrubber.appendChild(dot);
-  });
-}
-
 function buildScrollCards() {
   const scroller = document.getElementById("scroller");
-  scroller.innerHTML = "";
   const steps = getActiveSteps();
+  const isEn = currentLang === "en";
+  const isBi = currentLang === "bi";
+
+  const slider = document.getElementById("stanzaSlider");
+  if (slider) {
+    slider.max = String(Math.max(0, steps.length - 1));
+    slider.value = String(currentStepIndex);
+  }
+
+  const htmlChunks = [];
+  let lastChapterNum = null;
 
   steps.forEach((step, idx) => {
-    const card = document.createElement("article");
-    card.className = `step-card ${step.mode === "flashback" ? "flashback-card" : ""} ${idx === currentStepIndex ? "active" : ""}`;
-    card.id = `card-${idx}`;
+    if (currentGranularity === "stanzas" && step.chapterNumber !== lastChapterNum) {
+      lastChapterNum = step.chapterNumber;
+      const chHeading = isEn
+        ? `Chapter ${step.chapterNumber}: ${step.chapter_title_en || ""}`
+        : `თავი ${step.chapterNumber}: ${step.chapter_title_ka || ""}`;
+      htmlChunks.push(
+        `<div class="chapter-divider" id="ch-div-${step.chapterNumber}">${escapeHtml(chHeading)}</div>`
+      );
+    }
 
-    const isEn = currentLang === "en";
-    const stepLabel =
-      currentGranularity === "chapters"
-        ? isEn
-          ? `Chapter ${step.chapterNumber}`
-          : `თავი ${step.chapterNumber}`
-        : isEn
-          ? `Episode ${step.chapterNumber}`
-          : `ეპიზოდი ${step.chapterNumber}`;
+    const primaryEdge = (step.interactions && step.interactions[0]) || null;
+    const typeMeta = primaryEdge ? graphData.interaction_types[primaryEdge.type] : null;
+    const srcChar = primaryEdge ? graphData.characters[primaryEdge.source] : null;
+    const tgtChar = primaryEdge ? graphData.characters[primaryEdge.target] : null;
 
-    const stanzaLabel = isEn
-      ? `St. ${step.stanzaStart}–${step.stanzaEnd}`
-      : `სტრ. ${step.stanzaStart}–${step.stanzaEnd}`;
-
-    const flashbackTag =
-      step.mode === "flashback"
-        ? `<span>${isEn ? "📜 Flashback" : "📜 მოგონება"}</span>`
+    const srcName = srcChar ? (isEn ? srcChar.name_en : srcChar.name_ka) : "";
+    const tgtName = tgtChar ? (isEn ? tgtChar.name_en : tgtChar.name_ka) : "";
+    const bondSummary =
+      primaryEdge && typeMeta
+        ? `${typeMeta.emoji} ${srcName} ➔ ${tgtName}`
         : "";
 
-    const titleText = isEn ? step.title_en || step.title : step.title_ka || step.title;
-    const bodyText = isEn ? step.narrative_en || step.narrative : step.narrative_ka || step.narrative;
-    const verseText = isEn ? step.verse_en || step.verse : step.verse_ka || step.verse;
-    const btnText = isEn
-      ? `📖 Read Stanzas (${step.stanzaStart}–${step.stanzaEnd})`
-      : `📖 სტროფები (${step.stanzaStart}–${step.stanzaEnd})`;
+    const metaLeft =
+      currentGranularity === "stanzas"
+        ? isEn
+          ? `Stanza #${step.stanzaNumber}`
+          : `სტროფი #${step.stanzaNumber}`
+        : isEn
+          ? `Chapter ${step.chapterNumber} (St. ${step.stanzaStart}–${step.stanzaEnd})`
+          : `თავი ${step.chapterNumber} (სტრ. ${step.stanzaStart}–${step.stanzaEnd})`;
 
-    card.innerHTML = `
-      <div class="step-meta">
-        <span>${escapeHtml(stepLabel)} • ${escapeHtml(stanzaLabel)}</span>
-        ${flashbackTag}
-      </div>
-      <h2 class="step-title">${escapeHtml(titleText)}</h2>
-      <p class="step-body">${escapeHtml(bodyText)}</p>
-      <blockquote class="step-verse">${escapeHtml(verseText)}</blockquote>
-      <button class="read-stanzas-btn" data-step="${idx}">
-        ${escapeHtml(btnText)}
-      </button>
-    `;
-    scroller.appendChild(card);
+    const verseKa = step.verse_ka || step.verse || "";
+    const verseEn = step.verse_en || "";
+
+    let verseBlock = "";
+    if (isBi) {
+      verseBlock = `
+        <div class="step-verse-ka">${escapeHtml(verseKa)}</div>
+        ${verseEn ? `<div class="step-verse-en">${escapeHtml(verseEn)}</div>` : ""}
+      `;
+    } else if (isEn) {
+      verseBlock = `<div class="step-verse-ka">${escapeHtml(verseEn || verseKa)}</div>`;
+    } else {
+      verseBlock = `<div class="step-verse-ka">${escapeHtml(verseKa)}</div>`;
+    }
+
+    const commText = step.commentary_en || (currentGranularity === "chapters" ? step.narrative_en : "");
+    const sourcesHtml = (step.sources || [])
+      .map((s) => {
+        const url = typeof s === "string" ? s : s.url;
+        let host = "Source";
+        try {
+          host = new URL(url).hostname.replace("www.", "");
+        } catch (e) {}
+        return `<a class="source-chip" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">📚 ${escapeHtml(host)} ↗</a>`;
+      })
+      .join("");
+
+    const commentaryBlock = commText
+      ? `<details class="stanza-commentary-details">
+           <summary>🎓 ${isEn ? "Commentary" : "კომენტარი"}</summary>
+           <div class="commentary-text">
+             ${escapeHtml(commText)}
+             ${sourcesHtml ? `<div class="source-links-row">${sourcesHtml}</div>` : ""}
+           </div>
+         </details>`
+      : "";
+
+    const chapterTitleBlock =
+      currentGranularity === "chapters"
+        ? `<h2 style="font-size:1rem; margin-bottom:8px; color:#fff;">${escapeHtml(
+            isEn ? step.title_en : step.title_ka
+          )}</h2>`
+        : "";
+
+    htmlChunks.push(`
+      <article class="step-card ${step.mode === "flashback" ? "flashback-card" : ""} ${
+      idx === currentStepIndex ? "active" : ""
+    }" id="card-${idx}" data-idx="${idx}">
+        <div class="step-meta">
+          <span>${escapeHtml(metaLeft)}</span>
+          ${bondSummary ? `<span class="step-bond-pill">${escapeHtml(bondSummary)}</span>` : ""}
+        </div>
+        ${chapterTitleBlock}
+        ${verseBlock}
+        ${commentaryBlock}
+      </article>
+    `);
   });
 
-  document.querySelectorAll(".read-stanzas-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const idx = parseInt(e.currentTarget.dataset.step, 10);
-      const step = getActiveSteps()[idx];
-      openStanzaModal(step, null);
+  scroller.innerHTML = htmlChunks.join("");
+
+  scroller.querySelectorAll(".step-card").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("details") || e.target.closest("a")) return;
+      const idx = parseInt(card.getAttribute("data-idx"), 10);
+      if (!isNaN(idx)) {
+        activateStep(idx, false);
+      }
     });
   });
 }
@@ -312,18 +286,58 @@ function computePositions(nodeRealms) {
   return coords;
 }
 
+function activateStep(stepIndex, scrollIntoView = true) {
+  const steps = getActiveSteps();
+  if (!steps.length) return;
+  const safeIndex = Math.max(0, Math.min(stepIndex, steps.length - 1));
+
+  const prevCard = document.getElementById(`card-${currentStepIndex}`);
+  if (prevCard) prevCard.classList.remove("active");
+
+  currentStepIndex = safeIndex;
+  const nextCard = document.getElementById(`card-${safeIndex}`);
+  if (nextCard) {
+    nextCard.classList.add("active");
+    if (scrollIntoView) {
+      nextCard.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  updateGraph(safeIndex);
+}
+
 function updateGraph(stepIndex) {
   const steps = getActiveSteps();
   if (!steps.length) return;
   const safeIndex = Math.max(0, Math.min(stepIndex, steps.length - 1));
   currentStepIndex = safeIndex;
   const step = steps[safeIndex];
+  const isEn = currentLang === "en";
 
-  document.getElementById("currentChapter").textContent = `${step.chapterNumber} / ${steps.length}`;
+  const badgeEl = document.getElementById("currentChapter");
+  if (currentGranularity === "stanzas") {
+    badgeEl.textContent = isEn
+      ? `St. ${step.stanzaNumber} / ${steps.length}`
+      : `სტრ. ${step.stanzaNumber} / ${steps.length}`;
+  } else {
+    badgeEl.textContent = isEn
+      ? `Ch. ${step.chapterNumber} / ${steps.length}`
+      : `თავი ${step.chapterNumber} / ${steps.length}`;
+  }
+
+  const slider = document.getElementById("stanzaSlider");
+  if (slider && Number(slider.value) !== safeIndex) {
+    slider.value = String(safeIndex);
+  }
+
+  const chSelect = document.getElementById("chapterSelect");
+  if (chSelect && step.chapterNumber && String(chSelect.value) !== String(step.chapterNumber)) {
+    chSelect.value = String(step.chapterNumber);
+  }
 
   const modeBadge = document.getElementById("modeBadge");
   if (step.mode === "flashback") {
-    modeBadge.textContent = currentLang === "en" ? "📜 Flashback" : "📜 მოგონება";
+    modeBadge.textContent = isEn ? "📜 Flashback" : "📜 მოგონება";
     modeBadge.classList.remove("hidden");
   } else {
     modeBadge.classList.add("hidden");
@@ -331,11 +345,9 @@ function updateGraph(stepIndex) {
 
   document.getElementById("stageContainer").classList.toggle("flashback-stage", step.mode === "flashback");
 
-  document.querySelectorAll(".scrubber-dot").forEach((dot, idx) => {
-    dot.classList.toggle("active", idx === safeIndex);
-  });
-
   const positions = computePositions(step.nodeRealms);
+  const focalSet = new Set(step.activeChars || []);
+
   const nodesArray = Object.keys(step.nodeRealms)
     .map((charId) => {
       const chObj = graphData.characters[charId];
@@ -344,7 +356,8 @@ function updateGraph(stepIndex) {
         ...chObj,
         x: positions[charId].x,
         y: positions[charId].y,
-        currentRealm: step.nodeRealms[charId]
+        currentRealm: step.nodeRealms[charId],
+        isFocal: focalSet.has(charId)
       };
     })
     .filter(Boolean);
@@ -391,14 +404,14 @@ function updateGraph(stepIndex) {
     })
     .filter(Boolean);
 
-  const t = d3.transition().duration(550).ease(d3.easeCubicOut);
+  const t = d3.transition().duration(380).ease(d3.easeCubicOut);
 
   // Edges
   const edges = gEdges.selectAll(".edge-group").data(edgesArray, (d) => d.id);
   const edgesEnter = edges
     .enter()
     .append("g")
-    .attr("class", "edge-group")
+    .attr("class", (d) => `edge-group ${d.primary ? "primary-edge" : ""}`)
     .on("click", (event, d) => openInspector("interaction", d, step));
 
   edgesEnter.append("path").attr("class", "edge-line").attr("stroke-width", 2.2);
@@ -410,11 +423,13 @@ function updateGraph(stepIndex) {
     .attr("dominant-baseline", "central");
 
   const edgesMerged = edgesEnter.merge(edges);
+  edgesMerged.attr("class", (d) => `edge-group ${d.primary ? "primary-edge" : ""}`);
 
   edgesMerged
     .select(".edge-line")
     .transition(t)
     .attr("stroke", (d) => (d.typeMeta ? d.typeMeta.color : "#d4af37"))
+    .attr("stroke-dasharray", (d) => (d.primary === false ? "4 3" : null))
     .attr("marker-end", (d) => `url(#arrow-${d.type})`)
     .attr("d", (d) => `M${d.sourcePos.x},${d.sourcePos.y} Q${d.cx},${d.cy} ${d.targetPos.x},${d.targetPos.y}`);
 
@@ -439,9 +454,11 @@ function updateGraph(stepIndex) {
   const nodesEnter = nodes
     .enter()
     .append("g")
-    .attr("class", "character-group")
+    .attr("class", (d) => `character-group ${d.isFocal ? "is-focal" : ""}`)
     .attr("transform", (d) => `translate(${d.x},${d.y})`)
     .on("click", (event, d) => openInspector("character", d, step));
+
+  nodesEnter.append("circle").attr("class", "character-active-ring").attr("r", 23);
 
   nodesEnter
     .append("circle")
@@ -453,11 +470,12 @@ function updateGraph(stepIndex) {
   nodesEnter.append("text").attr("class", "node-label").attr("dy", 31);
 
   const nodesMerged = nodesEnter.merge(nodes);
+  nodesMerged.attr("class", (d) => `character-group ${d.isFocal ? "is-focal" : ""}`);
   nodesMerged.transition(t).attr("transform", (d) => `translate(${d.x},${d.y})`);
   nodesMerged.select(".character-node").attr("fill", (d) => d.color);
   nodesMerged
     .select(".node-label")
-    .text((d) => (currentLang === "en" ? d.name_en || d.name : d.name_ka || d.name));
+    .text((d) => (isEn ? d.name_en || d.name : d.name_ka || d.name));
 
   nodes.exit().transition(t).style("opacity", 0).remove();
 }
@@ -528,11 +546,7 @@ function openInspector(kind, data, step) {
     const srcName = isEn ? src?.name_en || src?.name : src?.name_ka || src?.name;
     const tgtName = isEn ? tgt?.name_en || tgt?.name : tgt?.name_ka || tgt?.name;
     const detailText = isEn ? data.detail_en || data.detail : data.detail_ka || data.detail;
-
-    const fullStanza = data.stanza_ref ? stanzasByNumber[String(data.stanza_ref)] : null;
-    const quoteText = isEn
-      ? fullStanza?.english_translation || data.quote_en || data.quote
-      : fullStanza?.georgian_raw_text || data.quote_ka || data.quote;
+    const quoteText = isEn ? data.quote_en || data.quote : data.quote_ka || data.quote;
 
     titleEl.textContent = `${emoji} ${bondTitle}`;
     bodyEl.innerHTML = `
@@ -540,158 +554,9 @@ function openInspector(kind, data, step) {
         ${escapeHtml(srcName)} ➔ ${escapeHtml(tgtName)}
         ${data.stanza_ref ? ` • ${isEn ? "Stanza" : "სტროფი"} #${data.stanza_ref}` : ""}
       </div>
-      <p style="font-size:0.83rem; line-height:1.55; color:#dce1f0;">${escapeHtml(detailText)}</p>
+      <p style="font-size:0.82rem; line-height:1.5; color:#dce1f0;">${escapeHtml(detailText)}</p>
       <div class="inspector-verse-box">${escapeHtml(quoteText)}</div>
-      <div style="margin-top:12px;">
-        <button class="read-stanzas-btn" id="inspectorOpenStanzaBtn" style="width:100%;">
-          📖 ${
-            data.stanza_ref
-              ? isEn
-                ? `Open Stanza #${data.stanza_ref} in Reader`
-                : `სტროფი #${data.stanza_ref} სრულ ტექსტში`
-              : isEn
-                ? `Read Stanzas (${step.stanzaStart}–${step.stanzaEnd})`
-                : `სტროფები (${step.stanzaStart}–${step.stanzaEnd})`
-          }
-        </button>
-      </div>
     `;
-
-    const openBtn = document.getElementById("inspectorOpenStanzaBtn");
-    if (openBtn) {
-      openBtn.addEventListener("click", () => {
-        openStanzaModal(step, data.stanza_ref || null);
-      });
-    }
-  }
-}
-
-function openStanzaModal(step, highlightStanzaNum) {
-  currentModalStep = step;
-  currentModalHighlightStanza = highlightStanzaNum;
-
-  const modal = document.getElementById("stanzaModal");
-  const title = document.getElementById("modalTitle");
-  const subtitle = document.getElementById("modalSubtitle");
-  const metaBox = document.getElementById("modalChapterMeta");
-  const body = document.getElementById("modalStanzasBody");
-
-  const isEn = currentLang === "en";
-  title.textContent = isEn ? step.title_en || step.title : step.title_ka || step.title;
-  subtitle.textContent = isEn
-    ? `Stanzas ${step.stanzaStart}–${step.stanzaEnd}`
-    : `სტროფები ${step.stanzaStart}–${step.stanzaEnd}`;
-
-  const coveredChapters = [];
-  if (Array.isArray(step.poemChapters)) {
-    step.poemChapters.forEach((chNum) => {
-      if (chaptersByNumber[chNum]) coveredChapters.push(chaptersByNumber[chNum]);
-    });
-  }
-
-  if (showAllCommentary && coveredChapters.length > 0) {
-    metaBox.classList.remove("hidden");
-    metaBox.innerHTML = coveredChapters
-      .map(
-        (ch) => `
-        <div style="margin-bottom:4px;">
-          <strong style="color:var(--accent-gold);">${escapeHtml(ch.chapter_title_ka)} / ${escapeHtml(ch.chapter_title_en)}</strong>:
-          ${escapeHtml(ch.chapter_expert_explanation_en || "")}
-        </div>`
-      )
-      .join("");
-  } else {
-    metaBox.classList.add("hidden");
-  }
-
-  body.innerHTML = "";
-  const foundStanzas = [];
-  for (let s = step.stanzaStart; s <= step.stanzaEnd; s++) {
-    if (stanzasByNumber[String(s)]) {
-      foundStanzas.push(stanzasByNumber[String(s)]);
-    }
-  }
-
-  if (foundStanzas.length > 0) {
-    foundStanzas.forEach((st) => {
-      const div = document.createElement("div");
-      const isHighlighted = Number(highlightStanzaNum) === Number(st.stanza_number);
-      div.className = `stanza-item ${isHighlighted ? "highlighted-stanza" : ""}`;
-      div.id = `modal-stanza-${st.stanza_number}`;
-
-      let linesHtml = "";
-      if (modalLang === "bi") {
-        linesHtml = `
-          <div class="stanza-grid">
-            <div class="stanza-lines-ka">${escapeHtml(st.georgian_raw_text)}</div>
-            <div class="stanza-lines-en">${escapeHtml(st.english_translation || "")}</div>
-          </div>
-        `;
-      } else if (modalLang === "ka") {
-        linesHtml = `
-          <div class="stanza-grid single-col">
-            <div class="stanza-lines-ka">${escapeHtml(st.georgian_raw_text)}</div>
-          </div>
-        `;
-      } else {
-        linesHtml = `
-          <div class="stanza-grid single-col">
-            <div class="stanza-lines-en">${escapeHtml(st.english_translation || "")}</div>
-          </div>
-        `;
-      }
-
-      const sourcesHtml = (st.scholarly_sources || [])
-        .map((s) => {
-          const url = typeof s === "string" ? s : s.url;
-          let host = "Source";
-          try {
-            host = new URL(url).hostname.replace("www.", "");
-          } catch (e) {}
-          return `<a class="source-chip" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">📚 ${escapeHtml(host)} ↗</a>`;
-        })
-        .join("");
-
-      const commentaryHtml = st.expert_explanation_en
-        ? `<details class="stanza-commentary-details" ${showAllCommentary ? "open" : ""}>
-             <summary>🎓 ${isEn ? "Scholarly Commentary" : "სამეცნიერო კომენტარი"}</summary>
-             <div class="commentary-text">
-               ${escapeHtml(st.expert_explanation_en)}
-               ${sourcesHtml ? `<div class="source-links-row">${sourcesHtml}</div>` : ""}
-             </div>
-           </details>`
-        : "";
-
-      div.innerHTML = `
-        <div class="stanza-top-row">
-          <span>#${st.stanza_number}</span>
-          <span>${st.wardrop_stanza_number ? `Wardrop #${st.wardrop_stanza_number}` : ""}</span>
-        </div>
-        ${linesHtml}
-        ${commentaryHtml}
-      `;
-      body.appendChild(div);
-    });
-  } else {
-    body.innerHTML = `
-      <div class="stanza-item">
-        <div class="stanza-top-row"><span>#${step.stanzaStart}–${step.stanzaEnd}</span></div>
-        <div class="stanza-lines-ka">${escapeHtml(isEn ? step.verse_en || step.verse : step.verse_ka || step.verse)}</div>
-      </div>
-    `;
-  }
-
-  modal.classList.remove("hidden");
-
-  if (highlightStanzaNum) {
-    setTimeout(() => {
-      const targetEl = document.getElementById(`modal-stanza-${highlightStanzaNum}`);
-      if (targetEl) {
-        targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }, 50);
-  } else {
-    body.scrollTop = 0;
   }
 }
 
@@ -728,11 +593,16 @@ function openMonographModal() {
   body.innerHTML = `
     <div class="stanza-item">
       <div class="stanza-top-row">
-        <span>${escapeHtml(meta.title_ka || "ვეფხისტყაოსანი")} — ${escapeHtml(meta.title_en || "The Knight in the Panther's Skin")}</span>
+        <span>${escapeHtml(meta.title_ka || "ვეფხისტყაოსანი")} — ${escapeHtml(
+    meta.title_en || "The Knight in the Panther's Skin"
+  )}</span>
         <span>${escapeHtml(meta.composition_period || "c. 1189–1207")}</span>
       </div>
       <p style="font-size:0.84rem; line-height:1.58; color:#cfd5e6;">
-        ${escapeHtml(meta.dataset_description || "Complete 65-chapter, 1,669-stanza critical edition paired with Marjory Scott Wardrop's English translation and academic commentary.")}
+        ${escapeHtml(
+          meta.dataset_description ||
+            "Complete 65-chapter, 1,669-stanza critical edition paired with Marjory Scott Wardrop's English translation and academic commentary."
+        )}
       </p>
     </div>
     ${monoSectionsHtml}
@@ -761,57 +631,36 @@ function handleSearchInput(query) {
   const numMatch = q.match(/^#?(\d+)$/);
   if (numMatch) {
     const stNum = parseInt(numMatch[1], 10);
-    const matchingStepIdx = steps.findIndex((s) => stNum >= s.stanzaStart && stNum <= s.stanzaEnd);
-    if (stanzasByNumber[String(stNum)]) {
-      const st = stanzasByNumber[String(stNum)];
+    const idx = steps.findIndex((s) =>
+      currentGranularity === "stanzas"
+        ? s.stanzaNumber === stNum
+        : stNum >= s.stanzaStart && stNum <= s.stanzaEnd
+    );
+    if (idx >= 0) {
+      const s = steps[idx];
       results.push({
-        type: "stanza",
-        stanzaNum: stNum,
-        stepIndex: matchingStepIdx >= 0 ? matchingStepIdx : 0,
-        title: `${isEn ? "Stanza" : "სტროფი"} #${stNum}`,
-        sub: isEn ? st.english_translation : st.georgian_raw_text.replace(/\n/g, " / ")
-      });
-    } else if (matchingStepIdx >= 0) {
-      const s = steps[matchingStepIdx];
-      results.push({
-        type: "step",
-        stepIndex: matchingStepIdx,
-        title: `${s.chapterNumber}. ${isEn ? s.title_en : s.title_ka} (#${stNum})`,
-        sub: isEn ? s.narrative_en : s.narrative_ka
+        stepIndex: idx,
+        title: `${isEn ? "Stanza" : "სტროფი"} #${stNum} (${isEn ? "Ch." : "თავი"} ${s.chapterNumber})`,
+        sub: isEn ? s.verse_en || s.verse_ka : (s.verse_ka || "").replace(/\n/g, " / ")
       });
     }
   }
 
   const qLower = q.toLowerCase();
-  steps.forEach((step, idx) => {
-    const hay = `${step.title_ka || ""} ${step.title_en || ""} ${step.narrative_ka || ""} ${step.narrative_en || ""}`.toLowerCase();
-    if (hay.includes(qLower) && results.length < 7) {
-      results.push({
-        type: "step",
-        stepIndex: idx,
-        title: `${step.chapterNumber}. ${isEn ? step.title_en || step.title : step.title_ka || step.title}`,
-        sub: `${step.stanzaStart}–${step.stanzaEnd}`
-      });
-    }
-  });
-
-  if (q.length >= 2 && results.length < 10) {
-    for (let s = 1; s <= 1669; s++) {
-      const st = stanzasByNumber[String(s)];
-      if (!st) continue;
-      if (
-        (st.georgian_raw_text && st.georgian_raw_text.toLowerCase().includes(qLower)) ||
-        (st.english_translation && st.english_translation.toLowerCase().includes(qLower))
-      ) {
-        const matchingStepIdx = steps.findIndex(
-          (step) => s >= step.stanzaStart && s <= step.stanzaEnd
-        );
+  if (q.length >= 2) {
+    for (let i = 0; i < steps.length; i++) {
+      const s = steps[i];
+      const hay = `${s.verse_ka || ""} ${s.verse_en || ""} ${s.chapter_title_ka || ""} ${
+        s.chapter_title_en || ""
+      }`.toLowerCase();
+      if (hay.includes(qLower)) {
         results.push({
-          type: "stanza",
-          stanzaNum: s,
-          stepIndex: matchingStepIdx >= 0 ? matchingStepIdx : 0,
-          title: `${isEn ? "Stanza" : "სტროფი"} #${s}`,
-          sub: isEn ? st.english_translation : st.georgian_raw_text.split("\n")[0]
+          stepIndex: i,
+          title:
+            currentGranularity === "stanzas"
+              ? `${isEn ? "Stanza" : "სტროფი"} #${s.stanzaNumber} • ${isEn ? "Ch." : "თავი"} ${s.chapterNumber}`
+              : `${isEn ? "Ch." : "თავი"} ${s.chapterNumber}: ${isEn ? s.title_en : s.title_ka}`,
+          sub: isEn ? s.verse_en || s.verse_ka : (s.verse_ka || "").split("\n")[0]
         });
         if (results.length >= 10) break;
       }
@@ -819,7 +668,9 @@ function handleSearchInput(query) {
   }
 
   if (results.length === 0) {
-    dropdown.innerHTML = `<div class="search-item"><div class="search-item-sub">${isEn ? "No matches found" : "არაფერი მოიძებნა"}</div></div>`;
+    dropdown.innerHTML = `<div class="search-item"><div class="search-item-sub">${
+      isEn ? "No matches found" : "არაფერი მოიძებნა"
+    }</div></div>`;
     dropdown.classList.remove("hidden");
     return;
   }
@@ -840,14 +691,7 @@ function handleSearchInput(query) {
       const r = results[parseInt(el.getAttribute("data-res-idx"), 10)];
       dropdown.classList.add("hidden");
       if (!r) return;
-      const card = document.getElementById(`card-${r.stepIndex}`);
-      if (card) {
-        card.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-      updateGraph(r.stepIndex);
-      if (r.type === "stanza" && r.stanzaNum) {
-        openStanzaModal(steps[r.stepIndex], r.stanzaNum);
-      }
+      activateStep(r.stepIndex, true);
     });
   });
 }
@@ -861,15 +705,16 @@ function updateUITextByLang() {
     }
   });
 
-  const epBtn = document.querySelector("#granularityToggle [data-granularity='episodes']");
+  const stBtn = document.querySelector("#granularityToggle [data-granularity='stanzas']");
   const chBtn = document.querySelector("#granularityToggle [data-granularity='chapters']");
-  if (epBtn) epBtn.textContent = isEn ? "26 Episodes" : "26 ეპიზოდი";
+  if (stBtn) stBtn.textContent = isEn ? "1669 Stanzas" : "1669 სტროფი";
   if (chBtn) chBtn.textContent = isEn ? "65 Chapters" : "65 თავი";
 
   const searchInput = document.getElementById("globalSearchInput");
   if (searchInput) {
-    searchInput.placeholder = isEn ? "🔍 Stanza # or search..." : "🔍 სტროფი # ან ძებნა...";
+    searchInput.placeholder = isEn ? "🔍 Stanza # or word..." : "🔍 სტროფი # ან სიტყვა...";
   }
+  populateChapterDropdown();
 }
 
 function setupControls() {
@@ -888,7 +733,6 @@ function setupControls() {
       e.currentTarget.classList.add("active");
       currentGranularity = e.currentTarget.getAttribute("data-granularity");
       currentStepIndex = 0;
-      buildScrubber();
       buildScrollCards();
       updateGraph(0);
       setupScrollObserver();
@@ -901,13 +745,8 @@ function setupControls() {
       document.querySelectorAll("#langToggle .seg-btn").forEach((b) => b.classList.remove("active"));
       e.currentTarget.classList.add("active");
       currentLang = e.currentTarget.getAttribute("data-lang");
-      modalLang = currentLang;
-      document.querySelectorAll("#modalLangToggle .seg-btn").forEach((b) => {
-        b.classList.toggle("active", b.getAttribute("data-lang") === modalLang);
-      });
       updateUITextByLang();
       renderRealms();
-      buildScrubber();
       buildScrollCards();
       updateGraph(currentStepIndex);
       setupScrollObserver();
@@ -915,28 +754,44 @@ function setupControls() {
     });
   });
 
-  document.querySelectorAll("#modalLangToggle .seg-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      document.querySelectorAll("#modalLangToggle .seg-btn").forEach((b) => b.classList.remove("active"));
-      e.currentTarget.classList.add("active");
-      modalLang = e.currentTarget.getAttribute("data-lang");
-      if (currentModalStep) {
-        openStanzaModal(currentModalStep, currentModalHighlightStanza);
-      }
-    });
-  });
-
-  const commBtn = document.getElementById("toggleCommentaryBtn");
-  if (commBtn) {
-    commBtn.addEventListener("click", () => {
-      showAllCommentary = !showAllCommentary;
-      commBtn.classList.toggle("active", showAllCommentary);
-      if (currentModalStep) {
-        openStanzaModal(currentModalStep, currentModalHighlightStanza);
+  // Chapter Dropdown Jump
+  const chSelect = document.getElementById("chapterSelect");
+  if (chSelect) {
+    chSelect.addEventListener("change", (e) => {
+      const chNum = parseInt(e.target.value, 10);
+      const steps = getActiveSteps();
+      const targetIdx = steps.findIndex((s) => s.chapterNumber === chNum);
+      if (targetIdx >= 0) {
+        activateStep(targetIdx, true);
       }
     });
   }
 
+  // Stanza Range Slider & Step Buttons
+  const slider = document.getElementById("stanzaSlider");
+  if (slider) {
+    slider.addEventListener("input", (e) => {
+      const idx = parseInt(e.target.value, 10);
+      if (!isNaN(idx)) {
+        activateStep(idx, true);
+      }
+    });
+  }
+
+  document.getElementById("prevStepBtn").addEventListener("click", () => {
+    if (currentStepIndex > 0) {
+      activateStep(currentStepIndex - 1, true);
+    }
+  });
+
+  document.getElementById("nextStepBtn").addEventListener("click", () => {
+    const steps = getActiveSteps();
+    if (currentStepIndex < steps.length - 1) {
+      activateStep(currentStepIndex + 1, true);
+    }
+  });
+
+  // Search Input
   const searchInput = document.getElementById("globalSearchInput");
   searchInput.addEventListener("input", (e) => handleSearchInput(e.target.value));
   searchInput.addEventListener("keydown", (e) => {
@@ -953,10 +808,6 @@ function setupControls() {
 
   document.getElementById("closeInspectorBtn").addEventListener("click", () => {
     document.getElementById("inspector").classList.remove("open");
-  });
-
-  document.getElementById("closeModalBtn").addEventListener("click", () => {
-    document.getElementById("stanzaModal").classList.add("hidden");
   });
 
   document.getElementById("openMonographBtn").addEventListener("click", () => {
@@ -976,18 +827,18 @@ function setupScrollObserver() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const idx = parseInt(entry.target.id.replace("card-", ""), 10);
+          const idx = parseInt(entry.target.getAttribute("data-idx"), 10);
           if (!isNaN(idx) && idx !== currentStepIndex) {
+            const prevCard = document.getElementById(`card-${currentStepIndex}`);
+            if (prevCard) prevCard.classList.remove("active");
             currentStepIndex = idx;
-            document.querySelectorAll(".step-card").forEach((c, i) => {
-              c.classList.toggle("active", i === idx);
-            });
+            entry.target.classList.add("active");
             updateGraph(idx);
           }
         }
       });
     },
-    { threshold: 0.55 }
+    { rootMargin: "-35% 0px -45% 0px", threshold: 0.1 }
   );
 
   document.querySelectorAll(".step-card").forEach((card) => scrollObserver.observe(card));

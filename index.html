@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ვეფხისტყაოსანი — სიუჟეტური ქსელი (1–1669)</title>
+  <title>ვეფხისტყაოსანი — სტროფული სიუჟეტური ქსელი (1–1669)</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
 
-  <!-- Clean, Single-Row Minimal Top Bar -->
+  <!-- Clean Single-Row Top Bar -->
   <header class="top-bar">
     <div class="brand">
       <h1>ვეფხისტყაოსანი</h1>
-      <span id="currentChapter" class="chapter-badge">1 / 26</span>
+      <span id="currentChapter" class="chapter-badge">სტრ. 1 / 1669</span>
       <span id="modeBadge" class="mode-badge hidden">📜 მოგონება</span>
+    </div>
+
+    <!-- Chapter Quick-Jump Dropdown -->
+    <div class="chapter-select-wrap">
+      <select id="chapterSelect" class="chapter-select" aria-label="თავის არჩევა"></select>
     </div>
 
     <!-- Compact Relationship Filters -->
@@ -30,39 +35,52 @@
       <button class="filter-chip" data-type="grief_support" title="თანაგრძნობა / Shared Mourning">💧 თანაგრძნობა</button>
     </nav>
 
-    <!-- Compact Tools: Search, 26/65 Toggle, KA/EN Toggle, Monograph -->
+    <!-- Right Controls: Search, Granularity (1669 Stanzas | 65 Chapters), Language, Monograph -->
     <div class="top-controls">
       <div class="search-wrapper">
         <input
           type="search"
           id="globalSearchInput"
           class="search-input"
-          placeholder="🔍 სტროფი # ან ძებნა..."
+          placeholder="🔍 სტროფი # ან სიტყვა..."
           autocomplete="off"
         />
         <div id="searchDropdown" class="search-dropdown hidden"></div>
       </div>
 
-      <div class="segmented-control" id="granularityToggle" title="26 ეპიზოდი ან 65 თავი">
-        <button class="seg-btn active" data-granularity="episodes">26 ეპიზოდი</button>
+      <div class="segmented-control" id="granularityToggle" title="სტროფული ან თავების რეჟიმი">
+        <button class="seg-btn active" data-granularity="stanzas">1669 სტროფი</button>
         <button class="seg-btn" data-granularity="chapters">65 თავი</button>
       </div>
 
       <div class="segmented-control" id="langToggle" title="ენა / Language">
         <button class="seg-btn active" data-lang="ka">KA</button>
         <button class="seg-btn" data-lang="en">EN</button>
+        <button class="seg-btn" data-lang="bi">KA+EN</button>
       </div>
 
-      <button class="icon-btn" id="openMonographBtn" title="სამეცნიერო კვლევა და წყაროები / Scholarly Monograph">
+      <button class="icon-btn" id="openMonographBtn" title="სამეცნიერო მონოგრაფია და წყაროები / Scholarly Monograph">
         📜
       </button>
     </div>
   </header>
 
-  <!-- Minimal Timeline Scrubber -->
-  <div class="timeline-scrubber" id="timelineScrubber"></div>
+  <!-- Interactive Stanza Scrubber Bar (1–1669) -->
+  <div class="timeline-scrubber">
+    <button class="step-nav-btn" id="prevStepBtn" title="წინა სტროფი / Previous">◀</button>
+    <input
+      type="range"
+      id="stanzaSlider"
+      class="stanza-slider"
+      min="0"
+      max="1668"
+      value="0"
+      aria-label="სტროფის სკრაბერი"
+    />
+    <button class="step-nav-btn" id="nextStepBtn" title="შემდეგი სტროფი / Next">▶</button>
+  </div>
 
-  <!-- Main Split Layout: Clean Narrative Cards + Uncluttered Swimlane Graph -->
+  <!-- Main Split Layout: Stanza Scroller + Sticky Swimlane Realm Graph -->
   <main class="app-container">
     <section class="scroller" id="scroller"></section>
     <section class="stage" id="stageContainer">
@@ -78,31 +96,6 @@
     </div>
     <div id="inspectorBody" class="inspector-content"></div>
   </aside>
-
-  <!-- Clean Full Stanza Reader Modal (with Collapsible Commentary & Bilingual Switch) -->
-  <div id="stanzaModal" class="modal-overlay hidden">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div>
-          <h2 id="modalTitle">თავის ტექსტი</h2>
-          <div id="modalSubtitle" class="modal-subtitle"></div>
-        </div>
-        <div class="modal-header-actions">
-          <button class="toggle-chip" id="toggleCommentaryBtn" title="კომენტარების ჩვენება/დამალვა">
-            🎓 კომენტარები
-          </button>
-          <div class="segmented-control" id="modalLangToggle">
-            <button class="seg-btn active" data-lang="ka">KA</button>
-            <button class="seg-btn" data-lang="en">EN</button>
-            <button class="seg-btn" data-lang="bi">KA+EN</button>
-          </div>
-          <button class="close-btn" id="closeModalBtn" aria-label="Close">×</button>
-        </div>
-      </div>
-      <div id="modalChapterMeta" class="modal-chapter-meta hidden"></div>
-      <div id="modalStanzasBody" class="modal-body"></div>
-    </div>
-  </div>
 
   <!-- Scholarly Monograph Modal -->
   <div id="monographModal" class="modal-overlay hidden">
