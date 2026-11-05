@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ვეფხისტყაოსანი — სტროფული სიუჟეტური ქსელი (1–1669)</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
     <div class="brand">
       <h1>ვეფხისტყაოსანი</h1>
       <span id="currentChapter" class="chapter-badge">სტრ. 1 / 1669</span>
-      <span id="modeBadge" class="mode-badge hidden">📜 მოგონება</span>
+      <span id="modeBadge" class="mode-badge hidden">მოგონება</span>
     </div>
 
     <!-- Chapter Quick-Jump Dropdown -->
@@ -22,17 +22,17 @@
       <select id="chapterSelect" class="chapter-select" aria-label="თავის არჩევა"></select>
     </div>
 
-    <!-- Compact Relationship Filters -->
+    <!-- Compact Text Relationship Filters -->
     <nav class="filters" id="typeFilters" aria-label="კავშირის ფილტრი">
       <button class="filter-chip active" data-type="all">ყველა</button>
-      <button class="filter-chip" data-type="love" title="მიჯნურობა / Courtly Love">💍 მიჯნურობა</button>
-      <button class="filter-chip" data-type="brotherhood" title="დაძმობილება / Sworn Brotherhood">🤝 ძმობა</button>
-      <button class="filter-chip" data-type="feudal" title="მეფობა და ყმობა / Fealty">👑 მეფობა</button>
-      <button class="filter-chip" data-type="service" title="ერთგულება და მსახურება / Loyal Service">🛡️ მსახურება</button>
-      <button class="filter-chip" data-type="letter" title="წერილი / Epistle">💌 წერილი</button>
-      <button class="filter-chip" data-type="conflict" title="ბრძოლა / Conflict">⚔️ ბრძოლა</button>
-      <button class="filter-chip" data-type="rescue" title="დახსნა / Rescue">🔓 დახსნა</button>
-      <button class="filter-chip" data-type="grief_support" title="თანაგრძნობა / Shared Mourning">💧 თანაგრძნობა</button>
+      <button class="filter-chip" data-type="love" title="მიჯნურობა / Courtly Love">მიჯნურობა</button>
+      <button class="filter-chip" data-type="brotherhood" title="დაძმობილება / Sworn Brotherhood">ძმობა</button>
+      <button class="filter-chip" data-type="feudal" title="მეფობა და ყმობა / Fealty">მეფობა</button>
+      <button class="filter-chip" data-type="service" title="ერთგულება და მსახურება / Loyal Service">მსახურება</button>
+      <button class="filter-chip" data-type="letter" title="წერილი / Epistle">წერილი</button>
+      <button class="filter-chip" data-type="conflict" title="ბრძოლა / Conflict">ბრძოლა</button>
+      <button class="filter-chip" data-type="rescue" title="დახსნა / Rescue">დახსნა</button>
+      <button class="filter-chip" data-type="grief_support" title="თანაგრძნობა / Shared Mourning">თანაგრძნობა</button>
     </nav>
 
     <!-- Right Controls: Search, Granularity (1669 Stanzas | 65 Chapters), Language, Monograph -->
@@ -42,7 +42,7 @@
           type="search"
           id="globalSearchInput"
           class="search-input"
-          placeholder="🔍 სტროფი # ან სიტყვა..."
+          placeholder="სტროფი # ან სიტყვა..."
           autocomplete="off"
         />
         <div id="searchDropdown" class="search-dropdown hidden"></div>
@@ -60,7 +60,7 @@
       </div>
 
       <button class="icon-btn" id="openMonographBtn" title="სამეცნიერო მონოგრაფია და წყაროები / Scholarly Monograph">
-        📜
+        კვლევა
       </button>
     </div>
   </header>
@@ -102,7 +102,7 @@
     <div class="modal-card">
       <div class="modal-header">
         <div>
-          <h2 id="monographTitle">📜 სამეცნიერო მონოგრაფია და წყაროები</h2>
+          <h2 id="monographTitle">სამეცნიერო მონოგრაფია და წყაროები</h2>
           <div class="modal-subtitle">1966 აკადემიური გამოცემა (1,669 სტროფი) • მ. უორდროპის თარგმანი (1,576 სტროფი)</div>
         </div>
         <button class="close-btn" id="closeMonographBtn" aria-label="Close">×</button>
@@ -111,8 +111,8 @@
     </div>
   </div>
 
-  <script src="data/poem-bundle.js?v=4"></script>
-  <script src="data/story-graph-bundle.js?v=4"></script>
-  <script src="app.js?v=4"></script>
+  <script src="data/poem-bundle.js?v=5"></script>
+  <script src="data/story-graph-bundle.js?v=5"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

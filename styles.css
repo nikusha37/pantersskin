@@ -123,7 +123,7 @@ body {
   border: 1px solid transparent;
   color: var(--text-muted);
   font-size: 0.73rem;
-  padding: 4px 8px;
+  padding: 4px 9px;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.18s ease;
@@ -247,15 +247,15 @@ body {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--card-border);
   color: var(--text-main);
-  width: 29px;
-  height: 29px;
-  border-radius: 50%;
+  padding: 4px 10px;
+  border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   cursor: pointer;
   transition: all 0.18s;
+  white-space: nowrap;
 }
 
 .icon-btn:hover {
@@ -502,6 +502,7 @@ svg#stageSvg {
 
 .edge-group {
   opacity: 1 !important;
+  cursor: pointer;
 }
 
 .edge-line {
@@ -522,16 +523,24 @@ svg#stageSvg {
   stroke-width: 3.6px;
 }
 
-.emoji-badge-bg {
-  fill: #121624;
-  stroke-width: 1.5px;
+.edge-label-bg {
+  fill: #101422;
+  stroke-width: 1.3px;
   cursor: pointer;
+  transition: fill 0.15s;
 }
 
-.emoji-marker {
-  font-size: 15px;
+.edge-group:hover .edge-label-bg {
+  fill: #1b2238;
+}
+
+.edge-label-text {
+  font-size: 10px;
+  font-weight: 600;
+  fill: #f0f2f8;
   cursor: pointer;
   user-select: none;
+  letter-spacing: 0.01em;
 }
 
 /* Clean Floating Inspector Card */

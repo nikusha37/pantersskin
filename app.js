@@ -20,14 +20,14 @@ let height = 620;
 
 const FILTER_LABELS = {
   all: { ka: "ყველა", en: "All" },
-  love: { ka: "💍 მიჯნურობა", en: "💍 Love" },
-  brotherhood: { ka: "🤝 ძმობა", en: "🤝 Brotherhood" },
-  feudal: { ka: "👑 მეფობა", en: "👑 Fealty" },
-  service: { ka: "🛡️ მსახურება", en: "🛡️ Service" },
-  letter: { ka: "💌 წერილი", en: "💌 Letter" },
-  conflict: { ka: "⚔️ ბრძოლა", en: "⚔️ Conflict" },
-  rescue: { ka: "🔓 დახსნა", en: "🔓 Rescue" },
-  grief_support: { ka: "💧 თანაგრძნობა", en: "💧 Empathy" }
+  love: { ka: "მიჯნურობა", en: "Love" },
+  brotherhood: { ka: "ძმობა", en: "Brotherhood" },
+  feudal: { ka: "მეფობა", en: "Fealty" },
+  service: { ka: "მსახურება", en: "Service" },
+  letter: { ka: "წერილი", en: "Letter" },
+  conflict: { ka: "ბრძოლა", en: "Conflict" },
+  rescue: { ka: "დახსნა", en: "Rescue" },
+  grief_support: { ka: "თანაგრძნობა", en: "Empathy" }
 };
 
 function escapeHtml(str) {
@@ -36,6 +36,12 @@ function escapeHtml(str) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function getEdgeShortLabel(typeKey) {
+  const item = FILTER_LABELS[typeKey];
+  if (!item) return typeKey;
+  return currentLang === "en" ? item.en : item.ka;
 }
 
 function getActiveSteps() {
@@ -172,10 +178,12 @@ function buildScrollCards() {
 
     const srcName = srcChar ? (isEn ? srcChar.name_en : srcChar.name_ka) : "";
     const tgtName = tgtChar ? (isEn ? tgtChar.name_en : tgtChar.name_ka) : "";
+    const typeLabel = primaryEdge ? getEdgeShortLabel(primaryEdge.type) : "";
     const bondSummary =
       primaryEdge && typeMeta
-        ? `${typeMeta.emoji} ${srcName} ➔ ${tgtName}`
+        ? `${typeLabel}: ${srcName} ➔ ${tgtName}`
         : "";
+    const bondColor = typeMeta?.color || "rgba(255,255,255,0.2)";
 
     const metaLeft =
       currentGranularity === "stanzas"
@@ -209,13 +217,13 @@ function buildScrollCards() {
         try {
           host = new URL(url).hostname.replace("www.", "");
         } catch (e) {}
-        return `<a class="source-chip" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">📚 ${escapeHtml(host)} ↗</a>`;
+        return `<a class="source-chip" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(host)} ↗</a>`;
       })
       .join("");
 
     const commentaryBlock = commText
       ? `<details class="stanza-commentary-details">
-           <summary>🎓 ${isEn ? "Commentary" : "კომენტარი"}</summary>
+           <summary>${isEn ? "Commentary" : "კომენტარი"}</summary>
            <div class="commentary-text">
              ${escapeHtml(commText)}
              ${sourcesHtml ? `<div class="source-links-row">${sourcesHtml}</div>` : ""}
@@ -236,7 +244,13 @@ function buildScrollCards() {
     }" id="card-${idx}" data-idx="${idx}">
         <div class="step-meta">
           <span>${escapeHtml(metaLeft)}</span>
-          ${bondSummary ? `<span class="step-bond-pill">${escapeHtml(bondSummary)}</span>` : ""}
+          ${
+            bondSummary
+              ? `<span class="step-bond-pill" style="border-color:${escapeHtml(bondColor)};">${escapeHtml(
+                  bondSummary
+                )}</span>`
+              : ""
+          }
         </div>
         ${chapterTitleBlock}
         ${verseBlock}
@@ -337,7 +351,7 @@ function updateGraph(stepIndex) {
 
   const modeBadge = document.getElementById("modeBadge");
   if (step.mode === "flashback") {
-    modeBadge.textContent = isEn ? "📜 Flashback" : "📜 მოგონება";
+    modeBadge.textContent = isEn ? "Flashback" : "მოგონება";
     modeBadge.classList.remove("hidden");
   } else {
     modeBadge.classList.add("hidden");
@@ -401,9 +415,16 @@ function updateGraph(stepIndex) {
       const midX = 0.25 * sPos.x + 0.5 * cx + 0.25 * tPos.x;
       const midY = 0.25 * sPos.y + 0.5 * cy + 0.25 * tPos.y;
 
+      const shortLabel = getEdgeShortLabel(edge.type);
+      const pillW = Math.max(shortLabel.length * 6.5 + 16, 52);
+      const pillH = 20;
+
       return {
         ...edge,
         typeMeta: graphData.interaction_types[edge.type],
+        shortLabel,
+        pillW,
+        pillH,
         sourcePos: sPos,
         targetPos: tPos,
         cx,
@@ -415,7 +436,7 @@ function updateGraph(stepIndex) {
     })
     .filter(Boolean);
 
-  // Synchronous D3 DOM update (smooth motion handled via CSS transitions — zero D3 timer collisions)
+  // Synchronous D3 DOM update for Edges with Text Pills
   const edges = gEdges.selectAll(".edge-group").data(edgesArray, (d) => d.id);
   edges.exit().remove();
 
@@ -426,10 +447,14 @@ function updateGraph(stepIndex) {
     .on("click", (event, d) => openInspector("interaction", d, step));
 
   edgesEnter.append("path").attr("class", "edge-line").attr("stroke-width", 2.2);
-  edgesEnter.append("circle").attr("class", "emoji-badge-bg").attr("r", 13);
+  edgesEnter
+    .append("rect")
+    .attr("class", "edge-label-bg")
+    .attr("rx", 10)
+    .attr("ry", 10);
   edgesEnter
     .append("text")
-    .attr("class", "emoji-marker")
+    .attr("class", "edge-label-text")
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "central");
 
@@ -446,18 +471,20 @@ function updateGraph(stepIndex) {
     .attr("d", (d) => `M${d.sourcePos.x},${d.sourcePos.y} Q${d.cx},${d.cy} ${d.targetPos.x},${d.targetPos.y}`);
 
   edgesMerged
-    .select(".emoji-badge-bg")
-    .attr("cx", (d) => d.midX)
-    .attr("cy", (d) => d.midY)
+    .select(".edge-label-bg")
+    .attr("x", (d) => d.midX - d.pillW / 2)
+    .attr("y", (d) => d.midY - d.pillH / 2)
+    .attr("width", (d) => d.pillW)
+    .attr("height", (d) => d.pillH)
     .attr("stroke", (d) => (d.typeMeta ? d.typeMeta.color : "#d4af37"));
 
   edgesMerged
-    .select(".emoji-marker")
-    .text((d) => (d.typeMeta ? d.typeMeta.emoji : "🔗"))
+    .select(".edge-label-text")
+    .text((d) => d.shortLabel)
     .attr("x", (d) => d.midX)
     .attr("y", (d) => d.midY);
 
-  // Character Nodes (100% synchronous DOM attributes + CSS GPU transition on transform)
+  // Character Nodes
   const nodes = gNodes.selectAll(".character-group").data(nodesArray, (d) => d.id);
   nodes.exit().remove();
 
@@ -517,7 +544,7 @@ function openInspector(kind, data, step) {
 
     titleEl.textContent = charName;
     bodyEl.innerHTML = `
-      <div class="inspector-sub">${escapeHtml(charTitle)} • 📍 ${escapeHtml(realmName)}</div>
+      <div class="inspector-sub">${escapeHtml(charTitle)} • ${escapeHtml(realmName)}</div>
       ${
         statusObj
           ? `<div class="inspector-status-box">${escapeHtml(isEn ? statusObj.en : statusObj.ka)}</div>`
@@ -532,10 +559,10 @@ function openInspector(kind, data, step) {
             const otherId = l.source === data.id ? l.target : l.source;
             const other = graphData.characters[otherId];
             const otherName = isEn ? other?.name_en || other?.name : other?.name_ka || other?.name;
-            const emoji = graphData.interaction_types[l.type]?.emoji || "🔗";
+            const typeText = getEdgeShortLabel(l.type);
             const lbl = isEn ? l.label_en || l.label : l.label_ka || l.label;
             return `<li class="inspector-conn-item" data-conn-idx="${idx}">
-              <strong>${emoji} ${escapeHtml(otherName)}</strong> — ${escapeHtml(lbl)}
+              <strong>[${escapeHtml(typeText)}] ${escapeHtml(otherName)}</strong> — ${escapeHtml(lbl)}
             </li>`;
           })
           .join("")}
@@ -558,14 +585,13 @@ function openInspector(kind, data, step) {
   } else {
     const src = graphData.characters[data.source];
     const tgt = graphData.characters[data.target];
-    const emoji = data.typeMeta ? data.typeMeta.emoji : "🔗";
     const bondTitle = isEn ? data.label_en || data.label : data.label_ka || data.label;
     const srcName = isEn ? src?.name_en || src?.name : src?.name_ka || src?.name;
     const tgtName = isEn ? tgt?.name_en || tgt?.name : tgt?.name_ka || tgt?.name;
     const detailText = isEn ? data.detail_en || data.detail : data.detail_ka || data.detail;
     const quoteText = isEn ? data.quote_en || data.quote : data.quote_ka || data.quote;
 
-    titleEl.textContent = `${emoji} ${bondTitle}`;
+    titleEl.textContent = bondTitle;
     bodyEl.innerHTML = `
       <div class="inspector-sub">
         ${escapeHtml(srcName)} ➔ ${escapeHtml(tgtName)}
@@ -589,7 +615,7 @@ function openMonographModal() {
       (s) => `
       <li style="margin-bottom:6px;">
         <a class="source-chip" href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">
-          🔗 ${escapeHtml(s.title)} ↗
+          ${escapeHtml(s.title)} ↗
         </a>
       </li>`
     )
@@ -727,9 +753,12 @@ function updateUITextByLang() {
   if (stBtn) stBtn.textContent = isEn ? "1669 Stanzas" : "1669 სტროფი";
   if (chBtn) chBtn.textContent = isEn ? "65 Chapters" : "65 თავი";
 
+  const monoBtn = document.getElementById("openMonographBtn");
+  if (monoBtn) monoBtn.textContent = isEn ? "Monograph" : "კვლევა";
+
   const searchInput = document.getElementById("globalSearchInput");
   if (searchInput) {
-    searchInput.placeholder = isEn ? "🔍 Stanza # or word..." : "🔍 სტროფი # ან სიტყვა...";
+    searchInput.placeholder = isEn ? "Stanza # or word..." : "სტროფი # ან სიტყვა...";
   }
   populateChapterDropdown();
 }
