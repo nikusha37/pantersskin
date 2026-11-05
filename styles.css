@@ -462,7 +462,13 @@ svg#stageSvg {
   letter-spacing: 0.02em;
 }
 
+.character-group {
+  opacity: 1 !important;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .character-node {
+  opacity: 1 !important;
   cursor: pointer;
   transition: filter 0.2s, r 0.2s;
 }
@@ -481,16 +487,21 @@ svg#stageSvg {
 }
 
 .character-group.is-focal .character-active-ring {
-  opacity: 0.95;
+  opacity: 0.95 !important;
 }
 
 .node-label {
+  opacity: 1 !important;
   font-size: 11.5px;
   font-weight: 600;
   fill: var(--text-main);
   text-anchor: middle;
   pointer-events: none;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95);
+}
+
+.edge-group {
+  opacity: 1 !important;
 }
 
 .edge-line {

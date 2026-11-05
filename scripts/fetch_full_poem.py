@@ -104,6 +104,67 @@ TYPE_ACTION_LABELS = {
     "grief_support": ("თანაგრძნობა და გლოვა", "Shared Grief & Consolation"),
 }
 
+ROMANTIC_PAIRS = {
+    frozenset({"avtandil", "tinatin"}),
+    frozenset({"tariel", "nestan"}),
+    frozenset({"fatman", "chashnagiri"}),
+}
+
+CONFLICT_PAIRS = {
+    frozenset({"rostevan", "tariel"}),
+    frozenset({"avtandil", "tariel"}),  # only before meeting
+    frozenset({"tariel", "ramaz"}),
+    frozenset({"tariel", "khvarazmsha"}),
+    frozenset({"tariel", "parsadan"}),
+    frozenset({"parsadan", "davari"}),
+    frozenset({"davari", "nestan"}),
+    frozenset({"avtandil", "chashnagiri"}),
+    frozenset({"fatman", "chashnagiri"}),
+    frozenset({"usen", "fatman"}),
+    frozenset({"surkhavi", "nestan"}),
+    frozenset({"dulardukht", "nestan"}),
+    frozenset({"rosan", "nestan"}),
+    frozenset({"tariel", "dulardukht"}),
+    frozenset({"avtandil", "dulardukht"}),
+    frozenset({"pridon", "dulardukht"}),
+    frozenset({"rostevan", "sograt"}),
+}
+
+BROTHERHOOD_SET = {"tariel", "avtandil", "pridon", "asmat"}
+SERVICE_PAIRS = {
+    frozenset({"avtandil", "shermadin"}),
+    frozenset({"rostevan", "sograt"}),
+    frozenset({"avtandil", "sograt"}),
+    frozenset({"tariel", "asmat"}),
+    frozenset({"nestan", "asmat"}),
+    frozenset({"avtandil", "asmat"}),
+    frozenset({"davari", "nestan"}),
+}
+
+def sanitize_pair_type(src, tgt, st_type, ch_num, default_type):
+    pair = frozenset({src, tgt})
+    # Romantic love only applies to romantic pairs
+    if st_type == "love" and pair not in ROMANTIC_PAIRS:
+        if pair in SERVICE_PAIRS:
+            return "service"
+        if src in BROTHERHOOD_SET and tgt in BROTHERHOOD_SET:
+            return "brotherhood"
+        return default_type if default_type != "love" else "feudal"
+
+    # Conflict only applies to actual adversarial pairs (avoid false positives from metaphorical weapons in friendly speeches)
+    if st_type == "conflict":
+        if pair == frozenset({"avtandil", "tariel"}) and ch_num >= 8:
+            return "brotherhood"
+        if pair not in CONFLICT_PAIRS:
+            if pair in ROMANTIC_PAIRS:
+                return "love"
+            if pair in SERVICE_PAIRS:
+                return "service"
+            if src in BROTHERHOOD_SET and tgt in BROTHERHOOD_SET:
+                return "brotherhood"
+            return default_type
+    return st_type
+
 def get_chapter_context(ch_num, st_num):
     """Returns (mode, nodeRealms, focal_pair, secondary_edges) for a given chapter and stanza."""
     mode = "flashback" if (10 <= ch_num <= 28 or ch_num == 47) else "present"
@@ -191,7 +252,6 @@ def get_chapter_context(ch_num, st_num):
         return mode, {"tariel": r_hero, "nestan": r_hero, "avtandil": r_hero, "pridon": "mulgazanzar", "fatman": "gulansharo", "surkhavi": "gulansharo", "asmat": "wilderness"}, ("nestan", "fatman", "rescue") if ch_num == 58 else ("pridon", "tariel", "brotherhood"), [("tariel", "nestan", "love")]
     if ch_num in (61, 62, 63):
         return mode, {"rostevan": "arabia", "tinatin": "arabia", "avtandil": "arabia", "tariel": "arabia", "nestan": "arabia", "pridon": "arabia", "asmat": "arabia"}, ("avtandil", "tinatin", "love"), [("tariel", "rostevan", "feudal"), ("tariel", "avtandil", "brotherhood")]
-    # ch 64, 65
     return mode, {"tariel": "india", "nestan": "india", "asmat": "india", "avtandil": "arabia", "tinatin": "arabia", "pridon": "mulgazanzar", "rustaveli": "arabia"}, ("tariel", "nestan", "feudal") if ch_num == 64 else ("rustaveli", "tariel", "grief_support"), [("tariel", "asmat", "feudal"), ("tariel", "avtandil", "brotherhood")]
 
 def detect_stanza_characters(text_ka, text_en, base_realms):
@@ -238,7 +298,7 @@ def build_stanza_graph():
                     node_realms[m_char] = CHARACTERS[m_char]["base_realm"]
 
             def_src, def_tgt, def_type = focal_default
-            st_type = detect_stanza_type(raw_ka, raw_en, def_type)
+            raw_type = detect_stanza_type(raw_ka, raw_en, def_type)
 
             if len(mentioned) >= 2:
                 src, tgt = mentioned[0], mentioned[1]
@@ -256,6 +316,8 @@ def build_stanza_graph():
                     src, tgt = m0, def_src
             else:
                 src, tgt = def_src, def_tgt
+
+            st_type = sanitize_pair_type(src, tgt, raw_type, ch_num, def_type)
 
             if src not in node_realms:
                 node_realms[src] = CHARACTERS[src]["base_realm"]
@@ -352,7 +414,7 @@ def build_stanza_graph():
                 "chapterNumber": ch_num,
                 "poemChapters": [ch_num],
                 "stanzaStart": stanzas[0]["stanza_number"],
-                "stanzaEnd": stanzas[-1][ "stanza_number"],
+                "stanzaEnd": stanzas[-1]["stanza_number"],
                 "mode": rep["mode"],
                 "title": ch_title_ka,
                 "title_ka": f"თავი {ch_num}: {ch_title_ka}",

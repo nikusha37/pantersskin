@@ -345,10 +345,21 @@ function updateGraph(stepIndex) {
 
   document.getElementById("stageContainer").classList.toggle("flashback-stage", step.mode === "flashback");
 
-  const positions = computePositions(step.nodeRealms);
+  // Ensure every character referenced by an edge is present in effectiveRealms
+  const effectiveRealms = { ...(step.nodeRealms || {}) };
+  (step.interactions || []).forEach((edge) => {
+    if (edge.source && !effectiveRealms[edge.source] && graphData.characters[edge.source]) {
+      effectiveRealms[edge.source] = graphData.characters[edge.source].base_realm;
+    }
+    if (edge.target && !effectiveRealms[edge.target] && graphData.characters[edge.target]) {
+      effectiveRealms[edge.target] = graphData.characters[edge.target].base_realm;
+    }
+  });
+
+  const positions = computePositions(effectiveRealms);
   const focalSet = new Set(step.activeChars || []);
 
-  const nodesArray = Object.keys(step.nodeRealms)
+  const nodesArray = Object.keys(effectiveRealms)
     .map((charId) => {
       const chObj = graphData.characters[charId];
       if (!chObj || !positions[charId]) return null;
@@ -356,7 +367,7 @@ function updateGraph(stepIndex) {
         ...chObj,
         x: positions[charId].x,
         y: positions[charId].y,
-        currentRealm: step.nodeRealms[charId],
+        currentRealm: effectiveRealms[charId],
         isFocal: focalSet.has(charId)
       };
     })
@@ -404,17 +415,14 @@ function updateGraph(stepIndex) {
     })
     .filter(Boolean);
 
-  const t = d3.transition().duration(320).ease(d3.easeCubicOut);
-
-  // Edges (interrupt any pending exit transitions so edges never get stuck half-faded)
+  // Synchronous D3 DOM update (smooth motion handled via CSS transitions — zero D3 timer collisions)
   const edges = gEdges.selectAll(".edge-group").data(edgesArray, (d) => d.id);
-  edges.exit().interrupt().remove();
+  edges.exit().remove();
 
   const edgesEnter = edges
     .enter()
     .append("g")
     .attr("class", (d) => `edge-group ${d.primary ? "primary-edge" : ""}`)
-    .style("opacity", 1)
     .on("click", (event, d) => openInspector("interaction", d, step));
 
   edgesEnter.append("path").attr("class", "edge-line").attr("stroke-width", 2.2);
@@ -427,14 +435,11 @@ function updateGraph(stepIndex) {
 
   const edgesMerged = edgesEnter.merge(edges);
   edgesMerged
-    .interrupt()
-    .style("opacity", 1)
-    .attr("class", (d) => `edge-group ${d.primary ? "primary-edge" : ""}`);
+    .attr("class", (d) => `edge-group ${d.primary ? "primary-edge" : ""}`)
+    .style("opacity", "1");
 
   edgesMerged
     .select(".edge-line")
-    .interrupt()
-    .transition(t)
     .attr("stroke", (d) => (d.typeMeta ? d.typeMeta.color : "#d4af37"))
     .attr("stroke-dasharray", (d) => (d.primary === false ? "4 3" : null))
     .attr("marker-end", (d) => `url(#arrow-${d.type})`)
@@ -442,8 +447,6 @@ function updateGraph(stepIndex) {
 
   edgesMerged
     .select(".emoji-badge-bg")
-    .interrupt()
-    .transition(t)
     .attr("cx", (d) => d.midX)
     .attr("cy", (d) => d.midY)
     .attr("stroke", (d) => (d.typeMeta ? d.typeMeta.color : "#d4af37"));
@@ -451,20 +454,17 @@ function updateGraph(stepIndex) {
   edgesMerged
     .select(".emoji-marker")
     .text((d) => (d.typeMeta ? d.typeMeta.emoji : "🔗"))
-    .interrupt()
-    .transition(t)
     .attr("x", (d) => d.midX)
     .attr("y", (d) => d.midY);
 
-  // Character Nodes (interrupt any pending exit transitions so nodes never get stuck at opacity < 1)
+  // Character Nodes (100% synchronous DOM attributes + CSS GPU transition on transform)
   const nodes = gNodes.selectAll(".character-group").data(nodesArray, (d) => d.id);
-  nodes.exit().interrupt().remove();
+  nodes.exit().remove();
 
   const nodesEnter = nodes
     .enter()
     .append("g")
     .attr("class", (d) => `character-group ${d.isFocal ? "is-focal" : ""}`)
-    .style("opacity", 1)
     .attr("transform", (d) => `translate(${d.x},${d.y})`)
     .on("click", (event, d) => openInspector("character", d, step));
 
@@ -481,19 +481,20 @@ function updateGraph(stepIndex) {
 
   const nodesMerged = nodesEnter.merge(nodes);
   nodesMerged
-    .interrupt()
-    .style("opacity", 1)
-    .attr("class", (d) => `character-group ${d.isFocal ? "is-focal" : ""}`);
-
-  nodesMerged
-    .transition(t)
-    .style("opacity", 1)
+    .attr("class", (d) => `character-group ${d.isFocal ? "is-focal" : ""}`)
+    .style("opacity", "1")
+    .attr("opacity", "1")
     .attr("transform", (d) => `translate(${d.x},${d.y})`);
 
-  nodesMerged.select(".character-node").attr("fill", (d) => d.color);
+  nodesMerged
+    .select(".character-node")
+    .attr("fill", (d) => d.color)
+    .style("opacity", "1");
+
   nodesMerged
     .select(".node-label")
-    .text((d) => (isEn ? d.name_en || d.name : d.name_ka || d.name));
+    .text((d) => (isEn ? d.name_en || d.name : d.name_ka || d.name))
+    .style("opacity", "1");
 }
 
 function openInspector(kind, data, step) {
