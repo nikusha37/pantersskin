@@ -137,7 +137,7 @@ def get_chapter_context(ch_num, st_num):
     if ch_num in (12, 13):
         return mode, {"nestan": "india", "tariel": "india", "asmat": "india"}, ("nestan", "tariel", "letter") if ch_num == 12 else ("tariel", "nestan", "letter"), [("asmat", "nestan", "service")]
     if ch_num in (14, 15):
-        return mode, {"tariel": "india", "nestan": "india", "asmat": "india", "parsadan": "india", "ramaz": "khataveti"}, ("tariel", "ramaz", "conflict") if ch_num == 14 else ("nestan", "tariel", "love"), [("asmat", "tariel", "service")]
+        return mode, {"tariel": "india", "nestan": "india", "asmat": "india", "parsadan": "india", "ramaz": "khataveti"}, ("tariel", "ramaz", "letter") if ch_num == 14 else ("nestan", "tariel", "love"), [("asmat", "tariel", "service")]
     if ch_num in (16, 17, 18, 19):
         return mode, {"tariel": "khataveti", "ramaz": "khataveti", "nestan": "india", "parsadan": "india"}, ("tariel", "ramaz", "conflict"), [("nestan", "tariel", "love")]
     if ch_num in (20, 21):
@@ -200,7 +200,6 @@ def detect_stanza_characters(text_ka, text_en, base_realms):
     for cid, pat in CHAR_PATTERNS.items():
         if pat.search(combined):
             found.append(cid)
-    # Prioritize characters already in base_realms, but also allow newly mentioned ones
     ordered = [c for c in found if c in base_realms] + [c for c in found if c not in base_realms]
     return ordered
 
@@ -238,15 +237,23 @@ def build_stanza_graph():
                 if m_char not in node_realms:
                     node_realms[m_char] = CHARACTERS[m_char]["base_realm"]
 
-            # Determine primary interaction for this exact stanza
             def_src, def_tgt, def_type = focal_default
             st_type = detect_stanza_type(raw_ka, raw_en, def_type)
 
             if len(mentioned) >= 2:
                 src, tgt = mentioned[0], mentioned[1]
             elif len(mentioned) == 1:
-                src = mentioned[0]
-                tgt = def_tgt if src != def_tgt else def_src
+                m0 = mentioned[0]
+                if m0 == def_src:
+                    src, tgt = def_src, def_tgt
+                elif re.search(
+                    r"გავგზავნე|მივსწერე|ვუთხარ|ვუბრძანე|მივეც|ვჰკარ|მოვკალ|ვნახე|წავედი|I sent|I wrote|I said|I told|I slew",
+                    f"{raw_ka}\n{raw_en}",
+                    re.I,
+                ):
+                    src, tgt = def_src, m0
+                else:
+                    src, tgt = m0, def_src
             else:
                 src, tgt = def_src, def_tgt
 
@@ -338,7 +345,6 @@ def build_stanza_graph():
                 "interactions": interactions,
             })
 
-        # Also record chapter-level step from the chapter's first/representative stanza
         if stanzas:
             rep = stanza_steps[-len(stanzas)]
             chapter_steps.append({
@@ -346,7 +352,7 @@ def build_stanza_graph():
                 "chapterNumber": ch_num,
                 "poemChapters": [ch_num],
                 "stanzaStart": stanzas[0]["stanza_number"],
-                "stanzaEnd": stanzas[-1]["stanza_number"],
+                "stanzaEnd": stanzas[-1][ "stanza_number"],
                 "mode": rep["mode"],
                 "title": ch_title_ka,
                 "title_ka": f"თავი {ch_num}: {ch_title_ka}",

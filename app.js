@@ -404,14 +404,17 @@ function updateGraph(stepIndex) {
     })
     .filter(Boolean);
 
-  const t = d3.transition().duration(380).ease(d3.easeCubicOut);
+  const t = d3.transition().duration(320).ease(d3.easeCubicOut);
 
-  // Edges
+  // Edges (interrupt any pending exit transitions so edges never get stuck half-faded)
   const edges = gEdges.selectAll(".edge-group").data(edgesArray, (d) => d.id);
+  edges.exit().interrupt().remove();
+
   const edgesEnter = edges
     .enter()
     .append("g")
     .attr("class", (d) => `edge-group ${d.primary ? "primary-edge" : ""}`)
+    .style("opacity", 1)
     .on("click", (event, d) => openInspector("interaction", d, step));
 
   edgesEnter.append("path").attr("class", "edge-line").attr("stroke-width", 2.2);
@@ -423,10 +426,14 @@ function updateGraph(stepIndex) {
     .attr("dominant-baseline", "central");
 
   const edgesMerged = edgesEnter.merge(edges);
-  edgesMerged.attr("class", (d) => `edge-group ${d.primary ? "primary-edge" : ""}`);
+  edgesMerged
+    .interrupt()
+    .style("opacity", 1)
+    .attr("class", (d) => `edge-group ${d.primary ? "primary-edge" : ""}`);
 
   edgesMerged
     .select(".edge-line")
+    .interrupt()
     .transition(t)
     .attr("stroke", (d) => (d.typeMeta ? d.typeMeta.color : "#d4af37"))
     .attr("stroke-dasharray", (d) => (d.primary === false ? "4 3" : null))
@@ -435,6 +442,7 @@ function updateGraph(stepIndex) {
 
   edgesMerged
     .select(".emoji-badge-bg")
+    .interrupt()
     .transition(t)
     .attr("cx", (d) => d.midX)
     .attr("cy", (d) => d.midY)
@@ -443,18 +451,20 @@ function updateGraph(stepIndex) {
   edgesMerged
     .select(".emoji-marker")
     .text((d) => (d.typeMeta ? d.typeMeta.emoji : "🔗"))
+    .interrupt()
     .transition(t)
     .attr("x", (d) => d.midX)
     .attr("y", (d) => d.midY);
 
-  edges.exit().remove();
-
-  // Character Nodes
+  // Character Nodes (interrupt any pending exit transitions so nodes never get stuck at opacity < 1)
   const nodes = gNodes.selectAll(".character-group").data(nodesArray, (d) => d.id);
+  nodes.exit().interrupt().remove();
+
   const nodesEnter = nodes
     .enter()
     .append("g")
     .attr("class", (d) => `character-group ${d.isFocal ? "is-focal" : ""}`)
+    .style("opacity", 1)
     .attr("transform", (d) => `translate(${d.x},${d.y})`)
     .on("click", (event, d) => openInspector("character", d, step));
 
@@ -470,14 +480,20 @@ function updateGraph(stepIndex) {
   nodesEnter.append("text").attr("class", "node-label").attr("dy", 31);
 
   const nodesMerged = nodesEnter.merge(nodes);
-  nodesMerged.attr("class", (d) => `character-group ${d.isFocal ? "is-focal" : ""}`);
-  nodesMerged.transition(t).attr("transform", (d) => `translate(${d.x},${d.y})`);
+  nodesMerged
+    .interrupt()
+    .style("opacity", 1)
+    .attr("class", (d) => `character-group ${d.isFocal ? "is-focal" : ""}`);
+
+  nodesMerged
+    .transition(t)
+    .style("opacity", 1)
+    .attr("transform", (d) => `translate(${d.x},${d.y})`);
+
   nodesMerged.select(".character-node").attr("fill", (d) => d.color);
   nodesMerged
     .select(".node-label")
     .text((d) => (isEn ? d.name_en || d.name : d.name_ka || d.name));
-
-  nodes.exit().transition(t).style("opacity", 0).remove();
 }
 
 function openInspector(kind, data, step) {
@@ -754,7 +770,6 @@ function setupControls() {
     });
   });
 
-  // Chapter Dropdown Jump
   const chSelect = document.getElementById("chapterSelect");
   if (chSelect) {
     chSelect.addEventListener("change", (e) => {
@@ -767,7 +782,6 @@ function setupControls() {
     });
   }
 
-  // Stanza Range Slider & Step Buttons
   const slider = document.getElementById("stanzaSlider");
   if (slider) {
     slider.addEventListener("input", (e) => {
@@ -791,7 +805,6 @@ function setupControls() {
     }
   });
 
-  // Search Input
   const searchInput = document.getElementById("globalSearchInput");
   searchInput.addEventListener("input", (e) => handleSearchInput(e.target.value));
   searchInput.addEventListener("keydown", (e) => {
