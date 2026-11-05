@@ -464,17 +464,12 @@ svg#stageSvg {
 
 .character-group {
   opacity: 1 !important;
+  cursor: pointer;
   transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.character-node {
-  opacity: 1 !important;
-  cursor: pointer;
-  transition: filter 0.2s, r 0.2s;
-}
-
-.character-group:hover .character-node {
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.9));
+.character-group:hover {
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.85));
 }
 
 .character-active-ring {
@@ -580,6 +575,22 @@ svg#stageSvg {
   font-size: 0.96rem;
   color: var(--accent-gold);
   line-height: 1.35;
+}
+
+.inspector-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.inspector-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-gold);
+  background: #101422;
+  flex-shrink: 0;
 }
 
 .close-btn {

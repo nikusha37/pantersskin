@@ -44,6 +44,12 @@ function getEdgeShortLabel(typeKey) {
   return currentLang === "en" ? item.en : item.ka;
 }
 
+function getCharacterAvatar(charObj) {
+  if (!charObj) return "";
+  const base = charObj.avatar || `assets/characters/${charObj.id}.png`;
+  return `${base}?v=8`;
+}
+
 function getActiveSteps() {
   return currentGranularity === "chapters" ? chapterSteps : stanzaSteps;
 }
@@ -77,12 +83,21 @@ function setupArrowMarkers() {
   if (!graphData || !graphData.interaction_types) return;
   defs.selectAll("*").remove();
 
+  // Shared circular clipPath for character node avatars
+  defs
+    .append("clipPath")
+    .attr("id", "node-avatar-clip")
+    .append("circle")
+    .attr("cx", 0)
+    .attr("cy", 0)
+    .attr("r", 21);
+
   Object.entries(graphData.interaction_types).forEach(([typeKey, meta]) => {
     defs
       .append("marker")
       .attr("id", `arrow-${typeKey}`)
       .attr("viewBox", "0 -5 10 10")
-      .attr("refX", 23)
+      .attr("refX", 28)
       .attr("refY", 0)
       .attr("markerWidth", 5)
       .attr("markerHeight", 5)
@@ -284,16 +299,16 @@ function computePositions(nodeRealms) {
 
   Object.entries(groups).forEach(([realmId, charIds]) => {
     const cx = getRealmX(realmId);
-    const usableHeight = height - 105;
+    const usableHeight = height - 115;
     const stepY = usableHeight / (charIds.length + 1);
     charIds.forEach((charId, i) => {
       let xOffset = 0;
       if (charIds.length >= 3) {
-        xOffset = (i % 2 === 0 ? -1 : 1) * Math.min(laneWidth * 0.15, 16);
+        xOffset = (i % 2 === 0 ? -1 : 1) * Math.min(laneWidth * 0.16, 18);
       }
       coords[charId] = {
         x: cx + xOffset,
-        y: 55 + stepY * (i + 1)
+        y: 58 + stepY * (i + 1)
       };
     });
   });
@@ -382,7 +397,8 @@ function updateGraph(stepIndex) {
         x: positions[charId].x,
         y: positions[charId].y,
         currentRealm: effectiveRealms[charId],
-        isFocal: focalSet.has(charId)
+        isFocal: focalSet.has(charId),
+        avatarUrl: getCharacterAvatar(chObj)
       };
     })
     .filter(Boolean);
@@ -484,7 +500,7 @@ function updateGraph(stepIndex) {
     .attr("x", (d) => d.midX)
     .attr("y", (d) => d.midY);
 
-  // Character Nodes
+  // Character Nodes with Custom Portraits
   const nodes = gNodes.selectAll(".character-group").data(nodesArray, (d) => d.id);
   nodes.exit().remove();
 
@@ -495,16 +511,33 @@ function updateGraph(stepIndex) {
     .attr("transform", (d) => `translate(${d.x},${d.y})`)
     .on("click", (event, d) => openInspector("character", d, step));
 
-  nodesEnter.append("circle").attr("class", "character-active-ring").attr("r", 23);
+  nodesEnter.append("circle").attr("class", "character-active-ring").attr("r", 26);
 
   nodesEnter
     .append("circle")
-    .attr("class", "character-node")
-    .attr("r", 17)
-    .attr("stroke", "#fff")
+    .attr("class", "character-node-bg")
+    .attr("r", 22)
+    .attr("fill", "#101422")
+    .attr("stroke-width", 2.2);
+
+  nodesEnter
+    .append("image")
+    .attr("class", "character-portrait")
+    .attr("x", -21)
+    .attr("y", -21)
+    .attr("width", 42)
+    .attr("height", 42)
+    .attr("clip-path", "url(#node-avatar-clip)")
+    .attr("preserveAspectRatio", "xMidYMid slice");
+
+  nodesEnter
+    .append("circle")
+    .attr("class", "character-node-ring")
+    .attr("r", 21.5)
+    .attr("fill", "none")
     .attr("stroke-width", 2);
 
-  nodesEnter.append("text").attr("class", "node-label").attr("dy", 31);
+  nodesEnter.append("text").attr("class", "node-label").attr("dy", 35);
 
   const nodesMerged = nodesEnter.merge(nodes);
   nodesMerged
@@ -514,8 +547,18 @@ function updateGraph(stepIndex) {
     .attr("transform", (d) => `translate(${d.x},${d.y})`);
 
   nodesMerged
-    .select(".character-node")
-    .attr("fill", (d) => d.color)
+    .select(".character-node-bg")
+    .attr("stroke", (d) => d.color)
+    .style("opacity", "1");
+
+  nodesMerged
+    .select(".character-portrait")
+    .attr("href", (d) => d.avatarUrl)
+    .style("opacity", "1");
+
+  nodesMerged
+    .select(".character-node-ring")
+    .attr("stroke", (d) => d.color)
     .style("opacity", "1");
 
   nodesMerged
@@ -541,10 +584,17 @@ function openInspector(kind, data, step) {
     const charTitle = isEn ? data.title_en || data.title : data.title_ka || data.title;
     const realmName = realm ? (isEn ? realm.name_en : realm.name_ka) : data.currentRealm;
     const statusObj = step.nodeStatus && step.nodeStatus[data.id];
+    const avatarUrl = getCharacterAvatar(data);
 
     titleEl.textContent = charName;
     bodyEl.innerHTML = `
-      <div class="inspector-sub">${escapeHtml(charTitle)} • ${escapeHtml(realmName)}</div>
+      <div class="inspector-profile-row">
+        <img src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(charName)}" class="inspector-avatar" />
+        <div>
+          <div class="inspector-sub" style="margin-bottom:4px;">${escapeHtml(charTitle)}</div>
+          <div style="font-size:0.74rem; color:var(--accent-gold);">${escapeHtml(realmName)}</div>
+        </div>
+      </div>
       ${
         statusObj
           ? `<div class="inspector-status-box">${escapeHtml(isEn ? statusObj.en : statusObj.ka)}</div>`
